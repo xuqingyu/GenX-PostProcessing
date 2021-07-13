@@ -7,7 +7,7 @@ library(cowplot)
 # the naming convention of PG is
 # '[...]/[Running_folder]/[year]/[case_id]_[year]_[case_description]/Results/'
 # so it is in fact preferable to feed in the setup folder;
-RunFdr <- "/Users/qingyuxu/Documents/PJM_QX_2030_ALL_18x7";
+RunFdr <- "/Users/qingyuxu/Documents/PJM_QX_2030_ALL_18x7_newwacc";
 settingfile <- 'sample_inputs_pjm.csv';
 # RunFdr <- "/Users/qingyuxu/Dropbox (Princeton)/NYISO Carbon Pricing Project/Results_QX_All";
 # settingfile <- 'sample_inputs_nyiso.csv';
@@ -62,18 +62,26 @@ storage_fuel <- as.character(na.omit(settings$Storage_Fuel));
 power_colors <- filter(colors, Fuel %in% fuel_list);
 color_list <- as.character(power_colors$Color);
 dir.create(paste0(RunFdr,"/Graphics"), showWarnings = FALSE)
+dir.create(paste0(RunFdr,"/Graphics/EnergyPrice"), showWarnings = FALSE)
 for (i in 1:n_subregions){
   dir.create(paste0(RunFdr,"/CompiledResults/",Subregions[i]), showWarnings = FALSE)
   dir.create(paste0(RunFdr,"/CompiledResults/",Subregions[i],"/Generation"), showWarnings = FALSE)
   dir.create(paste0(RunFdr,"/CompiledResults/",Subregions[i],"/Load"), showWarnings = FALSE)
   dir.create(paste0(RunFdr,"/CompiledResults/",Subregions[i],"/Emissions"), showWarnings = FALSE)
+  dir.create(paste0(RunFdr,"/CompiledResults/",Subregions[i],"/Graphics"), showWarnings = FALSE)
   dir.create(paste0(RunFdr,"/CompiledResults/",Subregions[i],"/Graphics/GenOutput"), showWarnings = FALSE)
+  dir.create(paste0(RunFdr,"/CompiledResults/",Subregions[i],"/Graphics/GenCapacity"), showWarnings = FALSE)
+  dir.create(paste0(RunFdr,"/CompiledResults/",Subregions[i],"/Graphics/SystemCost"), showWarnings = FALSE)
+  dir.create(paste0(RunFdr,"/CompiledResults/",Subregions[i],"/Graphics/LSECost"), showWarnings = FALSE)
+  dir.create(paste0(RunFdr,"/CompiledResults/",Subregions[i],"/Graphics/GenProfit"), showWarnings = FALSE)
 }
 
 load_cost_color <- select(settings,Load_Cost_Type,Load_Cost_Color) %>% distinct() %>% na.omit() %>% pivot_wider(names_from = Load_Cost_Type, values_from=Load_Cost_Color) 
 load_cost_type <- colnames(load_cost_color)
 system_cost_color <- select(settings,System_Cost_Type,System_Cost_Color) %>% distinct() %>% na.omit() %>% pivot_wider(names_from = System_Cost_Type, values_from=System_Cost_Color) 
 system_cost_type <- colnames(system_cost_color)
+genprofit_color <- select(settings,GenProfit_Type,GenProfit_Color) %>% distinct() %>% na.omit() %>% pivot_wider(names_from = GenProfit_Type, values_from=GenProfit_Color) 
+genprofit_type <- colnames(genprofit_color)
 
 sensitivity_comparison <- unique(na.omit(settings$TechSensitivity_Comparison))
 n_sensitivity_comparison <- length(sensitivity_comparison)

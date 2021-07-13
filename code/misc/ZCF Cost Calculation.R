@@ -13,16 +13,16 @@ for (i in 1:nrow(Settlement)) {
     # generator.loc[(generator.region == 'NY_West')&(generator.Resource == 'natural_gas_fired_combined_cycle'), 'Fixed_OM_cost_per_MWyr'] += 37822 # 50% of new cc capex in the same region
     # generator.loc[(generator.region == 'NY_West')&(generator.Resource == 'natural_gas_fired_combustion_turbine'), 'Fixed_OM_cost_per_MWyr'] += 27489 # 50% of new ct capex in the same region
     if ((Settlement$Region[i] == 'NY_East')&(Settlement$Resource[i] == 'natural_gas_fired_combined_cycle')) {
-      repowercost <- 52685
+      repowercost <- 38498
       Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
     } else if ((Settlement$Region[i] == 'NY_East')&(Settlement$Resource[i] == 'natural_gas_fired_combustion_turbine')){
-      repowercost <- 36818
+      repowercost <- 26904
       Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
     } else if ((Settlement$Region[i] == 'NY_West')&(Settlement$Resource[i] == 'natural_gas_fired_combined_cycle')){
-      repowercost <- 37822
+      repowercost <- 27637
       Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
     } else if ((Settlement$Region[i] == 'NY_West')&(Settlement$Resource[i] == 'natural_gas_fired_combustion_turbine')){
-      repowercost <- 27489
+      repowercost <- 20087
       Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
     }
   }
@@ -36,16 +36,16 @@ for (i in 1:nrow(Settlement)) {
     # 
     if (grepl('statedpolicy',Settlement$case[i])) {
       if ((Settlement$Region[i] %in% c('PJM_NJCoast','PJM_NJLand'))&(Settlement$Resource[i] == 'natural_gas_fired_combined_cycle')) {
-        repowercost <- 37454
+        repowercost <- 27368
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] %in% c('PJM_NJCoast','PJM_NJLand'))&(Settlement$Resource[i] == 'natural_gas_fired_combustion_turbine')){
-        repowercost <- 27511
+        repowercost <- 20103
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] == 'PJM_Dom')&(Settlement$Resource[i] == 'natural_gas_fired_combined_cycle')){
-        repowercost <- 34621
+        repowercost <- 25298
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] == 'PJM_Dom')&(Settlement$Resource[i] == 'natural_gas_fired_combustion_turbine')){
-        repowercost <- 24957
+        repowercost <- 18237
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       }
     } else if (grepl('deepdecarbonization',Settlement$case[i])){
@@ -74,54 +74,54 @@ for (i in 1:nrow(Settlement)) {
       # generator.loc[(generator.region == 'SC_VACA')&(generator.Resource == 'natural_gas_fired_combined_cycle'), 'Fixed_OM_cost_per_MWyr'] += 28626 # 50% of new cc capex in the same region
       # generator.loc[(generator.region == 'SC_VACA')&(generator.Resource == 'natural_gas_fired_combustion_turbine'), 'Fixed_OM_cost_per_MWyr'] += 22403 # 50% of new ct capex in the same region
       if ((Settlement$Region[i] %in% c('PJM_NJCoast','PJM_NJLand','PJM_Delaware','PJM_PECO','PJM_SMAC','PJM_WestMAC'))&(Settlement$Resource[i] == 'natural_gas_fired_combined_cycle')) {
-        repowercost <- 37454
+        repowercost <- 27368
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] %in% c('PJM_NJCoast','PJM_NJLand','PJM_Delaware','PJM_PECO','PJM_SMAC','PJM_WestMAC'))&(Settlement$Resource[i] == 'natural_gas_fired_combustion_turbine')){
-        repowercost <- 27511
+        repowercost <- 20103
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] == 'PJM_Dom')&(Settlement$Resource[i] == 'natural_gas_fired_combined_cycle')){
-        repowercost <- 34621
+        repowercost <- 25298
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] == 'PJM_Dom')&(Settlement$Resource[i] == 'natural_gas_fired_combustion_turbine')){
-        repowercost <- 24957
+        repowercost <- 18237
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] == 'PJM_COMD')&(Settlement$Resource[i] == 'natural_gas_fired_combined_cycle')){
         # generator.loc[(generator.region == 'PJM_COMD')&(generator.Resource == 'natural_gas_fired_combined_cycle'), 'Fixed_OM_cost_per_MWyr'] += 39265 # 50% of new cc capex in the same region
-        repowercost <- 39265
+        repowercost <- 28692
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] == 'PJM_COMD')&(Settlement$Resource[i] == 'natural_gas_fired_combustion_turbine')){
         # generator.loc[(generator.region == 'PJM_COMD')&(generator.Resource == 'natural_gas_fired_combustion_turbine'), 'Fixed_OM_cost_per_MWyr'] += 30307 # 50% of new ct capex in the same region
-        repowercost <- 30307
+        repowercost <- 22146
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] == 'PJM_WEST')&(Settlement$Resource[i] == 'natural_gas_fired_combined_cycle')){
-        repowercost <- 30668
+        repowercost <- 22410
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] == 'PJM_WEST')&(Settlement$Resource[i] == 'natural_gas_fired_combustion_turbine')){
-        repowercost <- 23473
+        repowercost <- 17152
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] == 'MIS_Central')&(Settlement$Resource[i] == 'natural_gas_fired_combined_cycle')){
-        repowercost <- 33073
+        repowercost <- 24167
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] == 'MIS_Central')&(Settlement$Resource[i] == 'natural_gas_fired_combustion_turbine')){
-        repowercost <- 25751
+        repowercost <- 18817
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] == 'MIS_East')&(Settlement$Resource[i] == 'natural_gas_fired_combined_cycle')){
-        repowercost <- 33929
+        repowercost <- 24793
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] == 'MIS_East')&(Settlement$Resource[i] == 'natural_gas_fired_combustion_turbine')){
-        repowercost <- 26545
+        repowercost <- 19397
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] == 'SC_TVA')&(Settlement$Resource[i] == 'natural_gas_fired_combined_cycle')){
-        repowercost <- 29680
+        repowercost <- 21687
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] == 'SC_TVA')&(Settlement$Resource[i] == 'natural_gas_fired_combustion_turbine')){
-        repowercost <- 23231
+        repowercost <- 16975
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] == 'SC_VACA')&(Settlement$Resource[i] == 'natural_gas_fired_combined_cycle')){
-        repowercost <- 28626
+        repowercost <- 20917
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } else if ((Settlement$Region[i] == 'SC_VACA')&(Settlement$Resource[i] == 'natural_gas_fired_combustion_turbine')){
-        repowercost <- 22403
+        repowercost <- 16370
         Settlement[i,] <- zcf_repowercostupdate(Settlement[i,], repowercost)
       } 
     }

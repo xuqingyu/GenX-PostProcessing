@@ -5,8 +5,8 @@ for (i in 1:n_subregions) {
   # reading total LSE cost
   lse_payment_subregion_fn <- paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Load/LSE_Payment_',temp_total_title,"_with2019_and_DG.csv")
   lse_payment_total <- read_csv(lse_payment_subregion_fn) %>%
-    mutate(`LSE Net Payment` = `Energy Payment` + `Transmission Loss Cost` + `NSE Cost`+ `Capacity Payment`+ `CO2 Revenue Mass Cap` +
-             `CO2 Revenue Load Rate Cap` + `RPS Total Payment` + `Tech Subsidy Cost` + `Transmission Cost` + `Congestion Revenue`) %>%
+    mutate(`LSE Net Payment` = `Energy Payment` + `Transmission Loss Cost` + `NSE Cost`+ `Capacity Payment`+ `CO2 Revenue` 
+           + `RPS Total Payment` + `Tech Subsidy Cost` + `Transmission Cost` + `Congestion Revenue`) %>%
     mutate(`LSE Net Payment (with DG)` = `LSE Net Payment` + `NJ DG Cost`) %>% 
     mutate(`LSE Net Payment ($/MWh)` = `LSE Net Payment`/`Gross Total`,
            `LSE Net Payment (with DG, $/MWh)` = `LSE Net Payment (with DG)`/`Gross Total`) %>%
@@ -18,7 +18,10 @@ for (i in 1:n_subregions) {
   system_cost_total <- read_csv(system_cost_subregion_fn) %>%
     mutate(`System Cost` = `Energy Import Cost` + `Energy Export Revenue` + `NSE Cost` +
              `Fuel and VOM` + `FOM` + `Sunk Cost` + CAPEX + `Emission Capture Cost`+ 
-             `Transmission Cost` + `Capacity Import Cost`) %>%
+             `Transmission Cost` + 
+             `Capacity Import Cost` + `Capacity Export Revenue` +
+             `RPS Import Cost` + `RPS Export Revenue` + 
+             `CO2 Import Cost` + `CO2 Export Revenue`) %>%
     mutate(`System Cost (with DG)` = `System Cost` + `NJ DG Cost`) %>% 
     mutate(`System Cost ($/MWh)` = `System Cost`/`Gross Total`,
            `System Cost (with DG, $/MWh)` = `System Cost (with DG)`/`Gross Total`) %>%

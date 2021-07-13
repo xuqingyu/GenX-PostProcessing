@@ -128,7 +128,7 @@ if (exists('Settlement')){
     non_battery_row <- which(!grepl('battery_*',settlement_battery_modification$Resource))
     settlement_battery_modification$bat_mod[non_battery_row] <- 0;
     Settlement <- left_join(Settlement, settlement_battery_modification, by = c("Region","Resource","Zone","Cluster","case"));
-    battery_row_2050 <- which((grepl('battery_*',Settlement$Resource))|(Settlement$year == '2050'))
+    battery_row_2050 <- which((grepl('battery_*',Settlement$Resource))&(Settlement$year == '2050'))
     Settlement$SunkCost[battery_row_2050] <- Settlement$SunkCost[battery_row_2050] - Settlement$bat_mod[battery_row_2050]
     Settlement <- Settlement %>% select(-bat_mod)
   }

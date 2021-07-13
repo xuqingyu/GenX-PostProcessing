@@ -28,12 +28,17 @@ for (i in 1:n_subregions) {
     group_by(case,year,Scenario, `TechSensitivity`) %>%
     mutate(`Energy Import Cost` = max(0, `Energy Payment` + `Congestion Revenue` + `Transmission Loss Cost` + `Energy Revenue` + `Energy Charge Payment`),
            `Energy Export Revenue` = min(0, `Energy Payment` + `Congestion Revenue` + `Transmission Loss Cost` + `Energy Revenue` + `Energy Charge Payment`),
-           `Capacity Import Cost` = max(0, `Capacity Payment` + `Capacity Revenue`)) %>%
+           `Capacity Import Cost` = max(0, `Capacity Payment` + `Capacity Revenue`),
+           `Capacity Export Revenue` = min(0, `Capacity Payment` + `Capacity Revenue`),
+           `RPS Import Cost` = max(0, `RPS Total Payment` + `RPS Revenue`),
+           `RPS Export Revenue` = min(0, `RPS Total Payment` + `RPS Revenue`),
+           `CO2 Import Cost` = max(0, `Emission Cost` + `CO2 Revenue`),
+           `CO2 Export Revenue` = min(0, `Emission Cost` + `CO2 Revenue`)) %>%
     select(-c(`Energy Payment`,`Congestion Revenue`,`Transmission Loss Cost`,`Energy Revenue`,`Energy Charge Payment`,
               `Capacity Payment`, `Capacity Revenue`,
               `Tech Subsidy Cost`, `Tech Subsidy Revenue`,
               `RPS Revenue`, `RPS Total Payment`,
-              `CO2 Revenue Mass Cap`, `CO2 Revenue Load Rate Cap`,`Emission Cost`)) %>%
+              `CO2 Revenue`,`Emission Cost`)) %>%
     filter(year != 2019);
   gross_load <- read_csv(paste0(RunFdr,"/CompiledResults/",Subregions[i],"/Load/Load_Component_",Subregions[i],".csv")) %>%
     filter(`Load Type` == 'Gross Total') %>%

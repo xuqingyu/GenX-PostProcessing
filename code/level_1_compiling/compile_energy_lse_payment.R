@@ -1,6 +1,6 @@
-#--------------------------------------#
-#Combining LSE Energy Payment data -----
-#--------------------------------------#
+#---------------------------------------#
+# Combining LSE Energy Payment data -----
+#---------------------------------------#
 if (exists('LSEEnergyPayment')){
   rm('LSEEnergyPayment')
 }

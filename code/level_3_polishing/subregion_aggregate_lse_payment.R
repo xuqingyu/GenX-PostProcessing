@@ -13,9 +13,7 @@ for ( i in 1:n_subregions){
               `Transmission Loss Cost` = sum(`Transmission Loss Cost`),
               `NSE Cost` = sum(`NSE Cost`),
               `Capacity Payment` = sum(`Capacity Payment`),
-              `CO2 Revenue Mass Cap` = sum(`CO2 Revenue Mass Cap`),
-              `CO2 Revenue Load Rate Cap` = sum(`CO2 Revenue Load Rate Cap`),
-              `CO2 Revenue Tax` = sum(`CO2 Revenue Tax`),
+              `CO2 Revenue` = sum(`CO2 Revenue Mass Cap` + `CO2 Revenue Load Rate Cap` + `CO2 Revenue Tax`),
               `RPS Total Payment` = sum(`RPS Total Payment`),
               `Tech Subsidy Cost` = sum(`Tech Subsidy Cost`),
               `Transmission Cost` = sum(`Transmission Cost`),
@@ -23,7 +21,7 @@ for ( i in 1:n_subregions){
     left_join(cases_newnames, by = c('case' = 'case_description')) %>%
     select(case, year, Scenario, `TechSensitivity`,AnnualLoad,
            `Energy Payment`, `Transmission Loss Cost`, `NSE Cost`, `Capacity Payment`,
-           `CO2 Revenue Mass Cap`,`CO2 Revenue Load Rate Cap`,`RPS Total Payment`,`Tech Subsidy Cost`,
+           `CO2 Revenue`,`RPS Total Payment`,`Tech Subsidy Cost`,
            `Transmission Cost`, `Congestion Revenue`)
   write_csv(lse_payment_subregion,paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Load/LSE_Payment_',temp_total_title,".csv"))
 }

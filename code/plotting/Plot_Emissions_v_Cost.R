@@ -15,9 +15,11 @@ for (i in 1:n_subregions) {
     temp_compared_scenario <- compared_scenario$Compared_Scenario[compared_scenario$Scenario_Comparison == comparison[j]]
     lse_cost_vs_emission_comparison <- lse_cost_vs_emission %>%
       filter(Scenario %in% temp_compared_scenario) %>%
-      filter(year != 2019)
+      filter(year != 2019) %>%
+      filter(TechSensitivity %in% interested_sensitivity)
     system_cost_vs_emission_comparison <- system_cost_vs_emission %>%
-      filter(Scenario %in% temp_compared_scenario)
+      filter(Scenario %in% temp_compared_scenario) %>%
+      filter(TechSensitivity %in% interested_sensitivity)
     ggplot()+
       geom_point(data = lse_cost_vs_emission_comparison, aes(x = `Load Emissions Rate (Ton/MWh)`, y = `LSE Net Payment ($/MWh)`, 
                                                              color = TechSensitivity)) +
@@ -25,7 +27,7 @@ for (i in 1:n_subregions) {
       scale_color_brewer(palette = 'Set1')+
       theme_bw()+
       theme(legend.position = "bottom")+
-      guides(color = guide_legend(nrow = 3, title.position = "left"))+
+      guides(color = guide_legend(nrow = 2, title.position = "left"))+
       geom_vline(xintercept = reference_lse_emission)+
       geom_hline(yintercept = reference_lse_cost) +
       labs(caption = "Vertical and Horizontal lines show 2019 (simulated) emission/cost level")+
@@ -38,7 +40,7 @@ for (i in 1:n_subregions) {
       scale_color_brewer(palette = 'Set1')+
       theme_bw()+
       theme(legend.position = "bottom")+
-      guides(color = guide_legend(nrow = 3, title.position = "left"))+
+      guides(color = guide_legend(nrow = 2, title.position = "left"))+
       geom_vline(xintercept = reference_lse_emission)+
       labs(caption = "Vertical line shows 2019 (simulated) emission level")+
       facet_grid(Scenario~year) +

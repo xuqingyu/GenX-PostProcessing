@@ -32,6 +32,7 @@ source('./code/level_1_compiling/compile_renewable_energy_requirement.R')
 source('./code/level_1_compiling/compile_renewable_energy_price.R')
 source('./code/level_1_compiling/compile_energy_lse_payment.R')
 source('./code/level_1_compiling/compile_capacity_lse_payment.R')
+source('./code/level_1_compiling/compile_capacity_trans_revenue.R')
 source('./code/level_1_compiling/compile_renewable_energy_lse_payment.R')
 
 # Level 2: Result Calculation ----

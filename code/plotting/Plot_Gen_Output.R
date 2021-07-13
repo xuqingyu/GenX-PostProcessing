@@ -28,8 +28,14 @@ for (i in 1:n_subregions) {
             scale_fill_manual(name = "Resources", values = fuel_colors) + 
             geom_hline(yintercept=0) + 
             facet_grid(.~Scenario) + 
-            ggtitle(paste0('Generation Output (TWh) ---',temp_total_title, " --- ", comparison[j], " --- ", temp_techsensitivity_list[k]))+
-            ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/GenOutPut/GenOutput_',comparison[j],'_',temp_total_title,'_Sensitivity_',k,'.png'),width = 16,height=9)
+            theme_bw()+
+            theme(
+              panel.grid.major.x = element_blank(),
+              panel.grid.minor.x = element_blank()
+            )+ 
+            facet_grid(.~Scenario) + 
+            ggtitle(paste0('Generation Output of ', temp_total_title, ' under \nSensitivity ',interested_sensitivity[k]))+
+            ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/GenOutPut/GenOutput_',comparison[j],'_',temp_total_title,'_Sensitivity_',k,'.png'),width = 7.5,height=7)
         }
       }
     }
@@ -71,23 +77,28 @@ for (i in 1:n_subregions) {
                      aes(x = year, y = `AnnualOutput (TWh)`, fill=Fuel),colour="black",size= 0.1) +
             scale_fill_manual(name = "Resources", values = fuel_colors) + 
             geom_hline(yintercept=0) + 
-            theme_classic()+
-            theme(legend.position = "none")+
+            theme_bw()+
+            theme(legend.position = "none",
+                  panel.grid.major.x = element_blank(),
+                  panel.grid.minor.x = element_blank()
+            )+
             facet_wrap(Scenario ~ TechSensitivity)
           g2 <- ggplot()+
             geom_col(data = temp_gen_output_compared_data,
                      aes(x = year, y = `Difference (TWh)`, fill=Fuel),colour="black",size= 0.1) +
             scale_fill_manual(name = "Resources", values = fuel_colors) + 
             geom_hline(yintercept=0) + 
-            facet_grid(Scenario ~ TechSensitivity)+
-            theme_classic()+
-            theme(legend.position = "bottom")+
-            guides(fill = guide_legend(nrow = 4, title.position = "top"))
+            facet_grid(TechSensitivity~Scenario)+
+            theme_bw()+
+            theme(legend.position = "right",
+                  panel.grid.major.x = element_blank(),
+                  panel.grid.minor.x = element_blank()
+            )
           
           ggdraw() +
-            draw_plot(g1,x = 0, y = .5, width = 1/n_compared_sensitivity, height = 0.5) + 
-            draw_plot(g2,x = 0, y = 0, width = 1, height = 0.5) +
-            ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/GenOutPut/Generation Output (TWh)_Sensitivity Comparison_', j ,"_of_", temp_total_title,"_of_", interested_scenario[k],'.png'),width = min(5*n_compared_sensitivity,10),height=9)
+            draw_plot(g1,x = 0, y = 0, width = .45) + 
+            draw_plot(g2,x = 0.5, y = 0, width = .5) +
+            ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/GenOutPut/Generation Output (TWh)_Sensitivity Comparison_', j ,"_of_", temp_total_title,"_of_", interested_scenario[k],'.png'),width = 9,height=7)
         }
       }
     }
