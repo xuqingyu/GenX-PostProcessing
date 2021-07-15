@@ -84,7 +84,14 @@ for (i in 1:n_subregions) {
         mutate(`Gross Total` = TWh*1e6) %>%
         select(-c(`Load Type`,TWh))
       lse_payment_wide <- left_join(lse_payment_wide, gross_load);
-      lse_payment_wide$`Gross Total`[lse_payment_wide$year == 2019] <- lse_payment_wide$`AnnualLoad`[lse_payment_wide$year == 2019]
+      if (Subregions[i] == 'PJM'){
+        lse_payment_wide$`Gross Total`[lse_payment_wide$year == 2019] <- 799629063
+      } else if (Subregions[i] == 'New Jersey'){
+        lse_payment_wide$`Gross Total`[lse_payment_wide$year == 2019] <- 82834833
+      } else {
+        lse_payment_wide$`Gross Total`[lse_payment_wide$year == 2019] <- lse_payment_wide$`AnnualLoad`[lse_payment_wide$year == 2019]
+      }
+      
       write_csv(lse_payment_wide,paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Load/LSE_Payment_',temp_total_title,"_with2019_and_DG.csv"))
       lse_payment_long <- pivot_longer(lse_payment_wide,!c(case, year, Scenario, `TechSensitivity`,AnnualLoad,`Gross Total`),names_to = 'Cost Type') %>%
         mutate(`USD per MWh` = value/`Gross Total`);

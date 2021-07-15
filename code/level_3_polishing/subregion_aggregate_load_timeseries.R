@@ -71,19 +71,22 @@ for ( k in 1:n_subregions){
 
 
 # 
-# load_timeseries_fn <- paste0(RunFdr,'/CompiledResults/PJM/Load/Load_fullyear_timeseries_PJM.csv')
-# load_timeseries <- read_csv(load_timeseries_fn)
-# load_timeseries_original_summary <- load_timeseries %>%
-#   filter(Load_Type == 'Load') %>%
-#   group_by(case,year) %>%
-#   summarize(`Annual Peak Load` = max(MW),
-#             `Annual Average Load` = mean(MW))
-# load_timeseries_flexmodified_summary <- load_timeseries %>%
-#   pivot_wider(names_from = 'Load_Type',values_from = 'MW') %>%
-#   group_by(case,year) %>%
-#   summarize(`Modified Annual Peak Load` = max(Load + `Flexible Demand`))
-# load_timeseries_summary <- left_join(load_timeseries_original_summary,load_timeseries_flexmodified_summary);
-# write_csv(load_timeseries_summary, paste0(RunFdr,'/CompiledResults/',Subregions[k],'/Load/Load_fullyear_summary_',temp_total_title,'.csv'))
+for (k in 1:n_subregions){
+  load_timeseries_fn <- paste0(RunFdr,'/CompiledResults/',Subregions[k],'/Load/Load_fullyear_timeseries_',Subregions[k],'.csv')
+  load_timeseries <- read_csv(load_timeseries_fn)
+  load_timeseries_original_summary <- load_timeseries %>%
+    filter(Load_Type == 'Load') %>%
+    group_by(case,year) %>%
+    summarize(`Annual Peak Load` = max(MW),
+              `Annual Average Load` = mean(MW))
+  load_timeseries_flexmodified_summary <- load_timeseries %>%
+    pivot_wider(names_from = 'Load_Type',values_from = 'MW') %>%
+    group_by(case,year) %>%
+    summarize(`Modified Annual Peak Load` = max(Load + `Flexible Demand`))
+  load_timeseries_summary <- left_join(load_timeseries_original_summary,load_timeseries_flexmodified_summary);
+  write_csv(load_timeseries_summary, paste0(RunFdr,'/CompiledResults/',Subregions[k],'/Load/Load_fullyear_summary_',temp_total_title,'.csv'))
+}
+
 # temp <- load_timeseries %>%
 #   filter(case == 'deepdecarbonization_mid', year == 2050)
 # temp_plot <- temp %>% filter(HourID %in% c(1:8760))

@@ -34,6 +34,20 @@ for (i in 1:n_subregions) {
       facet_grid(Scenario~year) +
       ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/LSEvsEmission_',temp_total_title,"_",comparison[j],'.png'),width = 7.5,height=7) 
     ggplot()+
+      geom_point(data = lse_cost_vs_emission_comparison, aes(x = `Load Emissions Rate (Ton/MWh)`, y = `LSE Net Payment (with DG, $/MWh)`, 
+                                                             color = TechSensitivity)) +
+      scale_x_reverse()+
+      scale_color_brewer(palette = 'Set1')+
+      theme_bw()+
+      theme(legend.position = "bottom")+
+      guides(color = guide_legend(nrow = 2, title.position = "left"))+
+      geom_vline(xintercept = reference_lse_emission)+
+      geom_hline(yintercept = reference_lse_cost) +
+      labs(caption = "Vertical and Horizontal lines show 2019 (simulated) emission/cost level")+
+      facet_grid(Scenario~year) +
+      ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/LSEvsEmission_withDG_',temp_total_title,"_",comparison[j],'.png'),width = 7.5,height=7) 
+    
+    ggplot()+
       geom_point(data = system_cost_vs_emission_comparison, aes(x = `Load Emissions Rate (Ton/MWh)`, y = `System Cost ($/MWh)`, 
                                                                 color = TechSensitivity)) +
       scale_x_reverse()+
@@ -45,6 +59,18 @@ for (i in 1:n_subregions) {
       labs(caption = "Vertical line shows 2019 (simulated) emission level")+
       facet_grid(Scenario~year) +
       ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/SystemvsEmission_',temp_total_title,"_",comparison[j],'.png'),width = 7.5,height=7)      
+    ggplot()+
+      geom_point(data = system_cost_vs_emission_comparison, aes(x = `Load Emissions Rate (Ton/MWh)`, y = `System Cost (with DG, $/MWh)`, 
+                                                                color = TechSensitivity)) +
+      scale_x_reverse()+
+      scale_color_brewer(palette = 'Set1')+
+      theme_bw()+
+      theme(legend.position = "bottom")+
+      guides(color = guide_legend(nrow = 2, title.position = "left"))+
+      geom_vline(xintercept = reference_lse_emission)+
+      labs(caption = "Vertical line shows 2019 (simulated) emission level")+
+      facet_grid(Scenario~year) +
+      ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/SystemvsEmission_withDG_',temp_total_title,"_",comparison[j],'.png'),width = 7.5,height=7)      
     
   }
   

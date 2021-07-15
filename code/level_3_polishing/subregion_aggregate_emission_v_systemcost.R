@@ -19,7 +19,7 @@ for (i in 1:n_subregions) {
     mutate(`System Cost` = `Energy Import Cost` + `Energy Export Revenue` + `NSE Cost` +
              `Fuel and VOM` + `FOM` + `Sunk Cost` + CAPEX + `Emission Capture Cost`+ 
              `Transmission Cost` + 
-             `Capacity Import Cost` + `Capacity Export Revenue` +
+             `Capacity Import Cost` + #`Capacity Export Revenue` +
              `RPS Import Cost` + `RPS Export Revenue` + 
              `CO2 Import Cost` + `CO2 Export Revenue`) %>%
     mutate(`System Cost (with DG)` = `System Cost` + `NJ DG Cost`) %>% 
