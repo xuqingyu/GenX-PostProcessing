@@ -6,15 +6,16 @@ if (exists('demand')){
   rm('demand','total_load','total_demand_region');
 }
 print('begin compiling energy demand')
+print(Sys.time())
 for ( i in 1:length(cases)){
   for (j in 1:length(years)){
     temp_load_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",years[j],"_",cases[i],"/Inputs/Load_data.csv");
     temp_timeweight_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",years[j],"_",cases[i],"/Results/time_weights.csv");
     if (file.exists(temp_load_fn)) {
-      temp_demand <- read_csv(temp_load_fn,progress = show_progress()) %>%
+      temp_demand <- read_csv(temp_load_fn, col_types = cols()) %>%
         select(-c(1:8)) %>% # the left 8 columns are for policy;
         mutate(case = cases[i], year = years[j]); 
-      timeweight <- read_csv(temp_timeweight_fn);
+      timeweight <- read_csv(temp_timeweight_fn,col_types = cols());
       temp_demand$weight <- timeweight$Weight;
     }
     if(!exists('demand')){
@@ -43,8 +44,10 @@ if(exists('demand')){
   
   rm(temp_load_fn, temp_timeweight_fn, temp_demand,timeweight,demand,total_load,total_demand_region)
   print('finished compiling energy demand')
+  print(Sys.time())
 } else {
   print('there are no demand files in any folder')
+  print(Sys.time())
 }
 
 

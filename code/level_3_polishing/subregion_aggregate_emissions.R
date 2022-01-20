@@ -13,19 +13,25 @@ for ( i in 1:n_subregions){
     summarize(`Emissions (Mtons)` = sum(value)/1e6) %>%
     left_join(cases_newnames, by = c('case' = 'case_description'))
   # Calculate the total generation of each case-year
-  gen_profit_subregion_fn <- paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Generation/Gen_Profit_',temp_total_title,".csv")
+  gen_profit_subregion_fn <- paste0(RunFdr,'/CompiledResults/',
+                                    Subregions[i],'/Generation/Gen_Profit_',
+                                    temp_total_title,".csv")
   total_gen <- read_csv(gen_profit_subregion_fn) %>%
     filter(!(Fuel %in% storage_fuel)) %>%
     group_by(case,year,Scenario, TechSensitivity) %>%
     summarize(TotalGen = sum(AnnualOutput))
   # Calculate the total load of each case-year
-  lse_payment_subregion_fn <- paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Load/LSE_Payment_',temp_total_title,".csv")
+  lse_payment_subregion_fn <- paste0(RunFdr,'/CompiledResults/',
+                                     Subregions[i],'/Load/LSE_Payment_',
+                                     temp_total_title,"_with2019_and_DG.csv")
   total_load_subregion <- read_csv(lse_payment_subregion_fn) %>%
-    select(case,year,Scenario, TechSensitivity,AnnualLoad)
+    select(case,year,Scenario, TechSensitivity, AnnualLoad,`Gross Total`)  %>%
+    filter(year != 2019)
   # Calculate emission rate
-  emission_subregion <- left_join(emission_subregion, total_gen) %>% left_join(total_load_subregion) %>%
+  emission_subregion <- left_join(emission_subregion, total_gen) %>% 
+    left_join(total_load_subregion) %>%
     mutate(`Generation Emissions Rate (Ton/MWh)` = `Emissions (Mtons)`/TotalGen*1e6,
-           `Load Emissions Rate (Ton/MWh)` = `Emissions (Mtons)`/AnnualLoad*1e6) %>%
+           `Load Emissions Rate (Ton/MWh)` = `Emissions (Mtons)`/`Gross Total`*1e6) %>%
     select(case, year, Scenario, TechSensitivity, 
            `Emissions (Mtons)`,`Generation Emissions Rate (Ton/MWh)`,`Load Emissions Rate (Ton/MWh)`)
   write_csv(emission_subregion,paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Emissions/Emissions_',temp_total_title,".csv"))

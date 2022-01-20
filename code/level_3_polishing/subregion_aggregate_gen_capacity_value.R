@@ -1,6 +1,6 @@
 # Capacity Values ----
-source('./code/Header.R')
-cap_values <- read_csv(paste0(RunFdr,"/CompiledResults/CapValue.csv")) %>%
+# source('./code/Header.R')
+cap_values <- read_csv(paste0(RunFdr,"/CompiledResults/CapValue.csv"), col_types = cols()) %>%
   filter(`annual_sum` > 100) %>%
   na.omit() %>%
   left_join(resource_mapping) %>%

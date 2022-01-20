@@ -4,15 +4,15 @@ source('./code/Header.R')
 if (exists('capacityprice_ts')){
   rm(capacityprice_ts)
 }
-
+k=1
 for (i in 1:length(TS_cases)){
-  for (j in 1:length(years)){
+  for (j in length(years)){ # only the last year is calculated on purpose
     temp_capacity_price_fn <- paste0(RunFdr,"/",years[j],"/",TS_cases_id[i],"_",years[j],"_",TS_cases[i],"/Results/ReserveMargin_w.csv");
     temp_load_fn <- paste0(RunFdr,"/",years[j],"/",TS_cases_id[i],"_",years[j],"_",TS_cases[i],"/Inputs/Load_data.csv");
     temp_ts_mapping_fn <- paste0(RunFdr,"/",years[j],"/",TS_cases_id[i],"_",years[j],"_",TS_cases[i],"/Inputs/time_series_mapping.csv");
     if (file.exists(temp_capacity_price_fn)){
       
-      temp_capacity_price = read_csv(temp_capacity_price_fn) %>% 
+      temp_capacity_price = read_csv(temp_capacity_price_fn, col_types = cols()) %>% 
         rename(Time_index = Constraint) %>% 
         mutate(Time_index = as.numeric(str_remove(Time_index,'t'))) %>% 
         pivot_longer(cols = !c(Time_index), names_to = 'Constraint', values_to = 'Price') %>%
@@ -22,10 +22,10 @@ for (i in 1:length(TS_cases)){
       temp_capacity_price$year <- years[j]
       
       if (file.exists(temp_ts_mapping_fn)){
-        ts_mapping <- read_csv(temp_ts_mapping_fn)
+        ts_mapping <- read_csv(temp_ts_mapping_fn, col_types = cols())
         n_slot <- dim(ts_mapping)[1]
-        Hours_per_period <- read_csv(temp_load_fn)$Hours_per_period %>% na.omit()
-        n_period <- read_csv(temp_load_fn)$Subperiods %>% na.omit()
+        Hours_per_period <- read_csv(temp_load_fn, col_types = cols())$Hours_per_period %>% na.omit()
+        n_period <- read_csv(temp_load_fn, col_types = cols())$Subperiods %>% na.omit()
         model_hours <- Hours_per_period*n_slot;
         HourID = c(1:model_hours)
         Slot <- rep(ts_mapping$slot,each = Hours_per_period)
@@ -45,9 +45,30 @@ for (i in 1:length(TS_cases)){
     } else {
       capacityprice_ts <- rbind(capacityprice_ts, temp_capacity_price);
     }
+    print(i)
+    if ((i %% 10 == 0)| (i == length(TS_cases))) {
+      write_csv(capacityprice_ts,paste0(RunFdr,'/CompiledResults/CapacityPrice_timeseries_',k,'.csv'))
+      rm(capacityprice_ts,capacityprice_ts)
+      k = k +1
+      print(k)
+    }
   }
 }
-write_csv(capacityprice_ts,paste0(RunFdr,'/CompiledResults/CapacityPrice_timeseries.csv'))
+# write_csv(capacityprice_ts,paste0(RunFdr,'/CompiledResults/CapacityPrice_timeseries.csv'))
+
+maxk = k - 1
+k = 1
+for (k in (1:maxk)){
+  temp_capacity_price <- read_csv(paste0(RunFdr,'/CompiledResults/CapacityPrice_timeseries_',k,'.csv'),
+                                  col_types = cols(Price = col_double()))
+  temp_capacity_price$Price[is.na(temp_capacity_price$Price)] <- 0
+  if(!exists('capacityprice_ts')){
+    capacityprice_ts <- temp_capacity_price;
+  } else {
+    capacityprice_ts <- rbind(capacityprice_ts, temp_capacity_price);
+  }
+  print(k)
+}
 capacityprice_ts_statistics <- capacityprice_ts %>%
   na.omit() %>%
   group_by(Constraint, case, year) %>%
@@ -56,19 +77,4 @@ capacityprice_ts_statistics <- capacityprice_ts %>%
 write_csv(capacityprice_ts_statistics,paste0(RunFdr,'/CompiledResults/CapacityPrice_timeseries_statistics.csv'))
 rm(capacityprice_ts_statistics,temp_capacity_price,capacityprice_ts)
 
-
-
-
-
-# capacityprice_ts <- read_csv(paste0(RunFdr,'/CompiledResults/CapacityPrice_timeseries.csv')) %>%
-#   mutate(Binding = ifelse(is.na(Price),NA,1))
-# temp_plot <- capacityprice_ts  %>%
-#   filter(year == 2030)
-# ggplot(data=temp_plot,aes(x=HourID, y=Binding, color=Constraint)) +
-#   geom_point() +
-#   # coord_flip() +
-#   scale_x_reverse()+
-#   theme_classic()+
-#   facet_grid(case~.)+
-#   ylab("Binding Hour")
 

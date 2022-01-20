@@ -13,7 +13,7 @@ for ( k in 1:n_subregions){
       temp_load_fn <- paste0(RunFdr,"/",years[j],"/",TS_cases_id[i],"_",years[j],"_",TS_cases[i],"/Inputs/Load_data.csv");
       temp_ts_mapping_fn <- paste0(RunFdr,"/",years[j],"/",TS_cases_id[i],"_",years[j],"_",TS_cases[i],"/Inputs/time_series_mapping.csv");
       if (file.exists(temp_power_fn)){
-        temp_generator <- read_csv(temp_generator_fn);
+        temp_generator <- read_csv(temp_generator_fn, col_types = cols());
         # The top 3 rows of the file are Resource, Zone, and Sum (to drop), and the most left columns are names, take the transpose
         temp_power_ts = t(read.csv(temp_power_fn,header = F)[-3,]); 
         # make the row one as column name
@@ -25,8 +25,11 @@ for ( k in 1:n_subregions){
         temp_power_ts <- cbind(temp_power_ts,select(temp_generator,region, cluster,Fuel)) %>%
           rename(Region = region,  Cluster = cluster) %>%
           filter(Region %in% temp_total);
-        zcf_row <- which(temp_power_ts$Fuel=='ZCF');
-        temp_power_ts$Resource[zcf_row] <- paste(temp_power_ts$Resource[zcf_row],'_ZCF',sep='')
+        if ((temp_total_title == 'New Jersey')|(temp_total_title == 'PJM')) {
+          zcf_row <- which(temp_power_ts$Fuel=='ZCF');
+          temp_power_ts$Resource[zcf_row] <- paste(temp_power_ts$Resource[zcf_row],'_ZCF',sep='')
+        }
+
         temp_power_ts <- temp_power_ts %>% 
           select(-Fuel) %>% 
           left_join(resource_mapping_includingflexibleload,by=c('Resource' = 'All_Resource')) %>%
@@ -46,8 +49,10 @@ for ( k in 1:n_subregions){
         temp_charge_ts <- cbind(temp_charge_ts,select(temp_generator,region, cluster,Fuel)) %>%
           rename(Region = region,  Cluster = cluster) %>%
           filter(Region %in% temp_total);
-        zcf_row <- which(temp_charge_ts$Fuel=='ZCF');
-        temp_charge_ts$Resource[zcf_row] <- paste(temp_charge_ts$Resource[zcf_row],'_ZCF',sep='')
+        if ((temp_total_title == 'New Jersey')|(temp_total_title == 'PJM')) {
+          zcf_row <- which(temp_charge_ts$Fuel=='ZCF');
+          temp_charge_ts$Resource[zcf_row] <- paste(temp_charge_ts$Resource[zcf_row],'_ZCF',sep='')
+        }
         temp_charge_ts <- temp_charge_ts %>% 
           select(-Fuel) %>% 
           left_join(resource_mapping_includingflexibleload,by=c('Resource' = 'All_Resource')) %>%
@@ -66,10 +71,10 @@ for ( k in 1:n_subregions){
         temp_injection_ts$year <- years[j]
         
         if (file.exists(temp_ts_mapping_fn)){
-          ts_mapping <- read_csv(temp_ts_mapping_fn)
+          ts_mapping <- read_csv(temp_ts_mapping_fn, col_types = cols())
           n_slot <- dim(ts_mapping)[1]
-          Hours_per_period <- read_csv(temp_load_fn)$Hours_per_period %>% na.omit()
-          n_period <- read_csv(temp_load_fn)$Subperiods %>% na.omit()
+          Hours_per_period <- read_csv(temp_load_fn, col_types = cols())$Hours_per_period %>% na.omit()
+          n_period <- read_csv(temp_load_fn, col_types = cols())$Subperiods %>% na.omit()
           model_hours <- Hours_per_period*n_slot;
           HourID = c(1:model_hours)
           Slot <- rep(ts_mapping$slot,each = Hours_per_period)
@@ -96,8 +101,8 @@ for ( k in 1:n_subregions){
 }
 
 
-# temp <- read_csv(paste0(RunFdr,'/CompiledResults/',Subregions[1],'/Generation/Gen_fullyear_timeseries_PJM.csv')) %>%
-#   filter(case == 'deepdecarbonization_mid', year == 2050,Fuel != 'Flexible Load') %>%
+# temp <- read_csv(paste0(RunFdr,'/CompiledResults/',Subregions[1],'/Generation/Gen_fullyear_timeseries_PJM_Google.csv')) %>%
+#   filter(case == 'currentpolicy_25ci_cipannual100', year == 2030,Fuel != 'Flexible Load') %>%
 #   mutate(Fuel = factor(Fuel,levels = capacity_resource_levels))
 # temp_plot <- temp %>% filter(HourID %in% c(1:672))
 # ggplot(data=temp_plot,aes(x=HourID, y=Injection, fill=Fuel)) +

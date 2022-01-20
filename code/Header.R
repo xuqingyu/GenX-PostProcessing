@@ -4,13 +4,7 @@ library(tidyverse)
 library(ggpubr)
 library(cowplot)
 # Actively Scanning Result Folders ---------------------------------------
-# the naming convention of PG is
-# '[...]/[Running_folder]/[year]/[case_id]_[year]_[case_description]/Results/'
-# so it is in fact preferable to feed in the setup folder;
-RunFdr <- "/Users/qingyuxu/Documents/PJM_QX_2030_ALL_18x7_newwacc";
-settingfile <- 'sample_inputs_pjm.csv';
-# RunFdr <- "/Users/qingyuxu/Dropbox (Princeton)/NYISO Carbon Pricing Project/Results_QX_All";
-# settingfile <- 'sample_inputs_nyiso.csv';
+
 dir.create(paste0(RunFdr,"/CompiledResults/"), showWarnings = FALSE)
 settings <- read_csv(paste0(RunFdr,"/",settingfile));
 resource_mapping <- select(settings, Resource, Fuel);
@@ -94,3 +88,12 @@ TS_cases<- settings$TS_cases %>% na.omit()
 TS_cases_id <- settings$TS_cases_id %>% na.omit()
 renewable_fuel <- settings$Renewable_Fuel %>% na.omit()
 clean_fuel <- settings$Clean_Fuel %>% na.omit()
+
+interface <- unique(na.omit(settings$Interface))
+n_interface <- length(interface)
+interface_line_mapping <- select(settings, Interface, Interface_Line, 
+                                 Interface_Line_Direction) %>% na.omit() %>%
+  mutate(Interface_Line = as.character(Interface_Line))
+
+
+

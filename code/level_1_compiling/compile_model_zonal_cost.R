@@ -5,13 +5,14 @@ if (exists('ZonalCost')){
   rm('ZonalCost')
 }
 print('begin compiling zonal cost')
+print(Sys.time())
 for ( i in 1:length(cases)) {
   for (j in 1:length(years)) {
     # '[...]/[Running_folder]/[year]/[case_id]_[year]_[case_description]/Results/'
     temp <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",years[j],"_",cases[i],"/Results/costs.csv");
     if (file.exists(temp))
     {
-      temp_cost <- read_csv(temp) %>%
+      temp_cost <- read_csv(temp,col_types = cols()) %>%
         select(-Total) %>%
         filter(Costs %in% c("cFix","cVar","cNSE","cStart","cCO2Tax","cCO2Capture")); 
       NoZone <- dim(temp_cost)[2]-1;
@@ -31,7 +32,10 @@ for ( i in 1:length(cases)) {
 }
 if (exists('ZonalCost')) {
   write_csv(ZonalCost, paste0(RunFdr,"/CompiledResults/Zonalcost.csv"))
+  rm(ZonalCost, temp_cost, temp)
   print('finished compiling zonal cost')
+  print(Sys.time())
 } else {
   print('there are no costs.csv')
+  print(Sys.time())
 }

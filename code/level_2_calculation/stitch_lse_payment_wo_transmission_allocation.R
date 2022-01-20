@@ -5,7 +5,7 @@ source('./code/Header.R')
 
 lse_energy_base_fn <- paste0(RunFdr,'/CompiledResults/LSEEnergyPayment.csv');
 if (file.exists(lse_energy_base_fn)) {
-  lse_energy_base <- read_csv(lse_energy_base_fn) %>%
+  lse_energy_base <- read_csv(lse_energy_base_fn, col_types = cols()) %>%
     rename(`Energy Payment Base` = Sum, zone = Zone) %>%
     select(case, year, zone, `Energy Payment Base`) %>%
     mutate(zone = factor(zone, levels = zone_mapping$zone))
@@ -15,7 +15,7 @@ if (file.exists(lse_energy_base_fn)) {
 
 gen_settlement_fn <- paste0(RunFdr,'/CompiledResults/Settlement_short.csv');
 if (file.exists(gen_settlement_fn)) {
-  lse_energy_flexible_load <- read_csv(gen_settlement_fn) %>%
+  lse_energy_flexible_load <- read_csv(gen_settlement_fn, col_types = cols()) %>%
     filter(Resource %in% flexiload_list) %>%
     group_by(case, year, Region) %>%
     summarize(`Energy Payment Flexible Load` = sum(EnergyRevenue + Charge_cost)) %>% #for now, Energy Revenue for flexible load is in reverse.
@@ -27,7 +27,7 @@ if (file.exists(gen_settlement_fn)) {
 
 if (exists('lse_energy_base')) {
   if (exists('lse_energy_flexible_load')) {
-    lse_energy <- left_join(lse_energy_base,lse_energy_flexible_load);
+    lse_energy <- left_join(lse_energy_base,lse_energy_flexible_load, col_types = cols());
     lse_energy[is.na(lse_energy)] <- 0 # it is possible that there is no flexible load resource, to enable that the summation will work, we need to change NA to zero
     lse_energy <- lse_energy %>%
       mutate(`Energy Payment` = `Energy Payment Base` + `Energy Payment Flexible Load`)

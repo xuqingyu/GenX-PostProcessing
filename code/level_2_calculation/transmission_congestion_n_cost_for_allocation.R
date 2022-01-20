@@ -1,5 +1,6 @@
 if(exists('trans_exp_cost_allocated')){
-  rm(trans_exp_cost, case_year_list, rto_list,temp_trans_exp_cost,trans_exp_cost_allocated)
+  rm(trans_exp_cost, case_year_list, rto_list,temp_trans_exp_cost,trans_exp_cost_allocated,
+     congestion_rev_allocated)
 }
 year_levels <- c('start', as.character(years_pre$Model_years));
 years_pre$Model_years <- factor(years_pre$Model_years, levels = year_levels)

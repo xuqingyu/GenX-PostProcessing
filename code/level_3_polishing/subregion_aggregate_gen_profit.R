@@ -1,7 +1,9 @@
 
 # source('./code/Header.R')
 # Calculate subregion cost
-gen_profit <- read_csv(paste0(RunFdr,'/CompiledResults/Settlement_short.csv')) %>%
+# Modified on Aug 27, 2021: this work in general
+gen_profit <- read_csv(paste0(RunFdr,'/CompiledResults/Settlement_short.csv'),
+                       col_types = cols()) %>%
   left_join(resource_mapping) %>%
   filter(EndCap>20) %>%
   na.omit() %>%

@@ -1,4 +1,6 @@
 source('./code/Header.R')
+p_width = 10
+p_height = 7
 for (i in 1:n_subregions) {
   temp_total_title <- Subregions[i]
   temp_total <- Subregion_zones$Subregion_zones[Subregion_zones$Subregions == Subregions[i]]
@@ -8,7 +10,7 @@ for (i in 1:n_subregions) {
       mutate(Scenario = factor(Scenario, levels = scenario),
              TechSensitivity = factor(TechSensitivity, levels = tech_sensitivity),
              `Cost Type` = factor(`Cost Type`, levels = system_cost_type),
-             `System Cost 2020US$/MWh` = round(value/`Gross Total`,2))
+             `System Cost 2020US$/MWh` = round(value/`Gross Total`,1))
     for (j in 1:n_comparison){
       for (k in 1:length(interested_sensitivity)){
         temp_compared_scenario <- compared_scenario$Compared_Scenario[compared_scenario$Scenario_Comparison == comparison[j]]
@@ -19,11 +21,11 @@ for (i in 1:n_subregions) {
         system_cost_plot_total_withdg <- system_cost_plot_comparison %>%
           group_by(case,year,AnnualLoad, Scenario, TechSensitivity,`Gross Total`) %>%
           summarize(value = sum(value)) %>%
-          mutate(`System Cost 2020US$/MWh` = round(value/`Gross Total`,2))
+          mutate(`System Cost 2020US$/MWh` = round(value/`Gross Total`,1))
         system_cost_plot_total <- system_cost_plot_comparison[system_cost_plot_comparison$`Cost Type`!='NJ DG Cost',] %>%
           group_by(case,year,AnnualLoad, Scenario, TechSensitivity,`Gross Total`) %>%
           summarize(value = sum(value)) %>%
-          mutate(`System Cost 2020US$/MWh` = round(value/`Gross Total`,2))
+          mutate(`System Cost 2020US$/MWh` = round(value/`Gross Total`,1))
         
         ggplot()+
           geom_col(data = system_cost_plot_comparison,
@@ -38,7 +40,9 @@ for (i in 1:n_subregions) {
           theme(legend.position = "bottom")+
           guides(fill = guide_legend(nrow = 3, title.position = "left"))+
           ggtitle(label = paste0('Regional Cost of ', temp_total_title, ' under \nSensitivity ',interested_sensitivity[k]))+
-          ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/SystemCost/SystemCostBreakDown_',temp_total_title,"_",comparison[j],'_',k,'_with_NJ_DG.png'),width = 9,height=7)
+          ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/SystemCost/SystemCostBreakDown_',temp_total_title,"_",comparison[j],'_',k,'_with_NJ_DG.png'),
+                 width = p_width,
+                 height = p_height)
         
         # ggplot()+
         #   geom_col(data = system_cost_plot_comparison,
@@ -67,7 +71,9 @@ for (i in 1:n_subregions) {
           theme(legend.position = "bottom")+
           guides(fill = guide_legend(nrow = 3, title.position = "left"))+
           ggtitle(label = paste0('Regional Cost of ', temp_total_title, ' under \nSensitivity ',interested_sensitivity[k]))+
-          ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/SystemCost/SystemCostBreakDown_',temp_total_title,"_",comparison[j],'_',k,'.png'),width = 9,height=7)
+          ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/SystemCost/SystemCostBreakDown_',temp_total_title,"_",comparison[j],'_',k,'.png'),
+                 width = p_width,
+                 height= p_height)
         
         # ggplot()+
         #   geom_col(data = system_cost_plot_comparison[system_cost_plot_comparison$`Cost Type`!='NJ DG Cost',],

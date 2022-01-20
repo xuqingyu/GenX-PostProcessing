@@ -1,4 +1,6 @@
 # Plotting
+p_width = 9
+p_height = 7
 source('./code/Header.R')
 for (i in 1:n_subregions) {
   temp_total_title <- Subregions[i]
@@ -15,18 +17,18 @@ for (i in 1:n_subregions) {
       for (k in 1:length(interested_sensitivity)){
         temp_compared_scenario <- compared_scenario$Compared_Scenario[compared_scenario$Scenario_Comparison == comparison[j]]
         lse_payment_plot_comparison <- lse_payment_plot %>%
-          mutate(`LSE Payment 2020US$/MWh` = round(value/`Gross Total`,2)) %>%
+          mutate(`LSE Payment 2020US$/MWh` = round(value/`Gross Total`,1)) %>%
           filter(Scenario %in% temp_compared_scenario, 
                  TechSensitivity == interested_sensitivity[k])
         
         lse_payment_plot_total_withdg <- lse_payment_plot_comparison %>%
           group_by(case,year,AnnualLoad, Scenario, TechSensitivity,`Gross Total`) %>%
           summarize(value = sum(value)) %>%
-          mutate(`LSE Payment 2020US$/MWh` = round(value/`Gross Total`,2))
+          mutate(`LSE Payment 2020US$/MWh` = round(value/`Gross Total`,1))
         lse_payment_plot_total <- lse_payment_plot_comparison[lse_payment_plot_comparison$`Cost Type`!='NJ DG Cost',] %>%
           group_by(case,year,AnnualLoad, Scenario, TechSensitivity,`Gross Total`) %>%
           summarize(value = sum(value)) %>%
-          mutate(`LSE Payment 2020US$/MWh` = round(value/`Gross Total`,2))
+          mutate(`LSE Payment 2020US$/MWh` = round(value/`Gross Total`,1))
         
         ggplot()+
           geom_col(data = lse_payment_plot_comparison,
@@ -39,9 +41,12 @@ for (i in 1:n_subregions) {
           facet_grid(.~Scenario) + 
           theme_bw()+
           theme(legend.position = "bottom")+
-          guides(fill = guide_legend(nrow = 4, title.position = "left"))+
+          guides(fill = guide_legend(nrow = 3, title.position = "left"))+
           ggtitle(label = paste0('LSE Cost of ', temp_total_title, ' under \nSensitivity ',interested_sensitivity[k]))+
-          ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/LSECost/LSECostBreakDown_',comparison[j],'_',temp_total_title,'_',k,'_with_NJ_DG.png'),width = 9,height=7)
+          ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/LSECost/LSECostBreakDown_',comparison[j],'_',
+                        temp_total_title,'_',k,'_with_NJ_DG.png'),
+                 width = p_width,
+                 height=p_height)
         
         # ggplot()+
         #   geom_col(data = lse_payment_plot_comparison,
@@ -65,9 +70,11 @@ for (i in 1:n_subregions) {
           facet_grid(.~Scenario) + 
           theme_bw()+
           theme(legend.position = "bottom")+
-          guides(fill = guide_legend(nrow = 4, title.position = "left"))+
+          guides(fill = guide_legend(nrow = 3, title.position = "left"))+
           ggtitle(label = paste0('LSE Cost of ', temp_total_title, ' under \nSensitivity ',interested_sensitivity[k]))+
-          ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/LSECost/LSECostBreakDown_',comparison[j],'_',temp_total_title,'_',k,'.png'),width = 9,height=7)
+          ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/LSECost/LSECostBreakDown_',comparison[j],'_',temp_total_title,'_',k,'.png'),
+                 width = p_width,
+                 height = p_height)
         
         # ggplot()+
         #   geom_col(data = lse_payment_plot_comparison[lse_payment_plot_comparison$`Cost Type`!='NJ DG Cost',],

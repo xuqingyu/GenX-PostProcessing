@@ -1,5 +1,5 @@
 # Plot load time-series
-source('./code/Header.R')
+# source('./code/Header.R')
 if (exists('load_timeseries')){
   rm(load_timeseries)
 }
@@ -7,9 +7,10 @@ print('begin generating timeseries data')
 for ( k in 1:n_subregions){
   temp_total_title <- Subregions[k]
   temp_total <- Subregion_zones$Subregion_zones[Subregion_zones$Subregions == Subregions[k]]
-  injection_timeseries_fn <- paste0(RunFdr,'/CompiledResults/',Subregions[k],'/Generation/Gen_fullyear_timeseries_',temp_total_title,'.csv');
+  injection_timeseries_fn <- paste0(RunFdr,'/CompiledResults/',Subregions[k],
+                                    '/Generation/Gen_fullyear_timeseries_',temp_total_title,'.csv');
   if (file.exists(injection_timeseries_fn)) {
-    flexible_load_timeseries <- read_csv(injection_timeseries_fn) %>%
+    flexible_load_timeseries <- read_csv(injection_timeseries_fn, col_types = cols()) %>%
       filter(Fuel == 'Flexible Load') %>%
       select(-Fuel) %>%
       rename(`Flexible Demand` = Injection) %>%
@@ -20,10 +21,12 @@ for ( k in 1:n_subregions){
   
   for (i in 1:length(TS_cases)){
     for (j in 1:length(years)){
-      temp_load_fn <- paste0(RunFdr,"/",years[j],"/",TS_cases_id[i],"_",years[j],"_",TS_cases[i],"/Inputs/Load_data.csv");
-      temp_ts_mapping_fn <- paste0(RunFdr,"/",years[j],"/",TS_cases_id[i],"_",years[j],"_",TS_cases[i],"/Inputs/time_series_mapping.csv");
+      temp_load_fn <- paste0(RunFdr,"/",years[j],"/",TS_cases_id[i],"_",years[j],"_",TS_cases[i],
+                             "/Inputs/Load_data.csv");
+      temp_ts_mapping_fn <- paste0(RunFdr,"/",years[j],"/",TS_cases_id[i],"_",years[j],"_",TS_cases[i],
+                                   "/Inputs/time_series_mapping.csv");
       if (file.exists(temp_load_fn)){
-        temp_demand <- read_csv(temp_load_fn) %>%
+        temp_demand <- read_csv(temp_load_fn, col_types = cols()) %>%
           select(-c(1:8)) %>%
           pivot_longer(cols=!c(Time_index),names_to = 'Zone', values_to = 'Load') %>%
           mutate(Zone = as.factor(str_remove(Zone, 'Load_MW_z'))) %>%
@@ -34,10 +37,10 @@ for ( k in 1:n_subregions){
           mutate(case = TS_cases[i],year = years[j] )
         
         if (file.exists(temp_ts_mapping_fn)){
-          ts_mapping <- read_csv(temp_ts_mapping_fn)
+          ts_mapping <- read_csv(temp_ts_mapping_fn, col_types = cols())
           n_slot <- dim(ts_mapping)[1]
-          Hours_per_period <- read_csv(temp_load_fn)$Hours_per_period %>% na.omit()
-          n_period <- read_csv(temp_load_fn)$Subperiods %>% na.omit()
+          Hours_per_period <- read_csv(temp_load_fn, col_types = cols())$Hours_per_period %>% na.omit()
+          n_period <- read_csv(temp_load_fn, col_types = cols())$Subperiods %>% na.omit()
           model_hours <- Hours_per_period*n_slot;
           HourID = c(1:model_hours)
           Slot <- rep(ts_mapping$slot,each = Hours_per_period)
@@ -73,7 +76,7 @@ for ( k in 1:n_subregions){
 # 
 for (k in 1:n_subregions){
   load_timeseries_fn <- paste0(RunFdr,'/CompiledResults/',Subregions[k],'/Load/Load_fullyear_timeseries_',Subregions[k],'.csv')
-  load_timeseries <- read_csv(load_timeseries_fn)
+  load_timeseries <- read_csv(load_timeseries_fn, col_types = cols())
   load_timeseries_original_summary <- load_timeseries %>%
     filter(Load_Type == 'Load') %>%
     group_by(case,year) %>%
@@ -87,12 +90,3 @@ for (k in 1:n_subregions){
   write_csv(load_timeseries_summary, paste0(RunFdr,'/CompiledResults/',Subregions[k],'/Load/Load_fullyear_summary_',temp_total_title,'.csv'))
 }
 
-# temp <- load_timeseries %>%
-#   filter(case == 'deepdecarbonization_mid', year == 2050)
-# temp_plot <- temp %>% filter(HourID %in% c(1:8760))
-# temp_plot_total <- temp_plot %>%
-#   group_by(HourID) %>%
-#   summarize(MW = sum(MW))
-# ggplot() +
-#   geom_area(data=temp_plot,aes(x=HourID, y=MW, fill=Load_Type))+
-#   geom_line(data=temp_plot_total,aes(x=HourID, y=MW),color="black")

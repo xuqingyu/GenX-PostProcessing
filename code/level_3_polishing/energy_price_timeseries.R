@@ -1,18 +1,18 @@
 # This file remaps the reduced time-series of each zone into the original 8760 ts.
 
-source('./code/Header.R')
+# source('./code/Header.R')
 if (exists('energyprice_ts')){
   rm(energyprice_ts,energyprice_reduced)
 }
-
+k = 1
 for (i in 1:length(TS_cases)){
-  for (j in 1:length(years)){
+  for (j in length(years)){# only the last year is calculated on purpose
     temp_price_fn <- paste0(RunFdr,"/",years[j],"/",TS_cases_id[i],"_",years[j],"_",TS_cases[i],"/Results/prices_w.csv");
     temp_load_fn <- paste0(RunFdr,"/",years[j],"/",TS_cases_id[i],"_",years[j],"_",TS_cases[i],"/Inputs/Load_data.csv");
     temp_ts_mapping_fn <- paste0(RunFdr,"/",years[j],"/",TS_cases_id[i],"_",years[j],"_",TS_cases[i],"/Inputs/time_series_mapping.csv");
     if (file.exists(temp_price_fn)){
       
-      temp_price_ts = read_csv(temp_price_fn) %>% 
+      temp_price_ts = read_csv(temp_price_fn, col_types = cols()) %>% 
         rename(Time_index = Zone) %>% 
         mutate(Time_index = as.numeric(str_remove(Time_index,'t'))) %>% 
         pivot_longer(cols = !c(Time_index), names_to = 'Zone', values_to = 'Price') %>%
@@ -24,10 +24,10 @@ for (i in 1:length(TS_cases)){
       temp_price_ts$year <- years[j]
       
       if (file.exists(temp_ts_mapping_fn)){
-        ts_mapping <- read_csv(temp_ts_mapping_fn)
+        ts_mapping <- read_csv(temp_ts_mapping_fn, col_types = cols())
         n_slot <- dim(ts_mapping)[1]
-        Hours_per_period <- read_csv(temp_load_fn)$Hours_per_period %>% na.omit()
-        n_period <- read_csv(temp_load_fn)$Subperiods %>% na.omit()
+        Hours_per_period <- read_csv(temp_load_fn, col_types = cols())$Hours_per_period %>% na.omit()
+        n_period <- read_csv(temp_load_fn,col_types = cols())$Subperiods %>% na.omit()
         model_hours <- Hours_per_period*n_slot;
         HourID = c(1:model_hours)
         Slot <- rep(ts_mapping$slot,each = Hours_per_period)
@@ -50,9 +50,27 @@ for (i in 1:length(TS_cases)){
       energyprice_reduced <- rbind(energyprice_reduced, temp_price_ts)
     }
   }
+  print(i)
+  if ((i %% 10 == 0)| (i == length(TS_cases))) {
+    write_csv(energyprice_ts,paste0(RunFdr,'/CompiledResults/EnergyPrice_timeseries_',k,'.csv'))
+    write_csv(energyprice_reduced,paste0(RunFdr,'/CompiledResults/EnergyPrice_timeseries_reduced_',k,'.csv'))
+    rm(energyprice_ts,temp_price_ts,energyprice_reduced,temp_price_ts_full)
+    k = k +1
+    print(k)
+  }
+}
+maxk = k - 1
+k = 1
+for (k in (1:maxk)){
+  temp_energyprice_ts <- read_csv(paste0(RunFdr,'/CompiledResults/EnergyPrice_timeseries_',k,'.csv'),col_types = cols())
+  if(!exists('energyprice_ts')){
+    energyprice_ts <- temp_energyprice_ts;
+  } else {
+    energyprice_ts <- rbind(energyprice_ts, temp_energyprice_ts);
+  }
+  print(k)
 }
 write_csv(energyprice_ts,paste0(RunFdr,'/CompiledResults/EnergyPrice_timeseries.csv'))
-write_csv(energyprice_reduced,paste0(RunFdr,'/CompiledResults/EnergyPrice_timeseries_reduced.csv'))
 energyprice_ts_statistics <- energyprice_ts %>%
   group_by(Zone, Region, case, year) %>%
   summarize(`Price Mean` = mean(Price),
@@ -61,43 +79,5 @@ energyprice_ts_statistics <- energyprice_ts %>%
             `Median` = quantile(Price, 0.50),
             `75th Quantile` = quantile(Price, .75))
 write_csv(energyprice_ts_statistics,paste0(RunFdr,'/CompiledResults/EnergyPrice_timeseries_statistics.csv'))
-rm(energyprice_ts,temp_price_ts,energyprice_reduced,temp_price_ts_full)
+rm(temp_energyprice_ts, energyprice_ts, energyprice_ts_statistics)
 
-
-
-
-
-# energyprice_ts <- read_csv(paste0(RunFdr,'/CompiledResults/EnergyPrice_timeseries.csv'))
-# temp_plot <- energyprice_ts  %>%
-#   filter(case == 'deepdecarbonization_mid', year == 2050, grepl('PJM_NJ*',Region)) %>% 
-#   filter(HourID %in% c(1:672))
-# ggplot(data=temp_plot,aes(x=HourID, y=Price, color=Region)) +
-#   geom_line() +
-#   coord_cartesian(ylim = c(0,200)) +
-#   geom_vline(xintercept = seq(from=1, to = 672, by = 24),color = 'grey90') +
-#   theme_classic()+
-#   ylab("Energy Price ($/MWh)")
-# 
-# temp_plot <- energyprice_ts  %>%
-#   filter(year == 2050, grepl('PJM_NJ*',Region))
-# ggplot(data=temp_plot,aes(x=case, y=Price)) +
-#   geom_boxplot(outlier.shape = NA) +
-#   theme_classic()+
-#   coord_flip(ylim = c(0,200))+
-#   ylab("Energy Price ($/MWh)")
-# 
-# 
-# energyprice_reduced <- read_csv(paste0(RunFdr,'/CompiledResults/EnergyPrice_timeseries_reduced.csv'))
-# energyprice_reduced_statistics <- energyprice_reduced %>%
-#   mutate(cluster = ceiling(Time_index/168)) %>%
-#   group_by(Region, case,year,cluster) %>%
-#   summarize(`Avg.Price` = mean(Price))
-# temp_plot <- energyprice_reduced_statistics  %>%
-#   filter(grepl('PJM_NJ*',Region),grepl('statedpolicy_',case),grepl('_mid',case)) 
-# ggplot(data=temp_plot,aes(x=cluster, y=Avg.Price, color=Region)) +
-#   geom_point() +
-#   coord_cartesian(ylim = c(0,100)) +
-#   geom_vline(xintercept = c(1:18),color="grey90")+
-#   theme_classic()+
-#   facet_grid(year~case)+
-#   ylab("Avg.Price ($/MWh)")

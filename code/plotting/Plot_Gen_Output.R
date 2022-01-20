@@ -1,10 +1,12 @@
 # Capacity Plot ----
 source('./code/Header.R')
-
+p_width = 12
+p_height = 7
 for (i in 1:n_subregions) {
   temp_total_title <- Subregions[i]
   temp_total <- Subregion_zones$Subregion_zones[Subregion_zones$Subregions == Subregions[i]]
   gen_output_subregion_fn <- paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Generation/Gen_Output_',temp_total_title,".csv")
+  
   if (file.exists(gen_output_subregion_fn)){
     gen_output_subregion <- read_csv(gen_output_subregion_fn) %>%
       select(case,year,Fuel,Scenario, TechSensitivity, AnnualOutput) %>%
@@ -20,7 +22,7 @@ for (i in 1:n_subregions) {
         filter(Scenario %in% temp_compared_scenario);
       temp_techsensitivity_list <- interested_sensitivity
       for (k in 1:length(tech_sensitivity)){
-        temp_data <- filter(gen_output_subregion_comparison,TechSensitivity == temp_techsensitivity_list[k])
+        temp_data <- filter(gen_output_subregion_comparison, TechSensitivity == temp_techsensitivity_list[k])
         if (dim(temp_data)[1]!=0){
           ggplot()+
             geom_col(data = temp_data,
@@ -35,7 +37,9 @@ for (i in 1:n_subregions) {
             )+ 
             facet_grid(.~Scenario) + 
             ggtitle(paste0('Generation Output of ', temp_total_title, ' under \nSensitivity ',interested_sensitivity[k]))+
-            ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/GenOutPut/GenOutput_',comparison[j],'_',temp_total_title,'_Sensitivity_',k,'.png'),width = 7.5,height=7)
+            ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/GenOutPut/GenOutput_',comparison[j],'_',temp_total_title,'_Sensitivity_',k,'.png'),
+                   width = p_width,
+                   height=p_height)
         }
       }
     }

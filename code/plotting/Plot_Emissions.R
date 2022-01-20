@@ -1,10 +1,12 @@
 source('./code/Header.R')
+p_width = 10
+p_height = 6
 for (i in 1:n_subregions) {
   temp_total_title <- Subregions[i]
   temp_total <- Subregion_zones$Subregion_zones[Subregion_zones$Subregions == Subregions[i]]
   emissions_subregion_fn <- paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Emissions/Emissions_',temp_total_title,"_with2019.csv")
   if (file.exists(emissions_subregion_fn)){
-    emissions_subregion <- read_csv(emissions_subregion_fn) %>%
+    emissions_subregion <- read_csv(emissions_subregion_fn, col_types = cols()) %>%
       mutate(Scenario = factor(Scenario, levels = scenario),
              TechSensitivity = factor(TechSensitivity, levels = tech_sensitivity))
     reference_row <- which((emissions_subregion$case=='currentpolicy_mid') & (emissions_subregion$year == 2019))
@@ -19,7 +21,8 @@ for (i in 1:n_subregions) {
         filter(Scenario %in% temp_compared_scenario, TechSensitivity %in% interested_sensitivity)
       ggplot()+
         geom_point(data = emissions_subregion_comparison,
-                   aes(x = year, y = `Emissions (Mtons)`, color = `TechSensitivity`)) +
+                   aes(x = as.character(year), y = `Emissions (Mtons)`, 
+                       color = `TechSensitivity`, shape = `TechSensitivity`)) +
         scale_color_brewer(palette = "Set1")+
         geom_hline(yintercept = reference_emissions)+
         theme_bw()+
@@ -27,13 +30,18 @@ for (i in 1:n_subregions) {
               panel.grid.minor.x = element_blank()
         )+
         facet_grid(.~Scenario) + 
-        labs(caption = "Horizontal lines show 2019 (simulated) emission level")+
+        xlab('Year')+
+        labs(caption = paste0("Horizontal lines show 2019 (simulated) emission level = ", reference_emissions," Mtons")) +
         guides(color = guide_legend(nrow = 2)) + 
-        ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/Emission_',comparison[j],'_',temp_total_title,'Absolute_Emission.png'),width = 7.5,height=7)
+        ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/Emission_',
+                      comparison[j],'_',temp_total_title,'_Absolute_Emission.png'),
+               width = p_width,height=p_height)
       
       ggplot()+
         geom_point(data = emissions_subregion_comparison,
-                   aes(x = year, y = `Generation Emissions Rate (Ton/MWh)`, color = `TechSensitivity`)) +
+                   aes(x = as.character(year), y = `Generation Emissions Rate (Ton/MWh)`, 
+                       color = `TechSensitivity`, shape = `TechSensitivity`),
+                   size = 3) +
         geom_hline(yintercept = reference_GER)+
         scale_color_brewer(palette = "Set1")+
         theme_bw()+
@@ -41,13 +49,18 @@ for (i in 1:n_subregions) {
               panel.grid.minor.x = element_blank()
         )+
         facet_grid(.~Scenario) + 
-        labs(caption = "Horizontal lines show 2019 (simulated) emission level") +
+        xlab('Year')+
+        labs(caption = paste0("Horizontal lines show 2019 (simulated) emission level = ", reference_GER," Ton/MWh")) +
         guides(color = guide_legend(nrow = 2)) + 
-        ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/Emission_',comparison[j],'_',temp_total_title,'Gen_ER.png'),width = 7.5,height=7)
+        ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/Emission_',
+                      comparison[j],'_',temp_total_title,'_Gen_ER.png'),
+               width = p_width,height=p_height)
       
       ggplot()+
         geom_point(data = emissions_subregion_comparison,
-                   aes(x = year, y = `Load Emissions Rate (Ton/MWh)`, color = `TechSensitivity`)) +
+                   aes(x = as.character(year), y = `Load Emissions Rate (Ton/MWh)`, 
+                       color = `TechSensitivity`, shape = `TechSensitivity`),
+                   size = 3) +
 
         geom_hline(yintercept = reference_LER)+
         scale_color_brewer(palette = "Set1")+
@@ -56,9 +69,12 @@ for (i in 1:n_subregions) {
               panel.grid.minor.x = element_blank()
         )+
         facet_grid(.~Scenario) + 
-        labs(caption = "Horizontal lines show 2019 (simulated) emission level")+
+        xlab('Year')+
+        labs(caption = paste0("Horizontal lines show 2019 (simulated) emission level = ", reference_LER," Ton/MWh")) +
         guides(color = guide_legend(nrow = 2)) + 
-        ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/Emission_',comparison[j],'_',temp_total_title,'Load_ER.png'),width = 7.5,height=7)
+        ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/Emission_',
+                      comparison[j],'_',temp_total_title,'_Load_ER.png'),
+               width = p_width,height=p_height)
       
     }
   }

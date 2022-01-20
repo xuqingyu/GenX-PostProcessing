@@ -1,7 +1,9 @@
 #LSE Payment cost Plot
 # source('./code/Header.R')
 # Calculate subregion cost
-lse_payment <- read_csv(paste0(RunFdr,'/CompiledResults/LSE_Payment.csv'))
+# Modified on Sept 1, 2021
+# works in general
+lse_payment <- read_csv(paste0(RunFdr,'/CompiledResults/LSE_Payment.csv'), col_types = cols())
 for ( i in 1:n_subregions){
   temp_total_title <- Subregions[i]
   temp_total <- Subregion_zones$Subregion_zones[Subregion_zones$Subregions == Subregions[i]]
@@ -30,7 +32,7 @@ for (i in 1:n_subregions) {
   temp_total <- Subregion_zones$Subregion_zones[Subregion_zones$Subregions == Subregions[i]]
   lse_payment_subregion_fn <- paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Load/LSE_Payment_',temp_total_title,".csv")
   if (file.exists(lse_payment_subregion_fn)){
-    lse_payment_plot <- read_csv(lse_payment_subregion_fn) %>%
+    lse_payment_plot <- read_csv(lse_payment_subregion_fn, col_types = cols()) %>%
       pivot_longer(!c(case, year, Scenario, `TechSensitivity`,AnnualLoad ),names_to = 'Cost Type');
     case_temp <- unique(select(lse_payment_plot,case))
     n_case_temp <- dim(case_temp)[1]
@@ -48,28 +50,30 @@ for (i in 1:n_subregions) {
         lse_payment_plot <- rbind(lse_payment_plot,temp_lse_payment_2019)
       }
     }
-    if ((temp_total_title == 'New Jersey')|(temp_total_title == 'PJM')) {
+    if ( ((temp_total_title == 'New Jersey')|(temp_total_title == 'PJM')) & identical(years,c("2030","2040","2050"))) {
       for (j in 1:n_case_temp) {
-        lse_payment_dg <- read_csv('./data/LSE_DGCost_NJ.csv')
         if (grepl('dgsolar',case_temp$case[j])){
-          temp_load <- select(lse_payment_plot,case,year,AnnualLoad) %>%
-            filter(case == case_temp$case[j])
-          if (grepl('lowrecost',case_temp$case[j])){
-            lse_payment_dg <- lse_payment_dg %>% 
-              filter(`TechSensitivity` == 'Low RE Cost')
-          } else if (grepl('highrecost',case_temp$case[j])){
-            lse_payment_dg <- lse_payment_dg %>% 
-              filter(`TechSensitivity` == 'High RE Cost')
-          } else {
-            lse_payment_dg <- lse_payment_dg %>% 
-              filter(`TechSensitivity` == 'Medium RE Cost')
-          }
-          lse_payment_dg <- select(lse_payment_dg, -c(`TechSensitivity`))
-          temp_lse_payment_dg <- unique(left_join(temp_load,lse_payment_dg));
-          temp_lse_payment_dg <- left_join(temp_lse_payment_dg, cases_newnames, by = c('case' = 'case_description')) %>%
-            select(case, year, Scenario, `TechSensitivity`,AnnualLoad, `Cost Type`, value)
-          lse_payment_plot <- rbind(lse_payment_plot,temp_lse_payment_dg)
+          lse_payment_dg <- read_csv('./data/LSE_DGCost_NJ_HighDG.csv')
+        } else {
+          lse_payment_dg <- read_csv('./data/LSE_DGCost_NJ_Normal.csv')
         }
+        temp_load <- select(lse_payment_plot,case,year,AnnualLoad) %>%
+          filter(case == case_temp$case[j])
+        if (grepl('lowrecost',case_temp$case[j])){
+          lse_payment_dg <- lse_payment_dg %>% 
+            filter(`TechSensitivity` == 'Low RE Cost')
+        } else if (grepl('highrecost',case_temp$case[j])){
+          lse_payment_dg <- lse_payment_dg %>% 
+            filter(`TechSensitivity` == 'High RE Cost')
+        } else {
+          lse_payment_dg <- lse_payment_dg %>% 
+            filter(`TechSensitivity` == 'Medium RE Cost')
+        }
+        lse_payment_dg <- select(lse_payment_dg, -c(`TechSensitivity`))
+        temp_lse_payment_dg <- unique(left_join(temp_load,lse_payment_dg));
+        temp_lse_payment_dg <- left_join(temp_lse_payment_dg, cases_newnames, by = c('case' = 'case_description')) %>%
+          select(case, year, Scenario, `TechSensitivity`,AnnualLoad, `Cost Type`, value)
+        lse_payment_plot <- rbind(lse_payment_plot,temp_lse_payment_dg)
       }
     }
     lse_payment_wide <- pivot_wider(lse_payment_plot, names_from = `Cost Type`);
