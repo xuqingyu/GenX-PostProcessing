@@ -13,7 +13,7 @@ for ( i in 1:length(cases)){
                                years[j],"_",cases[i],"/Results/capacity.csv");
     if (file.exists(temp_capacity_fn)){
       temp_capacity <- read_csv(temp_capacity_fn, col_types = cols()) %>%
-        filter(Region != 'n/a') %>% # remove the total row;
+        filter(Zone != 'n/a') %>% # remove the total row;
         mutate(case = cases[i], year = years[j]); 
       temp_generator <- read_csv(temp_generator_fn, col_types = cols());
       temp_capacity <- cbind(temp_capacity,temp_generator$Fuel);
@@ -29,7 +29,6 @@ for ( i in 1:length(cases)){
 
 if (exists('capacity')){
   capacity$Zone <-as.numeric(capacity$Zone);
-  capacity$Cluster <-as.numeric(capacity$Cluster);
   
   # set up the first year data
   temp_capacity <- subset(capacity,year == years[1]) %>%
@@ -44,23 +43,24 @@ if (exists('capacity')){
            RetChargeCap = 0,
            year = settings$start_year[1]);
   capacity <- rbind(temp_capacity, capacity);
-  capacity <- select(capacity, case, year, Region, Resource, Zone, Cluster, 
-                     Fuel, EndCap, EndEnergyCap, EndChargeCap, NewCap, RetCap, 
+  capacity <- select(capacity, case, year, Resource, Zone, Fuel, 
+                     EndCap, EndEnergyCap, EndChargeCap, NewCap, RetCap, 
                      NewEnergyCap, RetEnergyCap, NewChargeCap, RetChargeCap)
   capacity_for_settlement <- capacity;
   write_csv(capacity_for_settlement, 
             paste0(RunFdr,"/CompiledResults/capacity_for_settlement.csv"));
   
-  # change the ZCF setting
-  if (identical(years, c(2030, 2040, 2050))){
-    capacity_ZCF <- subset(capacity,Fuel == "ZCF") %>%
-      mutate(Resource = paste(Resource,"_ZCF",sep = ""));
-    capacity <- rbind(capacity_ZCF, subset(capacity,Fuel != "ZCF"));
-  }
+  # # change the ZCF setting
+  # if (identical(years, c(2030, 2040, 2050))){
+  #   capacity_ZCF <- subset(capacity,Fuel == "ZCF") %>%
+  #     mutate(Resource = paste(Resource,"_ZCF",sep = ""));
+  #   capacity <- rbind(capacity_ZCF, subset(capacity,Fuel != "ZCF"));
+  #   rm(capacity_ZCF)
+  # }
   capacity <- subset(capacity,select = -c(Fuel));
   write_csv(capacity, paste0(RunFdr,"/CompiledResults/capacity.csv"));
   
-  rm(capacity, capacity_for_settlement, capacity_ZCF, 
+  rm(capacity, capacity_for_settlement, 
      temp_capacity, temp_generator,temp_capacity_fn,temp_generator_fn)
   print('finished compiling capacity')
   print(Sys.time())

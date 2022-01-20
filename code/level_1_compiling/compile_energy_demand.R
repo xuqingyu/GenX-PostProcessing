@@ -37,7 +37,7 @@ if(exists('demand')){
   write_csv(total_load, paste0(RunFdr, "/CompiledResults/load_sums_weighted.csv"))
   
   total_demand_region <- demand %>%
-    pivot_longer(cols = !c('Time_index','case','year','weight'),names_to = "Region",values_to = "Load_MW") %>%
+    pivot_longer(cols = !c('Time_Index','case','year','weight'),names_to = "Region",values_to = "Load_MW") %>%
     group_by(case,year,Region) %>%
     summarize(AnnualLoad = sum(Load_MW*weight)/1e6);
   write_csv(total_demand_region, paste0(RunFdr, "/CompiledResults/Total_load_summary.csv"))

@@ -22,8 +22,8 @@ for ( i in 1:length(cases)){
       temp_generator <- read_csv(temp_generator_fn, col_types = cols());
       temp_charge <- cbind(temp_charge,temp_generator$Fuel);
       colnames(temp_charge)[dim(temp_charge)[2]] <- "Fuel";
-      temp_charge <- cbind(temp_charge,temp_generator$cluster);
-      colnames(temp_charge)[dim(temp_charge)[2]] <- "Cluster";
+      # temp_charge <- cbind(temp_charge,temp_generator$cluster);
+      # colnames(temp_charge)[dim(temp_charge)[2]] <- "Cluster";
       temp_charge$case = cases[i];
       temp_charge$year = years[j]
     }
@@ -35,23 +35,25 @@ for ( i in 1:length(cases)){
   }
 }
 if(exists('combined_charge')){
-  combined_charge$Sum <- as.numeric(combined_charge$Sum);
+  combined_charge$AnnualSum <- as.numeric(combined_charge$AnnualSum);
   combined_charge <- left_join(combined_charge, zone_mapping, 
                                by = c('Zone' = 'zone')) %>%
     rename(Region = region) %>%
-    select(case, year, Region, Resource, Zone, Cluster, Fuel, Sum);
+    select(case, year, Region, Resource, Zone, Fuel, AnnualSum);
   charge_for_settlement <- combined_charge;
   write_csv(charge_for_settlement, 
             paste0(RunFdr,"/CompiledResults/charge_for_settlement.csv"));
-  
-  combined_charge_temp1 <- subset(combined_charge,Fuel == "ZCF") %>%
-    mutate(Resource = paste(Resource,"_ZCF",sep = ""));
-  combined_charge <- rbind(combined_charge_temp1, 
-                           subset(combined_charge, Fuel != "ZCF"));
+  # if (identical(years, c(2030, 2040, 2050))){
+  #   combined_charge_temp1 <- subset(combined_charge,Fuel == "ZCF") %>%
+  #     mutate(Resource = paste(Resource,"_ZCF",sep = ""));
+  #   combined_charge <- rbind(combined_charge_temp1, 
+  #                            subset(combined_charge, Fuel != "ZCF"));
+  #   rm(combined_charge_temp1)
+  # }
   combined_charge <- subset(combined_charge,select = -c(Fuel));
   write_csv(combined_charge, paste0(RunFdr,"/CompiledResults/charge.csv"));
   rm(temp_generator_fn, temp_charge_fn, temp_charge,
-     combined_charge,charge_for_settlement,combined_charge_temp1)
+     combined_charge,charge_for_settlement)
   print('finished compiling energy charge')
   print(Sys.time())
 } else {

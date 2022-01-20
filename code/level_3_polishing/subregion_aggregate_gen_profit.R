@@ -10,7 +10,7 @@ gen_profit <- read_csv(paste0(RunFdr,'/CompiledResults/Settlement_short.csv'),
   mutate(`Tech Subsidy Revenue` = SubsidyRevenue + RegSubsidyRevenue) %>%
   rename(`Energy Revenue` = EnergyRevenue,
          `Capacity Revenue` = ReserveMarginRevenue,
-         `RPS Revenue` = `RPSRevenue`,
+         `ESR Revenue` = `ESRRevenue`,
          `Fuel and VOM` = VOM_n_Fuel,
          `CAPEX` = `Inv_cost`,
          `Energy Charge Payment` = `Charge_cost`,
@@ -25,14 +25,15 @@ for ( i in 1:n_subregions){
   gen_profit_subregion <- gen_profit %>%
     filter(Region %in% temp_total) %>%
     group_by(case,year,Fuel) %>%
-    summarize(AnnualOutput = sum(Sum),
+    summarize(AnnualOutput = sum(DischargeSum),
               AnnualCharge = sum(ChargeSum),
               Capacity = sum(EndCap),
+              `Charge Capacity` = sum(EndChargeCap),
               `Energy Capacity` = sum(EndEnergyCap),
               `Energy Revenue` = sum(`Energy Revenue`),
               `Energy Charge Payment` = sum(`Energy Charge Payment`),
               `Capacity Revenue` = sum(`Capacity Revenue`),
-              `RPS Revenue` = sum(`RPS Revenue`),
+              `ESR Revenue` = sum(`ESR Revenue`),
               `Fuel and VOM` = sum(`Fuel and VOM`),
               `FOM` = sum(`FOM`),
               `CAPEX` = sum(`CAPEX`),
@@ -42,8 +43,8 @@ for ( i in 1:n_subregions){
               `Tech Subsidy Revenue` = sum(`Tech Subsidy Revenue`)) %>%
     left_join(cases_newnames, by = c('case' = 'case_description')) %>%
     select(case,year,Fuel, Scenario, `TechSensitivity`,
-           AnnualOutput, AnnualCharge, Capacity,`Energy Capacity`,
-           `Energy Revenue`, `Energy Charge Payment`,`Capacity Revenue`,`RPS Revenue`,
+           AnnualOutput, AnnualCharge, Capacity, `Charge Capacity`, `Energy Capacity`,
+           `Energy Revenue`, `Energy Charge Payment`,`Capacity Revenue`,`ESR Revenue`,
            `Fuel and VOM`,`FOM`,`CAPEX`,`Sunk Cost`, `Emission Cost`, `Emission Capture Cost`,
            `Tech Subsidy Revenue`)
   write_csv(gen_profit_subregion,paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Generation/Gen_Profit_',temp_total_title,".csv"))

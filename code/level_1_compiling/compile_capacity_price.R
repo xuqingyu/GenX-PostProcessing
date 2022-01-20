@@ -21,11 +21,6 @@ for ( i in 1:length(cases)){
                case = cases[i],
                year = years[j]) %>%
         pivot_longer(cols=!c('hour','weight','case','year'))
-      # temp_Res_Mar$weight = time_weight$Weight;
-      # temp_Res_Mar$case = cases[i]
-      # temp_Res_Mar$year = years[j];
-      # temp_Res_Mar <- temp_Res_Mar %>%
-      #   pivot_longer(cols=!c('hour','weight','case','year'));
     }
     if(!exists('Res_Mar')) {
       Res_Mar <- temp_Res_Mar;

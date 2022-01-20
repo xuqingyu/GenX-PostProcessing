@@ -42,23 +42,28 @@ for ( i in 1:length(cases)){
   }
 }
 if (exists('combined_REcurtail')){
-  combined_REcurtail$Sum <- as.numeric(combined_REcurtail$Sum);
-  combined_REcurtail <- combined_REcurtail %>%
-    group_by(case,year,Zone,Resource,Fuel) %>%
-    summarize(Sum = sum(Sum));
-  
+  combined_REcurtail$AnnualSum <- as.numeric(combined_REcurtail$AnnualSum);
+  # combined_REcurtail <- combined_REcurtail %>%
+  #   group_by(case,year,Zone,Resource,Fuel) %>%
+  #   summarize(Sum = sum(Sum));
+  # 
   combined_REcurtail <- left_join(combined_REcurtail, zone_mapping, 
-                                  by = c('Zone' = 'zone'));
-  combined_REcurtail_temp1 <- subset(combined_REcurtail,Fuel == "ZCF") %>%
-    mutate(Resource = paste(Resource,"_ZCF",sep = ""));
-  combined_REcurtail <- rbind(combined_REcurtail_temp1, 
-                              subset(combined_REcurtail, Fuel != "ZCF"));
+                                  by = c('Zone' = 'zone')) %>%
+    rename(Region = region) %>%
+    select(case, year, Region, Resource, Zone, Fuel, AnnualSum);
+  # if (identical(years, c(2030, 2040, 2050))){
+  #   combined_REcurtail_temp1 <- subset(combined_REcurtail,Fuel == "ZCF") %>%
+  #     mutate(Resource = paste(Resource,"_ZCF",sep = ""));
+  #   combined_REcurtail <- rbind(combined_REcurtail_temp1, 
+  #                               subset(combined_REcurtail, Fuel != "ZCF"));
+  #   rm(combined_REcurtail_temp1)
+  # }
   combined_REcurtail <- subset(combined_REcurtail,select = -c(Fuel));
   
   write_csv(combined_REcurtail, 
             paste0(RunFdr,"/CompiledResults/renewablecurtail.csv"));
   rm(temp_generator_fn, temp_curtail_fn,temp_REcurtail,
-     temp_generator,combined_REcurtail,combined_REcurtail_temp1)
+     temp_generator,combined_REcurtail)
   print('finished compiling curtailment')
   print(Sys.time())
 } else {

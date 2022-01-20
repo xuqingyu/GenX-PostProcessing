@@ -13,14 +13,14 @@ for ( i in 1:length(cases)){
                                          "/Results/CO2Revenue_mass.csv");
     if (file.exists(temp_LSECO2Revenue_mass_fn)){
       temp_LSECO2Revenue_mass = read_csv(temp_LSECO2Revenue_mass_fn, 
-                                         col_types = cols())
+                                         col_types = cols(), col_names = F)
       end = dim(temp_LSECO2Revenue_mass)[2]
+      n_constraint = end - 2
+      colnames(temp_LSECO2Revenue_mass) <- c('Zone', 'AnnualSum', paste('CO2_MassCap_Revenue_',c(1:n_constraint), sep = ''))
       temp_LSECO2Revenue_mass = pivot_longer(temp_LSECO2Revenue_mass[-2], 
                                              c(2:(end-1)), # column 2 is the sum
                                              names_to = "item") %>%
         mutate(case = cases[i], year = years[j])
-      # temp_LSECO2Revenue_mass$case = cases[i]
-      # temp_LSECO2Revenue_mass$year = years[j]
       if (!exists('LSECO2Revenue_mass')) {
         LSECO2Revenue_mass <- temp_LSECO2Revenue_mass;
       } else {

@@ -13,14 +13,12 @@ for ( i in 1:length(cases)){
     if (file.exists(temp_emission_fn)){
       temp_carbon = read_csv(paste0(temp_emission_fn), col_types = cols()) %>%
         select(-Total) %>%
-        filter(Zone == 'Sum') %>%
+        filter(Zone == 'AnnualSum') %>%
         rename(temp = Zone) %>%
         pivot_longer(!(temp),names_to = 'Zone') %>%
         select(-temp) %>%
         mutate(case = cases[i], 
                year = years[j])
-      # temp_carbon$case = cases[i]
-      # temp_carbon$year = years[j]
     }
     if(!exists('carbon')) {
       carbon <- temp_carbon;

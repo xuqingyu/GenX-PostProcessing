@@ -19,8 +19,6 @@ for ( i in 1:length(cases)){
                                              c(2:(end-1)),
                                              names_to = "item") %>%
         mutate(case = cases[i], year = years[j])
-      # temp_LSECapacityPayment$case = cases[i]
-      # temp_LSECapacityPayment$year = years[j]
       if(!exists('LSECapacityPayment')) {
         LSECapacityPayment <- temp_LSECapacityPayment;
       } else {

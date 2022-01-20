@@ -9,10 +9,14 @@ print(Sys.time())
 for ( i in 1:length(cases)){
   for (j in 1:length(years)){
     temp_emission_masscap_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],
-                                       "_",years[j],"_",cases[i],"/Inputs/CO2Cap.csv");
+                                       "_",years[j],"_",cases[i],"/Inputs/CO2_cap.csv");
     if (file.exists(temp_emission_masscap_fn)){
       temp_carbon_masscap_raw = read_csv(paste0(temp_emission_masscap_fn),
                                          col_types = cols())
+      if (!('Region description' %in% colnames(temp_carbon_masscap_raw))) {
+        temp_carbon_masscap_raw <- temp_carbon_masscap_raw %>%
+          rename(`Region description` = colnames(temp_carbon_masscap_raw)[1])
+      }
       temp_NoCap = (dim(temp_carbon_masscap_raw)[2] - 2)/2
       temp_budgetcolumn = paste("CO_2_Max_Mtons_", c(1:temp_NoCap), sep = "")
       temp_carbon_masscap_budget <- temp_carbon_masscap_raw %>%

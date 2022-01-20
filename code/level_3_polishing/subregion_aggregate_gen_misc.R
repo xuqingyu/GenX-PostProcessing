@@ -28,11 +28,11 @@ for (i in 1:n_subregions) {
                                                col_types = cols()) %>%
       filter(!(Fuel %in% storage_fuel))  %>%
       select(case, year, Fuel, Scenario, TechSensitivity, AnnualOutput,Capacity , 
-             `Tech Subsidy Revenue`, `RPS Revenue`) %>%
-      mutate(`Subsidy (with RPS) Revenue per MWh` = round((`Tech Subsidy Revenue` + `RPS Revenue`)/AnnualOutput,digits=2));
+             `Tech Subsidy Revenue`, `ESR Revenue`) %>%
+      mutate(`Subsidy (with ESR) Revenue per MWh` = round((`Tech Subsidy Revenue` + `ESR Revenue`)/AnnualOutput,digits=2));
   }
   write_csv(subsidy_includingRPS_subregion,paste0(RunFdr,'/CompiledResults/',Subregions[i],
-                                                  '/Generation/Gen_Subsidy_wRPS_',temp_total_title,".csv"))
+                                                  '/Generation/Gen_Subsidy_wESR_',temp_total_title,".csv"))
 }
 
 for (i in 1:n_subregions) {

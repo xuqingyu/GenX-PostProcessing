@@ -8,9 +8,9 @@ for (i in 1:n_subregions) {
   temp_total_title <- Subregions[i]
   temp_total <- Subregion_zones$Subregion_zones[Subregion_zones$Subregions == Subregions[i]]
   gencurtail_subregion <- gen_curtail%>%
-    filter(region %in% temp_total) %>%
+    filter(Region %in% temp_total) %>%
     group_by(case,year,Fuel) %>%
-    summarize(AnnualCurtail = sum(Sum)) %>%
+    summarize(AnnualCurtail = sum(AnnualSum)) %>%
     left_join(cases_newnames, by = c('case' = 'case_description')) %>%
     select(case,year,Fuel, Scenario, `TechSensitivity`,
            AnnualCurtail)

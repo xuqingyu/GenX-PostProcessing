@@ -14,14 +14,14 @@ for ( i in 1:length(cases)) {
     {
       temp_cost <- read_csv(temp,col_types = cols()) %>%
         select(-Total) %>%
-        filter(Costs %in% c("cFix","cVar","cNSE","cStart","cCO2Tax","cCO2Capture")); 
+        filter(Costs %in% c("cFix","cVar","cNSE","cStart")); 
       NoZone <- dim(temp_cost)[2]-1;
       colnames(temp_cost) <- c("item",c(1:NoZone));
       temp_cost <- temp_cost %>%
         pivot_longer(c(2:(NoZone+1)),names_to = 'zone',values_to = 'value') %>%
         mutate(case = cases[i],year = years[j]) %>%
         select(zone,case,year,item,value) %>%
-        mutate(zone <- as.numeric(zone), value <- as.numeric(value));
+        mutate(zone = as.numeric(zone), value = as.numeric(value));
       if (!exists('ZonalCost')) {
         ZonalCost <- temp_cost
       } else {

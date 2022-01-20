@@ -1,6 +1,6 @@
 engprice_fn <- paste0(RunFdr,'/CompiledResults/price_summary.csv')
 if (file.exists(engprice_fn)) {
-  engprice <- read_csv(engprice_fn) %>%
+  engprice <- read_csv(engprice_fn, col_types = cols()) %>%
     group_by(case,year,name) %>%
     left_join(cases_newnames, by = c('case' = 'case_description')) %>%
     select(case,year,name,Scenario,TechSensitivity,`AnnualPrice`) %>%

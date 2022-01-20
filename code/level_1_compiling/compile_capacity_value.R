@@ -40,7 +40,7 @@ for ( i in 1:length(cases)){
       # Remove the first row (as it as been set as column names)
       
       n_reserve <- length(unique(temp_CapValue$Reserve))
-      annual_sum <- rep(temp_power$Sum,n_reserve)
+      annual_sum <- rep(temp_power$AnnualSum,n_reserve)
       temp_CapValue <-cbind(temp_CapValue,annual_sum) 
     }
     if(!exists('CapValue')) {
