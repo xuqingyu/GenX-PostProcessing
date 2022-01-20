@@ -4,15 +4,15 @@ p_height = 7
 for (i in 1:n_subregions) {
   temp_total_title <- Subregions[i]
   temp_total <- Subregion_zones$Subregion_zones[Subregion_zones$Subregions == Subregions[i]]
-  if ((temp_total_title == 'New Jersey')|(temp_total_title == 'PJM')) {
-    gen_capacity_subregion_fn <- paste0(RunFdr,'/CompiledResults/',
-                                        Subregions[i],'/Generation/Gen_Capacity_w_2019',
-                                        temp_total_title,".csv")
-  } else {
+  # if ((temp_total_title == 'New Jersey')|(temp_total_title == 'PJM')) {
+  #   gen_capacity_subregion_fn <- paste0(RunFdr,'/CompiledResults/',
+  #                                       Subregions[i],'/Generation/Gen_Capacity_w_2019',
+  #                                       temp_total_title,".csv")
+  # } else {
     gen_capacity_subregion_fn <- paste0(RunFdr,'/CompiledResults/',
                                         Subregions[i],'/Generation/Gen_Capacity_',
                                         temp_total_title,".csv")
-  }
+  # }
   
   if (file.exists(gen_capacity_subregion_fn)){
     gen_capacity_subregion_plot_all <- read_csv(gen_capacity_subregion_fn, col_types = cols()) %>%
@@ -42,7 +42,7 @@ for (i in 1:n_subregions) {
           scale_fill_manual(name = "Resources", values = fuel_colors) + 
           # scale_y_continuous(breaks = seq(from = 0, to = limits, by = limits/10))+
           geom_hline(yintercept=0) + 
-          facet_grid(.~Scenario) + 
+          facet_grid(.~Scenario) +
           theme_bw()+
           # coord_cartesian(ylim = c(0, limits))+
           theme(
@@ -56,7 +56,8 @@ for (i in 1:n_subregions) {
           ggtitle(label = paste0('Generation Capacity of ', temp_total_title, ' under \nSensitivity ',interested_sensitivity[k]))+
           ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/GenCapacity/GenCapacity_',comparison[j],'_',temp_total_title,'_',k,'.png'),
                  width = p_width,
-                 height = p_height)
+                 height = p_height)       
+
       }
     }
     # for (j in 1:n_sensitivity_comparison) {
