@@ -1,0 +1,18 @@
+﻿Scenario_runs,SCENARIO_Load
+Current Policy (CP),current_policy
+Stated Policy (SP),stated_policy
+SP + DG,stated_policyDGS1
+SP + Nuclear,stated_policy
+SP + 80% Instate,stated_policy
+SP + DG + Nuclear,stated_policyDGS1
+SP + DG + 80% Instate,stated_policyDGS1
+SP + Nuclear + 80% Instate,stated_policy
+SP + DG + 80% Instate + Nuclear,stated_policyDGS1
+Deep Decarbonization (DD),deep_decarbonization
+DD + DG,deep_decarbonizationDGS1
+DD + Nuclear,deep_decarbonization
+DD + 80% Instate,deep_decarbonization
+DD + DG + Nuclear,deep_decarbonizationDGS1
+DD + DG + 80% Instate,deep_decarbonizationDGS1
+DD + Nuclear + 80% Instate,deep_decarbonization
+DD + DG + 80% Instate + Nuclear,deep_decarbonizationDGS1

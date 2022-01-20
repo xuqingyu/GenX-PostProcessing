@@ -1,0 +1,301 @@
+﻿Studyregion_table,case,year,Fuel,Scenario,TechSensitivity,Capacity,Charging Capacity,Energy Capacity,Capacity Expansion,Energy Capacity Expansion,Charging Capacity Expansion,Capacity Retirement,Energy Capacity Retirement,Charging Capacity Retirement
+WECC,currentpolicy_10ci_adv_nocip,2030,Battery,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip,2030,Biomass,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,196.549,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip,2030,Gas CC,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,17955.701,0,0,0.001,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip,2030,Gas CC w/CCS,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip,2030,Gas CT,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,9900.219,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip,2030,Geothermal,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,1236.513,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip,2030,Hydro,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,9079.901,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip,2030,Nuclear,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip,2030,Offshore Wind,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip,2030,Onshore Wind,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,6063.2,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip,2030,Pumped hydro,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,3425.4,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip,2030,Utility Solar,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,26469.711,0,0,14162.611,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip_noccszcf,2030,Battery,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip_noccszcf,2030,Biomass,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,196.549,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip_noccszcf,2030,Gas CC,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,17955.701,0,0,0.001,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip_noccszcf,2030,Gas CC w/CCS,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip_noccszcf,2030,Gas CT,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,9900.219,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip_noccszcf,2030,Geothermal,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,1236.513,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip_noccszcf,2030,Hydro,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,9079.901,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip_noccszcf,2030,Nuclear,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip_noccszcf,2030,Offshore Wind,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip_noccszcf,2030,Onshore Wind,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,6063.2,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip_noccszcf,2030,Pumped hydro,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,3425.4,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_adv_nocip_noccszcf,2030,Utility Solar,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,26469.711,0,0,14162.611,0,0,0,0,0
+WECC,currentpolicy_10ci_nocip,2030,Battery,"10% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_nocip,2030,Biomass,"10% CI Part., Curt. Tech.",No 24x7 Purchase,196.549,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_nocip,2030,Gas CC,"10% CI Part., Curt. Tech.",No 24x7 Purchase,17955.702,0,0,0.002,0,0,0,0,0
+WECC,currentpolicy_10ci_nocip,2030,Gas CC w/CCS,"10% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_nocip,2030,Gas CT,"10% CI Part., Curt. Tech.",No 24x7 Purchase,9900.219,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_nocip,2030,Geothermal,"10% CI Part., Curt. Tech.",No 24x7 Purchase,1236.513,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_nocip,2030,Hydro,"10% CI Part., Curt. Tech.",No 24x7 Purchase,9079.901,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_nocip,2030,Nuclear,"10% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_nocip,2030,Offshore Wind,"10% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_nocip,2030,Onshore Wind,"10% CI Part., Curt. Tech.",No 24x7 Purchase,6063.2,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_nocip,2030,Pumped hydro,"10% CI Part., Curt. Tech.",No 24x7 Purchase,3425.4,0,0,0,0,0,0,0,0
+WECC,currentpolicy_10ci_nocip,2030,Utility Solar,"10% CI Part., Curt. Tech.",No 24x7 Purchase,26469.73,0,0,14162.63,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip,2030,Battery,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip,2030,Biomass,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,196.549,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip,2030,Gas CC,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,17955.702,0,0,0.002,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip,2030,Gas CC w/CCS,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip,2030,Gas CT,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,9900.219,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip,2030,Geothermal,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,1236.513,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip,2030,Hydro,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,9079.901,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip,2030,Nuclear,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip,2030,Offshore Wind,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip,2030,Onshore Wind,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,6063.2,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip,2030,Pumped hydro,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,3425.4,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip,2030,Utility Solar,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,26469.711,0,0,14162.611,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip_noccszcf,2030,Battery,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip_noccszcf,2030,Biomass,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,196.549,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip_noccszcf,2030,Gas CC,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,17955.701,0,0,0.001,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip_noccszcf,2030,Gas CC w/CCS,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip_noccszcf,2030,Gas CT,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,9900.219,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip_noccszcf,2030,Geothermal,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,1236.513,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip_noccszcf,2030,Hydro,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,9079.901,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip_noccszcf,2030,Nuclear,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip_noccszcf,2030,Offshore Wind,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip_noccszcf,2030,Onshore Wind,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,6063.2,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip_noccszcf,2030,Pumped hydro,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,3425.4,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_adv_nocip_noccszcf,2030,Utility Solar,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,26469.711,0,0,14162.611,0,0,0,0,0
+WECC,currentpolicy_25ci_nocip,2030,Battery,"25% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_nocip,2030,Biomass,"25% CI Part., Curt. Tech.",No 24x7 Purchase,196.549,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_nocip,2030,Gas CC,"25% CI Part., Curt. Tech.",No 24x7 Purchase,17955.702,0,0,0.002,0,0,0,0,0
+WECC,currentpolicy_25ci_nocip,2030,Gas CC w/CCS,"25% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_nocip,2030,Gas CT,"25% CI Part., Curt. Tech.",No 24x7 Purchase,9900.219,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_nocip,2030,Geothermal,"25% CI Part., Curt. Tech.",No 24x7 Purchase,1236.513,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_nocip,2030,Hydro,"25% CI Part., Curt. Tech.",No 24x7 Purchase,9079.901,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_nocip,2030,Nuclear,"25% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_nocip,2030,Offshore Wind,"25% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_nocip,2030,Onshore Wind,"25% CI Part., Curt. Tech.",No 24x7 Purchase,6063.2,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_nocip,2030,Pumped hydro,"25% CI Part., Curt. Tech.",No 24x7 Purchase,3425.4,0,0,0,0,0,0,0,0
+WECC,currentpolicy_25ci_nocip,2030,Utility Solar,"25% CI Part., Curt. Tech.",No 24x7 Purchase,26469.735,0,0,14162.635,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip,2030,Battery,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip,2030,Biomass,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,196.549,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip,2030,Gas CC,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,17955.703,0,0,0.003,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip,2030,Gas CC w/CCS,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip,2030,Gas CT,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,9900.219,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip,2030,Geothermal,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,1236.513,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip,2030,Hydro,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,9079.901,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip,2030,Nuclear,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip,2030,Offshore Wind,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip,2030,Onshore Wind,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,6063.2,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip,2030,Pumped hydro,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,3425.4,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip,2030,Utility Solar,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,26469.711,0,0,14162.611,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip_noccszcf,2030,Battery,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip_noccszcf,2030,Biomass,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,196.549,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip_noccszcf,2030,Gas CC,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,17955.703,0,0,0.003,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip_noccszcf,2030,Gas CC w/CCS,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip_noccszcf,2030,Gas CT,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,9900.219,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip_noccszcf,2030,Geothermal,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,1236.513,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip_noccszcf,2030,Hydro,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,9079.901,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip_noccszcf,2030,Nuclear,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip_noccszcf,2030,Offshore Wind,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip_noccszcf,2030,Onshore Wind,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,6063.2,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip_noccszcf,2030,Pumped hydro,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,3425.4,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_adv_nocip_noccszcf,2030,Utility Solar,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,26469.711,0,0,14162.611,0,0,0,0,0
+WECC,currentpolicy_5ci_nocip,2030,Battery,"5% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_nocip,2030,Biomass,"5% CI Part., Curt. Tech.",No 24x7 Purchase,196.549,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_nocip,2030,Gas CC,"5% CI Part., Curt. Tech.",No 24x7 Purchase,17955.702,0,0,0.002,0,0,0,0,0
+WECC,currentpolicy_5ci_nocip,2030,Gas CC w/CCS,"5% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_nocip,2030,Gas CT,"5% CI Part., Curt. Tech.",No 24x7 Purchase,9900.219,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_nocip,2030,Geothermal,"5% CI Part., Curt. Tech.",No 24x7 Purchase,1236.513,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_nocip,2030,Hydro,"5% CI Part., Curt. Tech.",No 24x7 Purchase,9079.901,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_nocip,2030,Nuclear,"5% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_nocip,2030,Offshore Wind,"5% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_nocip,2030,Onshore Wind,"5% CI Part., Curt. Tech.",No 24x7 Purchase,6063.2,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_nocip,2030,Pumped hydro,"5% CI Part., Curt. Tech.",No 24x7 Purchase,3425.4,0,0,0,0,0,0,0,0
+WECC,currentpolicy_5ci_nocip,2030,Utility Solar,"5% CI Part., Curt. Tech.",No 24x7 Purchase,26469.73,0,0,14162.63,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip,2030,Battery,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,3687.482,0,12606.751,3687.482,12606.751,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip,2030,Biomass,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,196.549,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip,2030,Gas CC,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,13974.357,0,0,0,0,0,3981.343,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip,2030,Gas CC w/CCS,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip,2030,Gas CT,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,9900.219,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip,2030,Geothermal,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,2946.513,0,0,1710,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip,2030,Hydro,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,9079.901,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip,2030,Nuclear,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip,2030,Offshore Wind,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip,2030,Onshore Wind,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,9659.059,0,0,3595.859,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip,2030,Pumped hydro,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,3425.4,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip,2030,Utility Solar,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,47936.412,0,0,35629.312,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Battery,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,3687.469,0,12606.653,3687.469,12606.653,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Biomass,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,196.549,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Gas CC,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,13974.38,0,0,0,0,0,3981.32,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Gas CC w/CCS,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Gas CT,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,9900.219,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Geothermal,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,2946.513,0,0,1710,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Hydro,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,9079.901,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Nuclear,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Offshore Wind,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Onshore Wind,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,9659.059,0,0,3595.859,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Pumped hydro,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,3425.4,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Utility Solar,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,47936.405,0,0,35629.305,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_nocip,2030,Battery,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,3863.995,0,12924.089,3863.995,12924.089,0,0,0,0
+WECC,currentpolicy_80CES_10ci_nocip,2030,Biomass,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,196.549,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_nocip,2030,Gas CC,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,14087.149,0,0,0,0,0,3868.551,0,0
+WECC,currentpolicy_80CES_10ci_nocip,2030,Gas CC w/CCS,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_nocip,2030,Gas CT,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,9900.219,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_nocip,2030,Geothermal,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,2946.513,0,0,1710,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_nocip,2030,Hydro,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,9079.901,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_nocip,2030,Nuclear,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_nocip,2030,Offshore Wind,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_nocip,2030,Onshore Wind,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,9659.059,0,0,3595.859,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_nocip,2030,Pumped hydro,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,3425.4,0,0,0,0,0,0,0,0
+WECC,currentpolicy_80CES_10ci_nocip,2030,Utility Solar,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,48041.622,0,0,35734.522,0,0,0,0,0
+PJM,currentpolicy_10ci_adv_nocip,2030,Battery,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,3020,0,3020,3020,3020,0,0,0,0
+PJM,currentpolicy_10ci_adv_nocip,2030,Biomass,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,252.915,0,0,0,0,0,0,0,0
+PJM,currentpolicy_10ci_adv_nocip,2030,Coal,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,0.002,0,0,0,0,0,49419.98,0,0
+PJM,currentpolicy_10ci_adv_nocip,2030,Gas CC,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,115556.702,0,0,60843.708,0,0,451.898,0,0
+PJM,currentpolicy_10ci_adv_nocip,2030,Gas CC w/CCS,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+PJM,currentpolicy_10ci_adv_nocip,2030,Gas CT,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,27205.255,0,0,0,0,0,443.273,0,0
+PJM,currentpolicy_10ci_adv_nocip,2030,Gas steam,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,6304.401,0,0
+PJM,currentpolicy_10ci_adv_nocip,2030,Hydro,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,4917.61,0,0,0,0,0,0,0,0
+PJM,currentpolicy_10ci_adv_nocip,2030,Nuclear,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,6462,0,0,0,0,0,19355.601,0,0
+PJM,currentpolicy_10ci_adv_nocip,2030,Offshore Wind,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,8549.999,0,0,8549.999,0,0,0,0,0
+PJM,currentpolicy_10ci_adv_nocip,2030,Onshore Wind,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,15292.298,0,0,6999.277,0,0,3.2,0,0
+PJM,currentpolicy_10ci_adv_nocip,2030,Pumped hydro,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,5243.999,0,0,0,0,0,0,0,0
+PJM,currentpolicy_10ci_adv_nocip,2030,Utility Solar,"10% CI Part., Adv. Tech. Full",No 24x7 Purchase,32533.606,0,0,29515.548,0,0,0,0,0
+PJM,currentpolicy_10ci_adv_nocip_noccszcf,2030,Battery,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,3020,0,3020,3020,3020,0,0,0,0
+PJM,currentpolicy_10ci_adv_nocip_noccszcf,2030,Biomass,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,252.915,0,0,0,0,0,0,0,0
+PJM,currentpolicy_10ci_adv_nocip_noccszcf,2030,Coal,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,49419.982,0,0
+PJM,currentpolicy_10ci_adv_nocip_noccszcf,2030,Gas CC,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,115556.692,0,0,60843.7,0,0,451.9,0,0
+PJM,currentpolicy_10ci_adv_nocip_noccszcf,2030,Gas CC w/CCS,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+PJM,currentpolicy_10ci_adv_nocip_noccszcf,2030,Gas CT,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,27205.305,0,0,0,0,0,443.223,0,0
+PJM,currentpolicy_10ci_adv_nocip_noccszcf,2030,Gas steam,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,6304.401,0,0
+PJM,currentpolicy_10ci_adv_nocip_noccszcf,2030,Hydro,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,4917.61,0,0,0,0,0,0,0,0
+PJM,currentpolicy_10ci_adv_nocip_noccszcf,2030,Nuclear,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,6462,0,0,0,0,0,19355.601,0,0
+PJM,currentpolicy_10ci_adv_nocip_noccszcf,2030,Offshore Wind,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,8550,0,0,8550,0,0,0,0,0
+PJM,currentpolicy_10ci_adv_nocip_noccszcf,2030,Onshore Wind,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,15292.298,0,0,6999.277,0,0,3.2,0,0
+PJM,currentpolicy_10ci_adv_nocip_noccszcf,2030,Pumped hydro,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,5243.999,0,0,0,0,0,0,0,0
+PJM,currentpolicy_10ci_adv_nocip_noccszcf,2030,Utility Solar,"10% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,32533.608,0,0,29515.55,0,0,0,0,0
+PJM,currentpolicy_10ci_nocip,2030,Battery,"10% CI Part., Curt. Tech.",No 24x7 Purchase,3020,0,3020,3020,3020,0,0,0,0
+PJM,currentpolicy_10ci_nocip,2030,Biomass,"10% CI Part., Curt. Tech.",No 24x7 Purchase,252.915,0,0,0,0,0,0,0,0
+PJM,currentpolicy_10ci_nocip,2030,Coal,"10% CI Part., Curt. Tech.",No 24x7 Purchase,0.002,0,0,0,0,0,49419.98,0,0
+PJM,currentpolicy_10ci_nocip,2030,Gas CC,"10% CI Part., Curt. Tech.",No 24x7 Purchase,115541.271,0,0,60828.277,0,0,451.898,0,0
+PJM,currentpolicy_10ci_nocip,2030,Gas CC w/CCS,"10% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+PJM,currentpolicy_10ci_nocip,2030,Gas CT,"10% CI Part., Curt. Tech.",No 24x7 Purchase,27204.939,0,0,0,0,0,443.589,0,0
+PJM,currentpolicy_10ci_nocip,2030,Gas steam,"10% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,6304.401,0,0
+PJM,currentpolicy_10ci_nocip,2030,Hydro,"10% CI Part., Curt. Tech.",No 24x7 Purchase,4917.61,0,0,0,0,0,0,0,0
+PJM,currentpolicy_10ci_nocip,2030,Nuclear,"10% CI Part., Curt. Tech.",No 24x7 Purchase,6462,0,0,0,0,0,19355.601,0,0
+PJM,currentpolicy_10ci_nocip,2030,Offshore Wind,"10% CI Part., Curt. Tech.",No 24x7 Purchase,8549.999,0,0,8549.999,0,0,0,0,0
+PJM,currentpolicy_10ci_nocip,2030,Onshore Wind,"10% CI Part., Curt. Tech.",No 24x7 Purchase,15292.298,0,0,6999.277,0,0,3.2,0,0
+PJM,currentpolicy_10ci_nocip,2030,Pumped hydro,"10% CI Part., Curt. Tech.",No 24x7 Purchase,5243.999,0,0,0,0,0,0,0,0
+PJM,currentpolicy_10ci_nocip,2030,Utility Solar,"10% CI Part., Curt. Tech.",No 24x7 Purchase,32533.607,0,0,29515.549,0,0,0,0,0
+PJM,currentpolicy_25ci_adv_nocip,2030,Battery,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,3020,0,3020,3020,3020,0,0,0,0
+PJM,currentpolicy_25ci_adv_nocip,2030,Biomass,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,252.915,0,0,0,0,0,0,0,0
+PJM,currentpolicy_25ci_adv_nocip,2030,Coal,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,49419.982,0,0
+PJM,currentpolicy_25ci_adv_nocip,2030,Gas CC,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,115556.692,0,0,60843.7,0,0,451.9,0,0
+PJM,currentpolicy_25ci_adv_nocip,2030,Gas CC w/CCS,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+PJM,currentpolicy_25ci_adv_nocip,2030,Gas CT,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,27205.305,0,0,0,0,0,443.223,0,0
+PJM,currentpolicy_25ci_adv_nocip,2030,Gas steam,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,6304.401,0,0
+PJM,currentpolicy_25ci_adv_nocip,2030,Hydro,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,4917.61,0,0,0,0,0,0,0,0
+PJM,currentpolicy_25ci_adv_nocip,2030,Nuclear,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,6462,0,0,0,0,0,19355.601,0,0
+PJM,currentpolicy_25ci_adv_nocip,2030,Offshore Wind,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,8550,0,0,8550,0,0,0,0,0
+PJM,currentpolicy_25ci_adv_nocip,2030,Onshore Wind,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,15292.298,0,0,6999.277,0,0,3.2,0,0
+PJM,currentpolicy_25ci_adv_nocip,2030,Pumped hydro,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,5243.999,0,0,0,0,0,0,0,0
+PJM,currentpolicy_25ci_adv_nocip,2030,Utility Solar,"25% CI Part., Adv. Tech. Full",No 24x7 Purchase,32533.608,0,0,29515.55,0,0,0,0,0
+PJM,currentpolicy_25ci_adv_nocip_noccszcf,2030,Battery,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,3020,0,3020,3020,3020,0,0,0,0
+PJM,currentpolicy_25ci_adv_nocip_noccszcf,2030,Biomass,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,252.915,0,0,0,0,0,0,0,0
+PJM,currentpolicy_25ci_adv_nocip_noccszcf,2030,Coal,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,49419.982,0,0
+PJM,currentpolicy_25ci_adv_nocip_noccszcf,2030,Gas CC,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,115556.692,0,0,60843.7,0,0,451.9,0,0
+PJM,currentpolicy_25ci_adv_nocip_noccszcf,2030,Gas CC w/CCS,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+PJM,currentpolicy_25ci_adv_nocip_noccszcf,2030,Gas CT,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,27205.305,0,0,0,0,0,443.223,0,0
+PJM,currentpolicy_25ci_adv_nocip_noccszcf,2030,Gas steam,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,6304.401,0,0
+PJM,currentpolicy_25ci_adv_nocip_noccszcf,2030,Hydro,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,4917.61,0,0,0,0,0,0,0,0
+PJM,currentpolicy_25ci_adv_nocip_noccszcf,2030,Nuclear,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,6462,0,0,0,0,0,19355.601,0,0
+PJM,currentpolicy_25ci_adv_nocip_noccszcf,2030,Offshore Wind,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,8550,0,0,8550,0,0,0,0,0
+PJM,currentpolicy_25ci_adv_nocip_noccszcf,2030,Onshore Wind,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,15292.298,0,0,6999.277,0,0,3.2,0,0
+PJM,currentpolicy_25ci_adv_nocip_noccszcf,2030,Pumped hydro,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,5243.999,0,0,0,0,0,0,0,0
+PJM,currentpolicy_25ci_adv_nocip_noccszcf,2030,Utility Solar,"25% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,32533.608,0,0,29515.55,0,0,0,0,0
+PJM,currentpolicy_25ci_nocip,2030,Battery,"25% CI Part., Curt. Tech.",No 24x7 Purchase,3020,0,3020,3020,3020,0,0,0,0
+PJM,currentpolicy_25ci_nocip,2030,Biomass,"25% CI Part., Curt. Tech.",No 24x7 Purchase,252.915,0,0,0,0,0,0,0,0
+PJM,currentpolicy_25ci_nocip,2030,Coal,"25% CI Part., Curt. Tech.",No 24x7 Purchase,0.002,0,0,0,0,0,49419.98,0,0
+PJM,currentpolicy_25ci_nocip,2030,Gas CC,"25% CI Part., Curt. Tech.",No 24x7 Purchase,115541.271,0,0,60828.277,0,0,451.898,0,0
+PJM,currentpolicy_25ci_nocip,2030,Gas CC w/CCS,"25% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+PJM,currentpolicy_25ci_nocip,2030,Gas CT,"25% CI Part., Curt. Tech.",No 24x7 Purchase,27204.939,0,0,0,0,0,443.589,0,0
+PJM,currentpolicy_25ci_nocip,2030,Gas steam,"25% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,6304.401,0,0
+PJM,currentpolicy_25ci_nocip,2030,Hydro,"25% CI Part., Curt. Tech.",No 24x7 Purchase,4917.61,0,0,0,0,0,0,0,0
+PJM,currentpolicy_25ci_nocip,2030,Nuclear,"25% CI Part., Curt. Tech.",No 24x7 Purchase,6462,0,0,0,0,0,19355.601,0,0
+PJM,currentpolicy_25ci_nocip,2030,Offshore Wind,"25% CI Part., Curt. Tech.",No 24x7 Purchase,8549.999,0,0,8549.999,0,0,0,0,0
+PJM,currentpolicy_25ci_nocip,2030,Onshore Wind,"25% CI Part., Curt. Tech.",No 24x7 Purchase,15292.298,0,0,6999.277,0,0,3.2,0,0
+PJM,currentpolicy_25ci_nocip,2030,Pumped hydro,"25% CI Part., Curt. Tech.",No 24x7 Purchase,5243.999,0,0,0,0,0,0,0,0
+PJM,currentpolicy_25ci_nocip,2030,Utility Solar,"25% CI Part., Curt. Tech.",No 24x7 Purchase,32533.607,0,0,29515.549,0,0,0,0,0
+PJM,currentpolicy_5ci_adv_nocip,2030,Battery,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,3020,0,3020,3020,3020,0,0,0,0
+PJM,currentpolicy_5ci_adv_nocip,2030,Biomass,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,252.915,0,0,0,0,0,0,0,0
+PJM,currentpolicy_5ci_adv_nocip,2030,Coal,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,0.002,0,0,0,0,0,49419.98,0,0
+PJM,currentpolicy_5ci_adv_nocip,2030,Gas CC,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,115556.686,0,0,60843.694,0,0,451.9,0,0
+PJM,currentpolicy_5ci_adv_nocip,2030,Gas CC w/CCS,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+PJM,currentpolicy_5ci_adv_nocip,2030,Gas CT,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,27205.291,0,0,0,0,0,443.237,0,0
+PJM,currentpolicy_5ci_adv_nocip,2030,Gas steam,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,0,0,0,0,0,0,6304.401,0,0
+PJM,currentpolicy_5ci_adv_nocip,2030,Hydro,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,4917.61,0,0,0,0,0,0,0,0
+PJM,currentpolicy_5ci_adv_nocip,2030,Nuclear,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,6462,0,0,0,0,0,19355.601,0,0
+PJM,currentpolicy_5ci_adv_nocip,2030,Offshore Wind,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,8549.999,0,0,8549.999,0,0,0,0,0
+PJM,currentpolicy_5ci_adv_nocip,2030,Onshore Wind,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,15292.298,0,0,6999.277,0,0,3.2,0,0
+PJM,currentpolicy_5ci_adv_nocip,2030,Pumped hydro,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,5243.999,0,0,0,0,0,0,0,0
+PJM,currentpolicy_5ci_adv_nocip,2030,Utility Solar,"5% CI Part., Adv. Tech. Full",No 24x7 Purchase,32533.607,0,0,29515.549,0,0,0,0,0
+PJM,currentpolicy_5ci_adv_nocip_noccszcf,2030,Battery,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,3020,0,3020,3020,3020,0,0,0,0
+PJM,currentpolicy_5ci_adv_nocip_noccszcf,2030,Biomass,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,252.915,0,0,0,0,0,0,0,0
+PJM,currentpolicy_5ci_adv_nocip_noccszcf,2030,Coal,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0.002,0,0,0,0,0,49419.98,0,0
+PJM,currentpolicy_5ci_adv_nocip_noccszcf,2030,Gas CC,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,115556.686,0,0,60843.694,0,0,451.9,0,0
+PJM,currentpolicy_5ci_adv_nocip_noccszcf,2030,Gas CC w/CCS,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+PJM,currentpolicy_5ci_adv_nocip_noccszcf,2030,Gas CT,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,27205.291,0,0,0,0,0,443.237,0,0
+PJM,currentpolicy_5ci_adv_nocip_noccszcf,2030,Gas steam,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,0,0,0,0,0,0,6304.401,0,0
+PJM,currentpolicy_5ci_adv_nocip_noccszcf,2030,Hydro,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,4917.61,0,0,0,0,0,0,0,0
+PJM,currentpolicy_5ci_adv_nocip_noccszcf,2030,Nuclear,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,6462,0,0,0,0,0,19355.601,0,0
+PJM,currentpolicy_5ci_adv_nocip_noccszcf,2030,Offshore Wind,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,8549.999,0,0,8549.999,0,0,0,0,0
+PJM,currentpolicy_5ci_adv_nocip_noccszcf,2030,Onshore Wind,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,15292.298,0,0,6999.277,0,0,3.2,0,0
+PJM,currentpolicy_5ci_adv_nocip_noccszcf,2030,Pumped hydro,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,5243.999,0,0,0,0,0,0,0,0
+PJM,currentpolicy_5ci_adv_nocip_noccszcf,2030,Utility Solar,"5% CI Part., Adv. Tech. no Comb.",No 24x7 Purchase,32533.607,0,0,29515.549,0,0,0,0,0
+PJM,currentpolicy_5ci_nocip,2030,Battery,"5% CI Part., Curt. Tech.",No 24x7 Purchase,3020,0,3020,3020,3020,0,0,0,0
+PJM,currentpolicy_5ci_nocip,2030,Biomass,"5% CI Part., Curt. Tech.",No 24x7 Purchase,252.915,0,0,0,0,0,0,0,0
+PJM,currentpolicy_5ci_nocip,2030,Coal,"5% CI Part., Curt. Tech.",No 24x7 Purchase,0.002,0,0,0,0,0,49419.98,0,0
+PJM,currentpolicy_5ci_nocip,2030,Gas CC,"5% CI Part., Curt. Tech.",No 24x7 Purchase,115541.272,0,0,60828.278,0,0,451.898,0,0
+PJM,currentpolicy_5ci_nocip,2030,Gas CC w/CCS,"5% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+PJM,currentpolicy_5ci_nocip,2030,Gas CT,"5% CI Part., Curt. Tech.",No 24x7 Purchase,27204.938,0,0,0,0,0,443.59,0,0
+PJM,currentpolicy_5ci_nocip,2030,Gas steam,"5% CI Part., Curt. Tech.",No 24x7 Purchase,0,0,0,0,0,0,6304.401,0,0
+PJM,currentpolicy_5ci_nocip,2030,Hydro,"5% CI Part., Curt. Tech.",No 24x7 Purchase,4917.61,0,0,0,0,0,0,0,0
+PJM,currentpolicy_5ci_nocip,2030,Nuclear,"5% CI Part., Curt. Tech.",No 24x7 Purchase,6462,0,0,0,0,0,19355.601,0,0
+PJM,currentpolicy_5ci_nocip,2030,Offshore Wind,"5% CI Part., Curt. Tech.",No 24x7 Purchase,8549.999,0,0,8549.999,0,0,0,0,0
+PJM,currentpolicy_5ci_nocip,2030,Onshore Wind,"5% CI Part., Curt. Tech.",No 24x7 Purchase,15292.298,0,0,6999.277,0,0,3.2,0,0
+PJM,currentpolicy_5ci_nocip,2030,Pumped hydro,"5% CI Part., Curt. Tech.",No 24x7 Purchase,5243.999,0,0,0,0,0,0,0,0
+PJM,currentpolicy_5ci_nocip,2030,Utility Solar,"5% CI Part., Curt. Tech.",No 24x7 Purchase,32533.606,0,0,29515.548,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip,2030,Battery,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,3020,0,3020,3020,3020,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip,2030,Biomass,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,252.915,0,0,0,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip,2030,Coal,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,0,0,0,0,0,0,49419.982,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip,2030,Gas CC,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,55645.537,0,0,505.143,0,0,24.498,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip,2030,Gas CC w/CCS,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip,2030,Gas CT,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,27648.528,0,0,0,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip,2030,Gas steam,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,0,0,0,0,0,0,6304.401,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip,2030,Hydro,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,4917.61,0,0,0,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip,2030,Nuclear,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,25814.402,0,0,0,0,0,3.199,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip,2030,Offshore Wind,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,8549.998,0,0,8549.998,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip,2030,Onshore Wind,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,59262.043,0,0,50965.822,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip,2030,Pumped hydro,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,5243.999,0,0,0,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip,2030,Utility Solar,"10% CI Part., Adv. Tech. Full, 80% CES",No 24x7 Purchase,103991.304,0,0,100973.246,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Battery,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,3020,0,3020,3020,3020,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Biomass,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,252.915,0,0,0,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Coal,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,0,0,0,0,0,0,49419.982,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Gas CC,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,55645.537,0,0,505.143,0,0,24.498,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Gas CC w/CCS,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Gas CT,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,27648.528,0,0,0,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Gas steam,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,0,0,0,0,0,0,6304.401,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Hydro,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,4917.61,0,0,0,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Nuclear,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,25814.402,0,0,0,0,0,3.199,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Offshore Wind,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,8549.998,0,0,8549.998,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Onshore Wind,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,59262.043,0,0,50965.822,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Pumped hydro,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,5243.999,0,0,0,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_adv_nocip_noccszcf,2030,Utility Solar,"10% CI Part., Adv. Tech. no Comb., 80% CES",No 24x7 Purchase,103991.304,0,0,100973.246,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_nocip,2030,Battery,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,3020,0,3020,3020,3020,0,0,0,0
+PJM,currentpolicy_80CES_10ci_nocip,2030,Biomass,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,252.915,0,0,0,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_nocip,2030,Coal,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,0,0,0,0,0,0,49419.982,0,0
+PJM,currentpolicy_80CES_10ci_nocip,2030,Gas CC,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,55648.572,0,0,508.178,0,0,24.498,0,0
+PJM,currentpolicy_80CES_10ci_nocip,2030,Gas CC w/CCS,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,0,0,0,0,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_nocip,2030,Gas CT,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,27648.528,0,0,0,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_nocip,2030,Gas steam,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,0,0,0,0,0,0,6304.401,0,0
+PJM,currentpolicy_80CES_10ci_nocip,2030,Hydro,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,4917.61,0,0,0,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_nocip,2030,Nuclear,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,25814.402,0,0,0,0,0,3.199,0,0
+PJM,currentpolicy_80CES_10ci_nocip,2030,Offshore Wind,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,8549.998,0,0,8549.998,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_nocip,2030,Onshore Wind,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,59258.659,0,0,50962.438,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_nocip,2030,Pumped hydro,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,5243.999,0,0,0,0,0,0,0,0
+PJM,currentpolicy_80CES_10ci_nocip,2030,Utility Solar,"10% CI Part., Curt. Tech., 80% CES",No 24x7 Purchase,103991.867,0,0,100973.809,0,0,0,0,0

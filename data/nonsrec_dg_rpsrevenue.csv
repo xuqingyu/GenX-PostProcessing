@@ -1,0 +1,409 @@
+case,year,Scenario,TechSensitivity,nonsrec_rps_revenue
+currentpolicy_doublezcfcost,2030,Current Policy (CP),Doubled ZCF Fuel Price,14565679
+currentpolicy_doublezcfcost,2040,Current Policy (CP),Doubled ZCF Fuel Price,0
+currentpolicy_doublezcfcost,2050,Current Policy (CP),Doubled ZCF Fuel Price,476684
+currentpolicy_highngcost,2030,Current Policy (CP),High NatGas Price,1563971
+currentpolicy_highngcost,2040,Current Policy (CP),High NatGas Price,0
+currentpolicy_highngcost,2050,Current Policy (CP),High NatGas Price,0
+currentpolicy_highrecost,2030,Current Policy (CP),High RE/BESS Cost,26394220
+currentpolicy_highrecost,2040,Current Policy (CP),High RE/BESS Cost,16144774
+currentpolicy_highrecost,2050,Current Policy (CP),High RE/BESS Cost,5569816
+currentpolicy_lowngcost,2030,Current Policy (CP),Low NatGas Price,21838608
+currentpolicy_lowngcost,2040,Current Policy (CP),Low NatGas Price,9311062
+currentpolicy_lowngcost,2050,Current Policy (CP),Low NatGas Price,9428862
+currentpolicy_lowrecost,2030,Current Policy (CP),Low RE/BESS Cost,9778241
+currentpolicy_lowrecost,2040,Current Policy (CP),Low RE/BESS Cost,0
+currentpolicy_lowrecost,2050,Current Policy (CP),Low RE/BESS Cost,0
+currentpolicy_mid,2030,Current Policy (CP),Mid,14565687
+currentpolicy_mid,2040,Current Policy (CP),Mid,0
+currentpolicy_mid,2050,Current Policy (CP),Mid,658557
+currentpolicy_noflexibleload,2030,Current Policy (CP),No Flexible Load,16104645
+currentpolicy_noflexibleload,2040,Current Policy (CP),No Flexible Load,785292
+currentpolicy_noflexibleload,2050,Current Policy (CP),No Flexible Load,1471679
+currentpolicy_nointertrans,2030,Current Policy (CP),No Interregional Transmission Upgrade,13324633
+currentpolicy_nointertrans,2040,Current Policy (CP),No Interregional Transmission Upgrade,0
+currentpolicy_nointertrans,2050,Current Policy (CP),No Interregional Transmission Upgrade,0
+deepdecarbonization_dgsolar_doublezcfcost,2030,DD + High Solar,Doubled ZCF Fuel Price,0
+deepdecarbonization_dgsolar_doublezcfcost,2040,DD + High Solar,Doubled ZCF Fuel Price,-27
+deepdecarbonization_dgsolar_doublezcfcost,2050,DD + High Solar,Doubled ZCF Fuel Price,-51
+deepdecarbonization_dgsolar_highngcost,2030,DD + High Solar,High NatGas Price,-2
+deepdecarbonization_dgsolar_highngcost,2040,DD + High Solar,High NatGas Price,0
+deepdecarbonization_dgsolar_highngcost,2050,DD + High Solar,High NatGas Price,-3
+deepdecarbonization_dgsolar_highrecost,2030,DD + High Solar,High RE/BESS Cost,0
+deepdecarbonization_dgsolar_highrecost,2040,DD + High Solar,High RE/BESS Cost,-2
+deepdecarbonization_dgsolar_highrecost,2050,DD + High Solar,High RE/BESS Cost,-5
+deepdecarbonization_dgsolar_instaterps_doublezcfcost,2030,DD + High Solar + 80% Instate,Doubled ZCF Fuel Price,-3
+deepdecarbonization_dgsolar_instaterps_doublezcfcost,2040,DD + High Solar + 80% Instate,Doubled ZCF Fuel Price,-11
+deepdecarbonization_dgsolar_instaterps_doublezcfcost,2050,DD + High Solar + 80% Instate,Doubled ZCF Fuel Price,1871
+deepdecarbonization_dgsolar_instaterps_highngcost,2030,DD + High Solar + 80% Instate,High NatGas Price,0
+deepdecarbonization_dgsolar_instaterps_highngcost,2040,DD + High Solar + 80% Instate,High NatGas Price,-2
+deepdecarbonization_dgsolar_instaterps_highngcost,2050,DD + High Solar + 80% Instate,High NatGas Price,5190391
+deepdecarbonization_dgsolar_instaterps_highrecost,2030,DD + High Solar + 80% Instate,High RE/BESS Cost,-1
+deepdecarbonization_dgsolar_instaterps_highrecost,2040,DD + High Solar + 80% Instate,High RE/BESS Cost,-22
+deepdecarbonization_dgsolar_instaterps_highrecost,2050,DD + High Solar + 80% Instate,High RE/BESS Cost,130200860
+deepdecarbonization_dgsolar_instaterps_lowngcost,2030,DD + High Solar + 80% Instate,Low NatGas Price,-1
+deepdecarbonization_dgsolar_instaterps_lowngcost,2040,DD + High Solar + 80% Instate,Low NatGas Price,-11
+deepdecarbonization_dgsolar_instaterps_lowngcost,2050,DD + High Solar + 80% Instate,Low NatGas Price,4988683
+deepdecarbonization_dgsolar_instaterps_lowrecost,2030,DD + High Solar + 80% Instate,Low RE/BESS Cost,-2
+deepdecarbonization_dgsolar_instaterps_lowrecost,2040,DD + High Solar + 80% Instate,Low RE/BESS Cost,-5
+deepdecarbonization_dgsolar_instaterps_lowrecost,2050,DD + High Solar + 80% Instate,Low RE/BESS Cost,-141
+deepdecarbonization_dgsolar_instaterps_mid,2030,DD + High Solar + 80% Instate,Mid,-3
+deepdecarbonization_dgsolar_instaterps_mid,2040,DD + High Solar + 80% Instate,Mid,-35
+deepdecarbonization_dgsolar_instaterps_mid,2050,DD + High Solar + 80% Instate,Mid,6930
+deepdecarbonization_dgsolar_instaterps_noflexibleload,2030,DD + High Solar + 80% Instate,No Flexible Load,-2
+deepdecarbonization_dgsolar_instaterps_noflexibleload,2040,DD + High Solar + 80% Instate,No Flexible Load,-16
+deepdecarbonization_dgsolar_instaterps_noflexibleload,2050,DD + High Solar + 80% Instate,No Flexible Load,-38
+deepdecarbonization_dgsolar_instaterps_nointertrans,2030,DD + High Solar + 80% Instate,No Interregional Transmission Upgrade,-2
+deepdecarbonization_dgsolar_instaterps_nointertrans,2040,DD + High Solar + 80% Instate,No Interregional Transmission Upgrade,-12
+deepdecarbonization_dgsolar_instaterps_nointertrans,2050,DD + High Solar + 80% Instate,No Interregional Transmission Upgrade,240
+deepdecarbonization_dgsolar_lowngcost,2030,DD + High Solar,Low NatGas Price,-2
+deepdecarbonization_dgsolar_lowngcost,2040,DD + High Solar,Low NatGas Price,0
+deepdecarbonization_dgsolar_lowngcost,2050,DD + High Solar,Low NatGas Price,-1
+deepdecarbonization_dgsolar_lowrecost,2030,DD + High Solar,Low RE/BESS Cost,-1
+deepdecarbonization_dgsolar_lowrecost,2040,DD + High Solar,Low RE/BESS Cost,0
+deepdecarbonization_dgsolar_lowrecost,2050,DD + High Solar,Low RE/BESS Cost,-27
+deepdecarbonization_dgsolar_mid,2030,DD + High Solar,Mid,0
+deepdecarbonization_dgsolar_mid,2040,DD + High Solar,Mid,-3
+deepdecarbonization_dgsolar_mid,2050,DD + High Solar,Mid,-15
+deepdecarbonization_dgsolar_noflexibleload,2030,DD + High Solar,No Flexible Load,0
+deepdecarbonization_dgsolar_noflexibleload,2040,DD + High Solar,No Flexible Load,-7
+deepdecarbonization_dgsolar_noflexibleload,2050,DD + High Solar,No Flexible Load,-5
+deepdecarbonization_dgsolar_nointertrans,2030,DD + High Solar,No Interregional Transmission Upgrade,-3
+deepdecarbonization_dgsolar_nointertrans,2040,DD + High Solar,No Interregional Transmission Upgrade,-11
+deepdecarbonization_dgsolar_nointertrans,2050,DD + High Solar,No Interregional Transmission Upgrade,-1
+deepdecarbonization_dgsolar_nuclear_doublezcfcost,2030,DD + High Solar + Nuclear,Doubled ZCF Fuel Price,0
+deepdecarbonization_dgsolar_nuclear_doublezcfcost,2040,DD + High Solar + Nuclear,Doubled ZCF Fuel Price,-13
+deepdecarbonization_dgsolar_nuclear_doublezcfcost,2050,DD + High Solar + Nuclear,Doubled ZCF Fuel Price,-58
+deepdecarbonization_dgsolar_nuclear_highngcost,2030,DD + High Solar + Nuclear,High NatGas Price,-2
+deepdecarbonization_dgsolar_nuclear_highngcost,2040,DD + High Solar + Nuclear,High NatGas Price,-1
+deepdecarbonization_dgsolar_nuclear_highngcost,2050,DD + High Solar + Nuclear,High NatGas Price,-3
+deepdecarbonization_dgsolar_nuclear_highrecost,2030,DD + High Solar + Nuclear,High RE/BESS Cost,0
+deepdecarbonization_dgsolar_nuclear_highrecost,2040,DD + High Solar + Nuclear,High RE/BESS Cost,-3
+deepdecarbonization_dgsolar_nuclear_highrecost,2050,DD + High Solar + Nuclear,High RE/BESS Cost,-14
+deepdecarbonization_dgsolar_nuclear_instaterps_doublezcfcost,2030,DD + High Solar + Nuclear + 80% Instate,Doubled ZCF Fuel Price,-3
+deepdecarbonization_dgsolar_nuclear_instaterps_doublezcfcost,2040,DD + High Solar + Nuclear + 80% Instate,Doubled ZCF Fuel Price,-14
+deepdecarbonization_dgsolar_nuclear_instaterps_doublezcfcost,2050,DD + High Solar + Nuclear + 80% Instate,Doubled ZCF Fuel Price,2512
+deepdecarbonization_dgsolar_nuclear_instaterps_highngcost,2030,DD + High Solar + Nuclear + 80% Instate,High NatGas Price,0
+deepdecarbonization_dgsolar_nuclear_instaterps_highngcost,2040,DD + High Solar + Nuclear + 80% Instate,High NatGas Price,-2
+deepdecarbonization_dgsolar_nuclear_instaterps_highngcost,2050,DD + High Solar + Nuclear + 80% Instate,High NatGas Price,5202157
+deepdecarbonization_dgsolar_nuclear_instaterps_highrecost,2030,DD + High Solar + Nuclear + 80% Instate,High RE/BESS Cost,-1
+deepdecarbonization_dgsolar_nuclear_instaterps_highrecost,2040,DD + High Solar + Nuclear + 80% Instate,High RE/BESS Cost,-23
+deepdecarbonization_dgsolar_nuclear_instaterps_highrecost,2050,DD + High Solar + Nuclear + 80% Instate,High RE/BESS Cost,130192796
+deepdecarbonization_dgsolar_nuclear_instaterps_lowngcost,2030,DD + High Solar + Nuclear + 80% Instate,Low NatGas Price,-1
+deepdecarbonization_dgsolar_nuclear_instaterps_lowngcost,2040,DD + High Solar + Nuclear + 80% Instate,Low NatGas Price,-15
+deepdecarbonization_dgsolar_nuclear_instaterps_lowngcost,2050,DD + High Solar + Nuclear + 80% Instate,Low NatGas Price,4989491
+deepdecarbonization_dgsolar_nuclear_instaterps_lowrecost,2030,DD + High Solar + Nuclear + 80% Instate,Low RE/BESS Cost,-2
+deepdecarbonization_dgsolar_nuclear_instaterps_lowrecost,2040,DD + High Solar + Nuclear + 80% Instate,Low RE/BESS Cost,-4
+deepdecarbonization_dgsolar_nuclear_instaterps_lowrecost,2050,DD + High Solar + Nuclear + 80% Instate,Low RE/BESS Cost,-62
+deepdecarbonization_dgsolar_nuclear_instaterps_mid,2030,DD + High Solar + Nuclear + 80% Instate,Mid,-3
+deepdecarbonization_dgsolar_nuclear_instaterps_mid,2040,DD + High Solar + Nuclear + 80% Instate,Mid,-32
+deepdecarbonization_dgsolar_nuclear_instaterps_mid,2050,DD + High Solar + Nuclear + 80% Instate,Mid,9423
+deepdecarbonization_dgsolar_nuclear_instaterps_noflexibleload,2030,DD + High Solar + Nuclear + 80% Instate,No Flexible Load,-2
+deepdecarbonization_dgsolar_nuclear_instaterps_noflexibleload,2040,DD + High Solar + Nuclear + 80% Instate,No Flexible Load,-38
+deepdecarbonization_dgsolar_nuclear_instaterps_noflexibleload,2050,DD + High Solar + Nuclear + 80% Instate,No Flexible Load,-14
+deepdecarbonization_dgsolar_nuclear_instaterps_nointertrans,2030,DD + High Solar + Nuclear + 80% Instate,No Interregional Transmission Upgrade,-2
+deepdecarbonization_dgsolar_nuclear_instaterps_nointertrans,2040,DD + High Solar + Nuclear + 80% Instate,No Interregional Transmission Upgrade,-17
+deepdecarbonization_dgsolar_nuclear_instaterps_nointertrans,2050,DD + High Solar + Nuclear + 80% Instate,No Interregional Transmission Upgrade,238
+deepdecarbonization_dgsolar_nuclear_lowngcost,2030,DD + High Solar + Nuclear,Low NatGas Price,-2
+deepdecarbonization_dgsolar_nuclear_lowngcost,2040,DD + High Solar + Nuclear,Low NatGas Price,-1
+deepdecarbonization_dgsolar_nuclear_lowngcost,2050,DD + High Solar + Nuclear,Low NatGas Price,-2
+deepdecarbonization_dgsolar_nuclear_lowrecost,2030,DD + High Solar + Nuclear,Low RE/BESS Cost,-1
+deepdecarbonization_dgsolar_nuclear_lowrecost,2040,DD + High Solar + Nuclear,Low RE/BESS Cost,0
+deepdecarbonization_dgsolar_nuclear_lowrecost,2050,DD + High Solar + Nuclear,Low RE/BESS Cost,-17
+deepdecarbonization_dgsolar_nuclear_mid,2030,DD + High Solar + Nuclear,Mid,0
+deepdecarbonization_dgsolar_nuclear_mid,2040,DD + High Solar + Nuclear,Mid,-3
+deepdecarbonization_dgsolar_nuclear_mid,2050,DD + High Solar + Nuclear,Mid,-9
+deepdecarbonization_dgsolar_nuclear_noflexibleload,2030,DD + High Solar + Nuclear,No Flexible Load,0
+deepdecarbonization_dgsolar_nuclear_noflexibleload,2040,DD + High Solar + Nuclear,No Flexible Load,-3
+deepdecarbonization_dgsolar_nuclear_noflexibleload,2050,DD + High Solar + Nuclear,No Flexible Load,-4
+deepdecarbonization_dgsolar_nuclear_nointertrans,2030,DD + High Solar + Nuclear,No Interregional Transmission Upgrade,-3
+deepdecarbonization_dgsolar_nuclear_nointertrans,2040,DD + High Solar + Nuclear,No Interregional Transmission Upgrade,-8
+deepdecarbonization_dgsolar_nuclear_nointertrans,2050,DD + High Solar + Nuclear,No Interregional Transmission Upgrade,-1
+deepdecarbonization_doublezcfcost,2030,Deep Decarbonization (DD),Doubled ZCF Fuel Price,0
+deepdecarbonization_doublezcfcost,2040,Deep Decarbonization (DD),Doubled ZCF Fuel Price,0
+deepdecarbonization_doublezcfcost,2050,Deep Decarbonization (DD),Doubled ZCF Fuel Price,-2
+deepdecarbonization_highngcost,2030,Deep Decarbonization (DD),High NatGas Price,0
+deepdecarbonization_highngcost,2040,Deep Decarbonization (DD),High NatGas Price,0
+deepdecarbonization_highngcost,2050,Deep Decarbonization (DD),High NatGas Price,0
+deepdecarbonization_highrecost,2030,Deep Decarbonization (DD),High RE/BESS Cost,0
+deepdecarbonization_highrecost,2040,Deep Decarbonization (DD),High RE/BESS Cost,-2
+deepdecarbonization_highrecost,2050,Deep Decarbonization (DD),High RE/BESS Cost,0
+deepdecarbonization_instaterps_doublezcfcost,2030,DD + 80% Instate,Doubled ZCF Fuel Price,0
+deepdecarbonization_instaterps_doublezcfcost,2040,DD + 80% Instate,Doubled ZCF Fuel Price,8478482
+deepdecarbonization_instaterps_doublezcfcost,2050,DD + 80% Instate,Doubled ZCF Fuel Price,5724824
+deepdecarbonization_instaterps_highngcost,2030,DD + 80% Instate,High NatGas Price,0
+deepdecarbonization_instaterps_highngcost,2040,DD + 80% Instate,High NatGas Price,8145056
+deepdecarbonization_instaterps_highngcost,2050,DD + 80% Instate,High NatGas Price,7927993
+deepdecarbonization_instaterps_highrecost,2030,DD + 80% Instate,High RE/BESS Cost,0
+deepdecarbonization_instaterps_highrecost,2040,DD + 80% Instate,High RE/BESS Cost,15763310
+deepdecarbonization_instaterps_highrecost,2050,DD + 80% Instate,High RE/BESS Cost,117322702
+deepdecarbonization_instaterps_lowngcost,2030,DD + 80% Instate,Low NatGas Price,0
+deepdecarbonization_instaterps_lowngcost,2040,DD + 80% Instate,Low NatGas Price,8288498
+deepdecarbonization_instaterps_lowngcost,2050,DD + 80% Instate,Low NatGas Price,22073928
+deepdecarbonization_instaterps_lowrecost,2030,DD + 80% Instate,Low RE/BESS Cost,0
+deepdecarbonization_instaterps_lowrecost,2040,DD + 80% Instate,Low RE/BESS Cost,5408304
+deepdecarbonization_instaterps_lowrecost,2050,DD + 80% Instate,Low RE/BESS Cost,-2
+deepdecarbonization_instaterps_mid,2030,DD + 80% Instate,Mid,0
+deepdecarbonization_instaterps_mid,2040,DD + 80% Instate,Mid,8088329
+deepdecarbonization_instaterps_mid,2050,DD + 80% Instate,Mid,15862051
+deepdecarbonization_instaterps_noflexibleload,2030,DD + 80% Instate,No Flexible Load,-4
+deepdecarbonization_instaterps_noflexibleload,2040,DD + 80% Instate,No Flexible Load,4609187
+deepdecarbonization_instaterps_noflexibleload,2050,DD + 80% Instate,No Flexible Load,17867162
+deepdecarbonization_instaterps_nointertrans,2030,DD + 80% Instate,No Interregional Transmission Upgrade,-1
+deepdecarbonization_instaterps_nointertrans,2040,DD + 80% Instate,No Interregional Transmission Upgrade,5233097
+deepdecarbonization_instaterps_nointertrans,2050,DD + 80% Instate,No Interregional Transmission Upgrade,19011840
+deepdecarbonization_lowngcost,2030,Deep Decarbonization (DD),Low NatGas Price,0
+deepdecarbonization_lowngcost,2040,Deep Decarbonization (DD),Low NatGas Price,-1
+deepdecarbonization_lowngcost,2050,Deep Decarbonization (DD),Low NatGas Price,0
+deepdecarbonization_lowrecost,2030,Deep Decarbonization (DD),Low RE/BESS Cost,0
+deepdecarbonization_lowrecost,2040,Deep Decarbonization (DD),Low RE/BESS Cost,0
+deepdecarbonization_lowrecost,2050,Deep Decarbonization (DD),Low RE/BESS Cost,-2
+deepdecarbonization_mid,2030,Deep Decarbonization (DD),Mid,0
+deepdecarbonization_mid,2040,Deep Decarbonization (DD),Mid,-1
+deepdecarbonization_mid,2050,Deep Decarbonization (DD),Mid,-1
+deepdecarbonization_noflexibleload,2030,Deep Decarbonization (DD),No Flexible Load,0
+deepdecarbonization_noflexibleload,2040,Deep Decarbonization (DD),No Flexible Load,-3
+deepdecarbonization_noflexibleload,2050,Deep Decarbonization (DD),No Flexible Load,-4
+deepdecarbonization_nointertrans,2030,Deep Decarbonization (DD),No Interregional Transmission Upgrade,-1
+deepdecarbonization_nointertrans,2040,Deep Decarbonization (DD),No Interregional Transmission Upgrade,0
+deepdecarbonization_nointertrans,2050,Deep Decarbonization (DD),No Interregional Transmission Upgrade,0
+deepdecarbonization_nuclear_doublezcfcost,2030,DD + Nuclear,Doubled ZCF Fuel Price,0
+deepdecarbonization_nuclear_doublezcfcost,2040,DD + Nuclear,Doubled ZCF Fuel Price,0
+deepdecarbonization_nuclear_doublezcfcost,2050,DD + Nuclear,Doubled ZCF Fuel Price,-1
+deepdecarbonization_nuclear_highngcost,2030,DD + Nuclear,High NatGas Price,0
+deepdecarbonization_nuclear_highngcost,2040,DD + Nuclear,High NatGas Price,0
+deepdecarbonization_nuclear_highngcost,2050,DD + Nuclear,High NatGas Price,-2
+deepdecarbonization_nuclear_highrecost,2030,DD + Nuclear,High RE/BESS Cost,0
+deepdecarbonization_nuclear_highrecost,2040,DD + Nuclear,High RE/BESS Cost,-2
+deepdecarbonization_nuclear_highrecost,2050,DD + Nuclear,High RE/BESS Cost,0
+deepdecarbonization_nuclear_instaterps_doublezcfcost,2030,DD + Nuclear + 80% Instate,Doubled ZCF Fuel Price,0
+deepdecarbonization_nuclear_instaterps_doublezcfcost,2040,DD + Nuclear + 80% Instate,Doubled ZCF Fuel Price,8478439
+deepdecarbonization_nuclear_instaterps_doublezcfcost,2050,DD + Nuclear + 80% Instate,Doubled ZCF Fuel Price,5725932
+deepdecarbonization_nuclear_instaterps_highngcost,2030,DD + Nuclear + 80% Instate,High NatGas Price,0
+deepdecarbonization_nuclear_instaterps_highngcost,2040,DD + Nuclear + 80% Instate,High NatGas Price,8145031
+deepdecarbonization_nuclear_instaterps_highngcost,2050,DD + Nuclear + 80% Instate,High NatGas Price,7929406
+deepdecarbonization_nuclear_instaterps_highrecost,2030,DD + Nuclear + 80% Instate,High RE/BESS Cost,0
+deepdecarbonization_nuclear_instaterps_highrecost,2040,DD + Nuclear + 80% Instate,High RE/BESS Cost,15763287
+deepdecarbonization_nuclear_instaterps_highrecost,2050,DD + Nuclear + 80% Instate,High RE/BESS Cost,117320489
+deepdecarbonization_nuclear_instaterps_lowngcost,2030,DD + Nuclear + 80% Instate,Low NatGas Price,0
+deepdecarbonization_nuclear_instaterps_lowngcost,2040,DD + Nuclear + 80% Instate,Low NatGas Price,8288449
+deepdecarbonization_nuclear_instaterps_lowngcost,2050,DD + Nuclear + 80% Instate,Low NatGas Price,22074478
+deepdecarbonization_nuclear_instaterps_lowrecost,2030,DD + Nuclear + 80% Instate,Low RE/BESS Cost,0
+deepdecarbonization_nuclear_instaterps_lowrecost,2040,DD + Nuclear + 80% Instate,Low RE/BESS Cost,5408296
+deepdecarbonization_nuclear_instaterps_lowrecost,2050,DD + Nuclear + 80% Instate,Low RE/BESS Cost,-3
+deepdecarbonization_nuclear_instaterps_mid,2030,DD + Nuclear + 80% Instate,Mid,0
+deepdecarbonization_nuclear_instaterps_mid,2040,DD + Nuclear + 80% Instate,Mid,8087841
+deepdecarbonization_nuclear_instaterps_mid,2050,DD + Nuclear + 80% Instate,Mid,15864386
+deepdecarbonization_nuclear_instaterps_noflexibleload,2030,DD + Nuclear + 80% Instate,No Flexible Load,-4
+deepdecarbonization_nuclear_instaterps_noflexibleload,2040,DD + Nuclear + 80% Instate,No Flexible Load,4609180
+deepdecarbonization_nuclear_instaterps_noflexibleload,2050,DD + Nuclear + 80% Instate,No Flexible Load,17865449
+deepdecarbonization_nuclear_instaterps_nointertrans,2030,DD + Nuclear + 80% Instate,No Interregional Transmission Upgrade,-1
+deepdecarbonization_nuclear_instaterps_nointertrans,2040,DD + Nuclear + 80% Instate,No Interregional Transmission Upgrade,5232927
+deepdecarbonization_nuclear_instaterps_nointertrans,2050,DD + Nuclear + 80% Instate,No Interregional Transmission Upgrade,19013434
+deepdecarbonization_nuclear_lowngcost,2030,DD + Nuclear,Low NatGas Price,0
+deepdecarbonization_nuclear_lowngcost,2040,DD + Nuclear,Low NatGas Price,-1
+deepdecarbonization_nuclear_lowngcost,2050,DD + Nuclear,Low NatGas Price,0
+deepdecarbonization_nuclear_lowrecost,2030,DD + Nuclear,Low RE/BESS Cost,0
+deepdecarbonization_nuclear_lowrecost,2040,DD + Nuclear,Low RE/BESS Cost,0
+deepdecarbonization_nuclear_lowrecost,2050,DD + Nuclear,Low RE/BESS Cost,0
+deepdecarbonization_nuclear_mid,2030,DD + Nuclear,Mid,0
+deepdecarbonization_nuclear_mid,2040,DD + Nuclear,Mid,0
+deepdecarbonization_nuclear_mid,2050,DD + Nuclear,Mid,0
+deepdecarbonization_nuclear_noflexibleload,2030,DD + Nuclear,No Flexible Load,0
+deepdecarbonization_nuclear_noflexibleload,2040,DD + Nuclear,No Flexible Load,-1
+deepdecarbonization_nuclear_noflexibleload,2050,DD + Nuclear,No Flexible Load,-3
+deepdecarbonization_nuclear_nointertrans,2030,DD + Nuclear,No Interregional Transmission Upgrade,-1
+deepdecarbonization_nuclear_nointertrans,2040,DD + Nuclear,No Interregional Transmission Upgrade,0
+deepdecarbonization_nuclear_nointertrans,2050,DD + Nuclear,No Interregional Transmission Upgrade,0
+statedpolicy_dgsolar_doublezcfcost,2030,SP + High Solar,Doubled ZCF Fuel Price,20409741
+statedpolicy_dgsolar_doublezcfcost,2040,SP + High Solar,Doubled ZCF Fuel Price,3598838
+statedpolicy_dgsolar_doublezcfcost,2050,SP + High Solar,Doubled ZCF Fuel Price,9952811
+statedpolicy_dgsolar_highngcost,2030,SP + High Solar,High NatGas Price,779764
+statedpolicy_dgsolar_highngcost,2040,SP + High Solar,High NatGas Price,0
+statedpolicy_dgsolar_highngcost,2050,SP + High Solar,High NatGas Price,0
+statedpolicy_dgsolar_highrecost,2030,SP + High Solar,High RE/BESS Cost,40840721
+statedpolicy_dgsolar_highrecost,2040,SP + High Solar,High RE/BESS Cost,96013761
+statedpolicy_dgsolar_highrecost,2050,SP + High Solar,High RE/BESS Cost,57655924
+statedpolicy_dgsolar_instaterps_doublezcfcost,2030,SP + High Solar + 80% Instate,Doubled ZCF Fuel Price,20409269
+statedpolicy_dgsolar_instaterps_doublezcfcost,2040,SP + High Solar + 80% Instate,Doubled ZCF Fuel Price,114599650
+statedpolicy_dgsolar_instaterps_doublezcfcost,2050,SP + High Solar + 80% Instate,Doubled ZCF Fuel Price,607940200
+statedpolicy_dgsolar_instaterps_highngcost,2030,SP + High Solar + 80% Instate,High NatGas Price,779813
+statedpolicy_dgsolar_instaterps_highngcost,2040,SP + High Solar + 80% Instate,High NatGas Price,10310947
+statedpolicy_dgsolar_instaterps_highngcost,2050,SP + High Solar + 80% Instate,High NatGas Price,627145096
+statedpolicy_dgsolar_instaterps_highrecost,2030,SP + High Solar + 80% Instate,High RE/BESS Cost,40839723
+statedpolicy_dgsolar_instaterps_highrecost,2040,SP + High Solar + 80% Instate,High RE/BESS Cost,197618311
+statedpolicy_dgsolar_instaterps_highrecost,2050,SP + High Solar + 80% Instate,High RE/BESS Cost,797141895
+statedpolicy_dgsolar_instaterps_lowngcost,2030,SP + High Solar + 80% Instate,Low NatGas Price,34662451
+statedpolicy_dgsolar_instaterps_lowngcost,2040,SP + High Solar + 80% Instate,Low NatGas Price,252010762
+statedpolicy_dgsolar_instaterps_lowngcost,2050,SP + High Solar + 80% Instate,Low NatGas Price,1001569264
+statedpolicy_dgsolar_instaterps_lowrecost,2030,SP + High Solar + 80% Instate,Low RE/BESS Cost,11125899
+statedpolicy_dgsolar_instaterps_lowrecost,2040,SP + High Solar + 80% Instate,Low RE/BESS Cost,139865799
+statedpolicy_dgsolar_instaterps_lowrecost,2050,SP + High Solar + 80% Instate,Low RE/BESS Cost,767153260
+statedpolicy_dgsolar_instaterps_mid,2030,SP + High Solar + 80% Instate,Mid,20409269
+statedpolicy_dgsolar_instaterps_mid,2040,SP + High Solar + 80% Instate,Mid,116641968
+statedpolicy_dgsolar_instaterps_mid,2050,SP + High Solar + 80% Instate,Mid,790311316
+statedpolicy_dgsolar_instaterps_noflexibleload,2030,SP + High Solar + 80% Instate,No Flexible Load,21946509
+statedpolicy_dgsolar_instaterps_noflexibleload,2040,SP + High Solar + 80% Instate,No Flexible Load,129057228
+statedpolicy_dgsolar_instaterps_noflexibleload,2050,SP + High Solar + 80% Instate,No Flexible Load,820120083
+statedpolicy_dgsolar_instaterps_nointertrans,2030,SP + High Solar + 80% Instate,No Interregional Transmission Upgrade,20698230
+statedpolicy_dgsolar_instaterps_nointertrans,2040,SP + High Solar + 80% Instate,No Interregional Transmission Upgrade,126673191
+statedpolicy_dgsolar_instaterps_nointertrans,2050,SP + High Solar + 80% Instate,No Interregional Transmission Upgrade,810030896
+statedpolicy_dgsolar_lowngcost,2030,SP + High Solar,Low NatGas Price,34662153
+statedpolicy_dgsolar_lowngcost,2040,SP + High Solar,Low NatGas Price,54891688
+statedpolicy_dgsolar_lowngcost,2050,SP + High Solar,Low NatGas Price,82294140
+statedpolicy_dgsolar_lowrecost,2030,SP + High Solar,Low RE/BESS Cost,11125958
+statedpolicy_dgsolar_lowrecost,2040,SP + High Solar,Low RE/BESS Cost,-2
+statedpolicy_dgsolar_lowrecost,2050,SP + High Solar,Low RE/BESS Cost,-6
+statedpolicy_dgsolar_mid,2030,SP + High Solar,Mid,20409741
+statedpolicy_dgsolar_mid,2040,SP + High Solar,Mid,4321946
+statedpolicy_dgsolar_mid,2050,SP + High Solar,Mid,12487290
+statedpolicy_dgsolar_noflexibleload,2030,SP + High Solar,No Flexible Load,21946725
+statedpolicy_dgsolar_noflexibleload,2040,SP + High Solar,No Flexible Load,7633098
+statedpolicy_dgsolar_noflexibleload,2050,SP + High Solar,No Flexible Load,20752175
+statedpolicy_dgsolar_nointertrans,2030,SP + High Solar,No Interregional Transmission Upgrade,20698243
+statedpolicy_dgsolar_nointertrans,2040,SP + High Solar,No Interregional Transmission Upgrade,0
+statedpolicy_dgsolar_nointertrans,2050,SP + High Solar,No Interregional Transmission Upgrade,0
+statedpolicy_dgsolar_nuclear_doublezcfcost,2030,SP + High Solar + Nuclear,Doubled ZCF Fuel Price,20409741
+statedpolicy_dgsolar_nuclear_doublezcfcost,2040,SP + High Solar + Nuclear,Doubled ZCF Fuel Price,5763247
+statedpolicy_dgsolar_nuclear_doublezcfcost,2050,SP + High Solar + Nuclear,Doubled ZCF Fuel Price,13101340
+statedpolicy_dgsolar_nuclear_highngcost,2030,SP + High Solar + Nuclear,High NatGas Price,779764
+statedpolicy_dgsolar_nuclear_highngcost,2040,SP + High Solar + Nuclear,High NatGas Price,0
+statedpolicy_dgsolar_nuclear_highngcost,2050,SP + High Solar + Nuclear,High NatGas Price,0
+statedpolicy_dgsolar_nuclear_highrecost,2030,SP + High Solar + Nuclear,High RE/BESS Cost,40840653
+statedpolicy_dgsolar_nuclear_highrecost,2040,SP + High Solar + Nuclear,High RE/BESS Cost,98320006
+statedpolicy_dgsolar_nuclear_highrecost,2050,SP + High Solar + Nuclear,High RE/BESS Cost,59128210
+statedpolicy_dgsolar_nuclear_instaterps_doublezcfcost,2030,SP + High Solar + Nuclear + 80% Instate,Doubled ZCF Fuel Price,20409269
+statedpolicy_dgsolar_nuclear_instaterps_doublezcfcost,2040,SP + High Solar + Nuclear + 80% Instate,Doubled ZCF Fuel Price,5763107
+statedpolicy_dgsolar_nuclear_instaterps_doublezcfcost,2050,SP + High Solar + Nuclear + 80% Instate,Doubled ZCF Fuel Price,132450528
+statedpolicy_dgsolar_nuclear_instaterps_highngcost,2030,SP + High Solar + Nuclear + 80% Instate,High NatGas Price,779813
+statedpolicy_dgsolar_nuclear_instaterps_highngcost,2040,SP + High Solar + Nuclear + 80% Instate,High NatGas Price,0
+statedpolicy_dgsolar_nuclear_instaterps_highngcost,2050,SP + High Solar + Nuclear + 80% Instate,High NatGas Price,171874408
+statedpolicy_dgsolar_nuclear_instaterps_highrecost,2030,SP + High Solar + Nuclear + 80% Instate,High RE/BESS Cost,40839723
+statedpolicy_dgsolar_nuclear_instaterps_highrecost,2040,SP + High Solar + Nuclear + 80% Instate,High RE/BESS Cost,98327154
+statedpolicy_dgsolar_nuclear_instaterps_highrecost,2050,SP + High Solar + Nuclear + 80% Instate,High RE/BESS Cost,291444794
+statedpolicy_dgsolar_nuclear_instaterps_lowngcost,2030,SP + High Solar + Nuclear + 80% Instate,Low NatGas Price,34662451
+statedpolicy_dgsolar_nuclear_instaterps_lowngcost,2040,SP + High Solar + Nuclear + 80% Instate,Low NatGas Price,56150873
+statedpolicy_dgsolar_nuclear_instaterps_lowngcost,2050,SP + High Solar + Nuclear + 80% Instate,Low NatGas Price,281678909
+statedpolicy_dgsolar_nuclear_instaterps_lowrecost,2030,SP + High Solar + Nuclear + 80% Instate,Low RE/BESS Cost,11125899
+statedpolicy_dgsolar_nuclear_instaterps_lowrecost,2040,SP + High Solar + Nuclear + 80% Instate,Low RE/BESS Cost,0
+statedpolicy_dgsolar_nuclear_instaterps_lowrecost,2050,SP + High Solar + Nuclear + 80% Instate,Low RE/BESS Cost,87783003
+statedpolicy_dgsolar_nuclear_instaterps_mid,2030,SP + High Solar + Nuclear + 80% Instate,Mid,20409269
+statedpolicy_dgsolar_nuclear_instaterps_mid,2040,SP + High Solar + Nuclear + 80% Instate,Mid,6802243
+statedpolicy_dgsolar_nuclear_instaterps_mid,2050,SP + High Solar + Nuclear + 80% Instate,Mid,185637262
+statedpolicy_dgsolar_nuclear_instaterps_noflexibleload,2030,SP + High Solar + Nuclear + 80% Instate,No Flexible Load,21946509
+statedpolicy_dgsolar_nuclear_instaterps_noflexibleload,2040,SP + High Solar + Nuclear + 80% Instate,No Flexible Load,9218326
+statedpolicy_dgsolar_nuclear_instaterps_noflexibleload,2050,SP + High Solar + Nuclear + 80% Instate,No Flexible Load,183457392
+statedpolicy_dgsolar_nuclear_instaterps_nointertrans,2030,SP + High Solar + Nuclear + 80% Instate,No Interregional Transmission Upgrade,20698230
+statedpolicy_dgsolar_nuclear_instaterps_nointertrans,2040,SP + High Solar + Nuclear + 80% Instate,No Interregional Transmission Upgrade,0
+statedpolicy_dgsolar_nuclear_instaterps_nointertrans,2050,SP + High Solar + Nuclear + 80% Instate,No Interregional Transmission Upgrade,130984895
+statedpolicy_dgsolar_nuclear_lowngcost,2030,SP + High Solar + Nuclear,Low NatGas Price,34662153
+statedpolicy_dgsolar_nuclear_lowngcost,2040,SP + High Solar + Nuclear,Low NatGas Price,56150175
+statedpolicy_dgsolar_nuclear_lowngcost,2050,SP + High Solar + Nuclear,Low NatGas Price,84786417
+statedpolicy_dgsolar_nuclear_lowrecost,2030,SP + High Solar + Nuclear,Low RE/BESS Cost,11126028
+statedpolicy_dgsolar_nuclear_lowrecost,2040,SP + High Solar + Nuclear,Low RE/BESS Cost,-1
+statedpolicy_dgsolar_nuclear_lowrecost,2050,SP + High Solar + Nuclear,Low RE/BESS Cost,-3
+statedpolicy_dgsolar_nuclear_mid,2030,SP + High Solar + Nuclear,Mid,20409741
+statedpolicy_dgsolar_nuclear_mid,2040,SP + High Solar + Nuclear,Mid,6802189
+statedpolicy_dgsolar_nuclear_mid,2050,SP + High Solar + Nuclear,Mid,16089015
+statedpolicy_dgsolar_nuclear_noflexibleload,2030,SP + High Solar + Nuclear,No Flexible Load,21946725
+statedpolicy_dgsolar_nuclear_noflexibleload,2040,SP + High Solar + Nuclear,No Flexible Load,9217466
+statedpolicy_dgsolar_nuclear_noflexibleload,2050,SP + High Solar + Nuclear,No Flexible Load,23740263
+statedpolicy_dgsolar_nuclear_nointertrans,2030,SP + High Solar + Nuclear,No Interregional Transmission Upgrade,20698243
+statedpolicy_dgsolar_nuclear_nointertrans,2040,SP + High Solar + Nuclear,No Interregional Transmission Upgrade,0
+statedpolicy_dgsolar_nuclear_nointertrans,2050,SP + High Solar + Nuclear,No Interregional Transmission Upgrade,0
+statedpolicy_doublezcfcost,2030,Stated Policy (SP),Doubled ZCF Fuel Price,9918646
+statedpolicy_doublezcfcost,2040,Stated Policy (SP),Doubled ZCF Fuel Price,1293448
+statedpolicy_doublezcfcost,2050,Stated Policy (SP),Doubled ZCF Fuel Price,2865217
+statedpolicy_highngcost,2030,Stated Policy (SP),High NatGas Price,640973
+statedpolicy_highngcost,2040,Stated Policy (SP),High NatGas Price,0
+statedpolicy_highngcost,2050,Stated Policy (SP),High NatGas Price,0
+statedpolicy_highrecost,2030,Stated Policy (SP),High RE/BESS Cost,18604972
+statedpolicy_highrecost,2040,Stated Policy (SP),High RE/BESS Cost,19346570
+statedpolicy_highrecost,2050,Stated Policy (SP),High RE/BESS Cost,10178473
+statedpolicy_instaterps_doublezcfcost,2030,SP + 80% Instate,Doubled ZCF Fuel Price,9918607
+statedpolicy_instaterps_doublezcfcost,2040,SP + 80% Instate,Doubled ZCF Fuel Price,24909208
+statedpolicy_instaterps_doublezcfcost,2050,SP + 80% Instate,Doubled ZCF Fuel Price,126206237
+statedpolicy_instaterps_highngcost,2030,SP + 80% Instate,High NatGas Price,640990
+statedpolicy_instaterps_highngcost,2040,SP + 80% Instate,High NatGas Price,24070348
+statedpolicy_instaterps_highngcost,2050,SP + 80% Instate,High NatGas Price,104809054
+statedpolicy_instaterps_highrecost,2030,SP + 80% Instate,High RE/BESS Cost,18604949
+statedpolicy_instaterps_highrecost,2040,SP + 80% Instate,High RE/BESS Cost,56589601
+statedpolicy_instaterps_highrecost,2050,SP + 80% Instate,High RE/BESS Cost,248001560
+statedpolicy_instaterps_lowngcost,2030,SP + 80% Instate,Low NatGas Price,15708529
+statedpolicy_instaterps_lowngcost,2040,SP + 80% Instate,Low NatGas Price,47813979
+statedpolicy_instaterps_lowngcost,2050,SP + 80% Instate,Low NatGas Price,147851654
+statedpolicy_instaterps_lowrecost,2030,SP + 80% Instate,Low RE/BESS Cost,5732967
+statedpolicy_instaterps_lowrecost,2040,SP + 80% Instate,Low RE/BESS Cost,27543151
+statedpolicy_instaterps_lowrecost,2050,SP + 80% Instate,Low RE/BESS Cost,108142026
+statedpolicy_instaterps_mid,2030,SP + 80% Instate,Mid,9918607
+statedpolicy_instaterps_mid,2040,SP + 80% Instate,Mid,26127584
+statedpolicy_instaterps_mid,2050,SP + 80% Instate,Mid,132145989
+statedpolicy_instaterps_noflexibleload,2030,SP + 80% Instate,No Flexible Load,10878882
+statedpolicy_instaterps_noflexibleload,2040,SP + 80% Instate,No Flexible Load,28825148
+statedpolicy_instaterps_noflexibleload,2050,SP + 80% Instate,No Flexible Load,120373572
+statedpolicy_instaterps_nointertrans,2030,SP + 80% Instate,No Interregional Transmission Upgrade,9481860
+statedpolicy_instaterps_nointertrans,2040,SP + 80% Instate,No Interregional Transmission Upgrade,25380054
+statedpolicy_instaterps_nointertrans,2050,SP + 80% Instate,No Interregional Transmission Upgrade,129722032
+statedpolicy_lowngcost,2030,Stated Policy (SP),Low NatGas Price,15708611
+statedpolicy_lowngcost,2040,Stated Policy (SP),Low NatGas Price,10935652
+statedpolicy_lowngcost,2050,Stated Policy (SP),Low NatGas Price,13029688
+statedpolicy_lowrecost,2030,Stated Policy (SP),Low RE/BESS Cost,5732790
+statedpolicy_lowrecost,2040,Stated Policy (SP),Low RE/BESS Cost,0
+statedpolicy_lowrecost,2050,Stated Policy (SP),Low RE/BESS Cost,0
+statedpolicy_mid,2030,Stated Policy (SP),Mid,9918646
+statedpolicy_mid,2040,Stated Policy (SP),Mid,1398909
+statedpolicy_mid,2050,Stated Policy (SP),Mid,2828449
+statedpolicy_noflexibleload,2030,Stated Policy (SP),No Flexible Load,10878397
+statedpolicy_noflexibleload,2040,Stated Policy (SP),No Flexible Load,1997106
+statedpolicy_noflexibleload,2050,Stated Policy (SP),No Flexible Load,4303751
+statedpolicy_nointertrans,2030,Stated Policy (SP),No Interregional Transmission Upgrade,9481636
+statedpolicy_nointertrans,2040,Stated Policy (SP),No Interregional Transmission Upgrade,335710
+statedpolicy_nointertrans,2050,Stated Policy (SP),No Interregional Transmission Upgrade,479432
+statedpolicy_nuclear_doublezcfcost,2030,SP + Nuclear,Doubled ZCF Fuel Price,9918646
+statedpolicy_nuclear_doublezcfcost,2040,SP + Nuclear,Doubled ZCF Fuel Price,1718534
+statedpolicy_nuclear_doublezcfcost,2050,SP + Nuclear,Doubled ZCF Fuel Price,3500089
+statedpolicy_nuclear_highngcost,2030,SP + Nuclear,High NatGas Price,640973
+statedpolicy_nuclear_highngcost,2040,SP + Nuclear,High NatGas Price,0
+statedpolicy_nuclear_highngcost,2050,SP + Nuclear,High NatGas Price,0
+statedpolicy_nuclear_highrecost,2030,SP + Nuclear,High RE/BESS Cost,18604592
+statedpolicy_nuclear_highrecost,2040,SP + Nuclear,High RE/BESS Cost,19594412
+statedpolicy_nuclear_highrecost,2050,SP + Nuclear,High RE/BESS Cost,10442922
+statedpolicy_nuclear_instaterps_doublezcfcost,2030,SP + Nuclear + 80% Instate,Doubled ZCF Fuel Price,9918607
+statedpolicy_nuclear_instaterps_doublezcfcost,2040,SP + Nuclear + 80% Instate,Doubled ZCF Fuel Price,28766414
+statedpolicy_nuclear_instaterps_doublezcfcost,2050,SP + Nuclear + 80% Instate,Doubled ZCF Fuel Price,115426533
+statedpolicy_nuclear_instaterps_highngcost,2030,SP + Nuclear + 80% Instate,High NatGas Price,640990
+statedpolicy_nuclear_instaterps_highngcost,2040,SP + Nuclear + 80% Instate,High NatGas Price,26326727
+statedpolicy_nuclear_instaterps_highngcost,2050,SP + Nuclear + 80% Instate,High NatGas Price,102272367
+statedpolicy_nuclear_instaterps_highrecost,2030,SP + Nuclear + 80% Instate,High RE/BESS Cost,18604949
+statedpolicy_nuclear_instaterps_highrecost,2040,SP + Nuclear + 80% Instate,High RE/BESS Cost,58951580
+statedpolicy_nuclear_instaterps_highrecost,2050,SP + Nuclear + 80% Instate,High RE/BESS Cost,230970975
+statedpolicy_nuclear_instaterps_lowngcost,2030,SP + Nuclear + 80% Instate,Low NatGas Price,15708529
+statedpolicy_nuclear_instaterps_lowngcost,2040,SP + Nuclear + 80% Instate,Low NatGas Price,43015506
+statedpolicy_nuclear_instaterps_lowngcost,2050,SP + Nuclear + 80% Instate,Low NatGas Price,147966794
+statedpolicy_nuclear_instaterps_lowrecost,2030,SP + Nuclear + 80% Instate,Low RE/BESS Cost,5732920
+statedpolicy_nuclear_instaterps_lowrecost,2040,SP + Nuclear + 80% Instate,Low RE/BESS Cost,19267270
+statedpolicy_nuclear_instaterps_lowrecost,2050,SP + Nuclear + 80% Instate,Low RE/BESS Cost,84749854
+statedpolicy_nuclear_instaterps_mid,2030,SP + Nuclear + 80% Instate,Mid,9918607
+statedpolicy_nuclear_instaterps_mid,2040,SP + Nuclear + 80% Instate,Mid,29627173
+statedpolicy_nuclear_instaterps_mid,2050,SP + Nuclear + 80% Instate,Mid,127740776
+statedpolicy_nuclear_instaterps_noflexibleload,2030,SP + Nuclear + 80% Instate,No Flexible Load,10878882
+statedpolicy_nuclear_instaterps_noflexibleload,2040,SP + Nuclear + 80% Instate,No Flexible Load,31471285
+statedpolicy_nuclear_instaterps_noflexibleload,2050,SP + Nuclear + 80% Instate,No Flexible Load,119239091
+statedpolicy_nuclear_instaterps_nointertrans,2030,SP + Nuclear + 80% Instate,No Interregional Transmission Upgrade,9481860
+statedpolicy_nuclear_instaterps_nointertrans,2040,SP + Nuclear + 80% Instate,No Interregional Transmission Upgrade,26455277
+statedpolicy_nuclear_instaterps_nointertrans,2050,SP + Nuclear + 80% Instate,No Interregional Transmission Upgrade,125160451
+statedpolicy_nuclear_lowngcost,2030,SP + Nuclear,Low NatGas Price,15708611
+statedpolicy_nuclear_lowngcost,2040,SP + Nuclear,Low NatGas Price,11290785
+statedpolicy_nuclear_lowngcost,2050,SP + Nuclear,Low NatGas Price,13119684
+statedpolicy_nuclear_lowrecost,2030,SP + Nuclear,Low RE/BESS Cost,5732790
+statedpolicy_nuclear_lowrecost,2040,SP + Nuclear,Low RE/BESS Cost,0
+statedpolicy_nuclear_lowrecost,2050,SP + Nuclear,Low RE/BESS Cost,0
+statedpolicy_nuclear_mid,2030,SP + Nuclear,Mid,9918646
+statedpolicy_nuclear_mid,2040,SP + Nuclear,Mid,1765371
+statedpolicy_nuclear_mid,2050,SP + Nuclear,Mid,3597109
+statedpolicy_nuclear_noflexibleload,2030,SP + Nuclear,No Flexible Load,10878397
+statedpolicy_nuclear_noflexibleload,2040,SP + Nuclear,No Flexible Load,2476959
+statedpolicy_nuclear_noflexibleload,2050,SP + Nuclear,No Flexible Load,5032537
+statedpolicy_nuclear_nointertrans,2030,SP + Nuclear,No Interregional Transmission Upgrade,9481636
+statedpolicy_nuclear_nointertrans,2040,SP + Nuclear,No Interregional Transmission Upgrade,576299
+statedpolicy_nuclear_nointertrans,2050,SP + Nuclear,No Interregional Transmission Upgrade,1411914
