@@ -14,7 +14,7 @@ for ( i in 1:length(cases)) {
     {
       temp_cost <- read_csv(temp,col_types = cols()) %>%
         select(-Total) %>%
-        filter(Costs %in% c("cFix","cVar","cNSE","cStart")); 
+        filter(Costs %in% c("cInv","cFOM","cFuel","cNSE","cStart")); 
       NoZone <- dim(temp_cost)[2]-1;
       colnames(temp_cost) <- c("item",c(1:NoZone));
       temp_cost <- temp_cost %>%

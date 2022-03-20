@@ -43,8 +43,7 @@ for (i in 1:n_subregions) {
   if (file.exists(gen_profit_subregion_fn)){
     captured_energy_price_subregion <- read_csv(gen_profit_subregion_fn, col_types = cols()) %>%
       filter(!(Fuel %in% storage_fuel))  %>%
-      select(case, year, Fuel, Scenario, TechSensitivity, AnnualOutput, Capacity , 
-             `Energy Revenue`) %>%
+      select(case, year, Fuel, Scenario, TechSensitivity, AnnualOutput, Capacity, `Energy Revenue`) %>%
       mutate(`Energy Revenue per MWh` = `Energy Revenue`/AnnualOutput) ;
   }
   write_csv(captured_energy_price_subregion,paste0(RunFdr,'/CompiledResults/',Subregions[i],

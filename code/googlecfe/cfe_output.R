@@ -1,5 +1,5 @@
 # Generation Plot ----
-cfe_score <- read_csv(paste0(temp_RunFdr,'/CompiledResults/CFE_table.csv'),
+cfe_score <- read_csv(paste0(temp_RunFdr,'/CompiledResults/tfs_cfe_table.csv'),
                       col_types = cols()) %>%
   mutate(TechSensitivity = factor(TechSensitivity, levels = x_list),
          Scenario = factor(Scenario, levels = y_list)) %>%

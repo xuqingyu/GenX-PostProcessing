@@ -7,6 +7,7 @@ gen_profit <- read_csv(paste0(RunFdr,'/CompiledResults/Settlement_short.csv'),
   left_join(resource_mapping) %>%
   filter(EndCap>20) %>%
   na.omit() %>%
+  filter(!(Fuel %in% flexiload_list)) %>%
   mutate(`Tech Subsidy Revenue` = SubsidyRevenue + RegSubsidyRevenue) %>%
   rename(`Energy Revenue` = EnergyRevenue,
          `Capacity Revenue` = ReserveMarginRevenue,

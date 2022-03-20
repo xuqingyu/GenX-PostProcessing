@@ -18,8 +18,6 @@ for ( i in 1:length(cases)){
         pivot_longer(cols=!c(Zone), names_to = 'Constraint',
                      values_to = 'Price') %>%
         mutate(case = cases[i], year = years[j])
-      # temp_carbon_loadrate_price$case = cases[i]
-      # temp_carbon_loadrate_price$year = years[j]
       if(!exists('carbon_loadrate_price')){
         carbon_loadrate_price <- temp_carbon_loadrate_price;
       }

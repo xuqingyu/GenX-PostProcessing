@@ -10,10 +10,14 @@ for ( i in 1:length(cases)){
   for (j in 1:length(years)){
     temp_emission_loadratecap_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],
                                            "_",years[j],"_",cases[i],
-                                           "/Inputs/CO2LoadRateCap.csv");
+                                           "/Inputs/CO2_loadrate_cap.csv");
     if (file.exists(temp_emission_loadratecap_fn)){
       temp_carbon_loadratecap_raw = read_csv(paste0(temp_emission_loadratecap_fn), 
                                              col_types = cols())
+      if (!('Region description' %in% colnames(temp_carbon_loadratecap_raw))) {
+        temp_carbon_loadratecap_raw <- temp_carbon_loadratecap_raw %>%
+          rename(`Region description` = colnames(temp_carbon_loadratecap_raw)[1])
+      }
       temp_NoCap = (dim(temp_carbon_loadratecap_raw)[2] - 2)/2
       temp_budgetcolumn = paste("CO_2_Max_LoadRate_",c(1:temp_NoCap),sep = "")
       temp_carbon_loadratecap_budget <- temp_carbon_loadratecap_raw %>%
@@ -31,8 +35,6 @@ for ( i in 1:length(cases)){
                                            temp_carbon_loadratecap_membership, 
                                            by = c('Region description','LoadRateCapID')) %>%
         mutate(case = cases[i], year = years[j])
-      # temp_carbon_loadratecap$case = cases[i]
-      # temp_carbon_loadratecap$year = years[j]
       if(!exists('carbon_loadratecap')){
         carbon_loadratecap <- temp_carbon_loadratecap;
       } else {
@@ -49,6 +51,6 @@ if(exists('carbon_loadratecap')){
   print('finish compiling carbon emission cap load emission rate based')
   print(Sys.time())
 } else {
-  print('there are no CO2LoadRateCap.csv')
+  print('there are no CO2_loadrate_cap.csv')
   print(Sys.time())
 }

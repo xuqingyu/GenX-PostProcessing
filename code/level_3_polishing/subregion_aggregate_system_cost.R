@@ -7,15 +7,15 @@ for (i in 1:n_subregions) {
   lse_payment_subregion_fn <- paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Load/LSE_Payment_',temp_total_title,"_with2019_and_DG.csv")
   gen_profit_subregion_fn <- paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Generation/Gen_Profit_',temp_total_title,".csv")
   if (file.exists(lse_payment_subregion_fn)){
-    lse_payment_plot <- read_csv(lse_payment_subregion_fn)
+    lse_payment_plot <- read_csv(lse_payment_subregion_fn, col_types = cols())
   }
   if (file.exists(gen_profit_subregion_fn)){
-    gen_profit_subregion_total <- read_csv(gen_profit_subregion_fn) %>%
+    gen_profit_subregion_total <- read_csv(gen_profit_subregion_fn, col_types = cols()) %>%
       group_by(case,year,Scenario, `TechSensitivity`) %>%
       summarize(`Energy Revenue` = (-1) * sum(`Energy Revenue`),
                 `Energy Charge Payment` = (-1) * sum(`Energy Charge Payment`),
                 `Capacity Revenue` = (-1) * sum(`Capacity Revenue`),
-                `RPS Revenue` = (-1) * sum(`RPS Revenue`),
+                `ESR Revenue` = (-1) * sum(`ESR Revenue`),
                 `Fuel and VOM` = (-1) * sum(`Fuel and VOM`),
                 `FOM` = (-1) * sum(`FOM`),
                 `CAPEX` = (-1) * sum(`CAPEX`),
@@ -30,17 +30,18 @@ for (i in 1:n_subregions) {
            `Energy Export Revenue` = min(0, `Energy Payment` + `Congestion Revenue` + `Transmission Loss Cost` + `Energy Revenue` + `Energy Charge Payment`),
            `Capacity Import Cost` = max(0, `Capacity Payment` + `Capacity Revenue`),
            `Capacity Export Revenue` = min(0, `Capacity Payment` + `Capacity Revenue`),
-           `RPS Import Cost` = max(0, `RPS Total Payment` + `RPS Revenue`),
-           `RPS Export Revenue` = min(0, `RPS Total Payment` + `RPS Revenue`),
+           `RPS Import Cost` = max(0, `RPS Total Payment` + `ESR Revenue`),
+           `RPS Export Revenue` = min(0, `RPS Total Payment` + `ESR Revenue`),
            `CO2 Import Cost` = max(0, `Emission Cost` + `CO2 Revenue`),
            `CO2 Export Revenue` = min(0, `Emission Cost` + `CO2 Revenue`)) %>%
     select(-c(`Energy Payment`,`Congestion Revenue`,`Transmission Loss Cost`,`Energy Revenue`,`Energy Charge Payment`,
               `Capacity Payment`, `Capacity Revenue`,
               `Tech Subsidy Cost`, `Tech Subsidy Revenue`,
-              `RPS Revenue`, `RPS Total Payment`,
+              `ESR Revenue`, `RPS Total Payment`,
               `CO2 Revenue`,`Emission Cost`)) %>%
     filter(year != 2019);
-  gross_load <- read_csv(paste0(RunFdr,"/CompiledResults/",Subregions[i],"/Load/Load_Component_",Subregions[i],".csv")) %>%
+  gross_load <- read_csv(paste0(RunFdr,"/CompiledResults/",Subregions[i],"/Load/Load_Component_",Subregions[i],".csv"), 
+                         col_types = cols()) %>%
     filter(`Load Type` == 'Gross Total') %>%
     mutate(`Gross Total` = TWh*1e6) %>%
     select(-c(`Load Type`,TWh))

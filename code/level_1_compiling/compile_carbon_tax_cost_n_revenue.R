@@ -10,15 +10,21 @@ for ( i in 1:length(cases)){
   for (j in 1:length(years)){
     temp_LSECO2Tax_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",
                                 years[j],"_",cases[i],"/Results/CO2Cost_tax.csv");
+    temp_generator_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",
+                                years[j],"_",cases[i],
+                                "/Inputs/Generators_data.csv");
     if (file.exists(temp_LSECO2Tax_fn)){
+      t_generators <- read_csv(temp_generator_fn, col_types = cols()) %>%
+        select(Zone)
       temp_LSECO2Tax = read_csv(temp_LSECO2Tax_fn, col_types = cols()) %>%
-        group_by(zone) %>%
-        summarize(value = sum(Sum)) %>%
+        mutate(Zone = t_generators$Zone) %>%
+        group_by(Zone) %>%
+        summarize(value = sum(AnnualSum)) %>%
         mutate(item = 'CO2Tax',
                case = cases[i],
                year = years[j])
       temp_GenCO2Tax = read_csv(temp_LSECO2Tax_fn, col_types = cols()) %>%
-        rename(value = Sum) %>%
+        rename(value = AnnualSum) %>%
         mutate(item = 'CO2Tax',
                case = cases[i],
                year = years[j])

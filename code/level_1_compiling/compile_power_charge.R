@@ -6,9 +6,9 @@ print('begin compiling energy charge')
 print(Sys.time())
 for ( i in 1:length(cases)){
   for (j in 1:length(years)){
-    temp_generator_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",
-                                years[j],"_",cases[i],
-                                "/Inputs/Generators_data.csv");
+    # temp_generator_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",
+    #                             years[j],"_",cases[i],
+    #                             "/Inputs/Generators_data.csv");
     temp_charge_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",
                              years[j],"_",cases[i],"/Results/charge.csv");
     if (file.exists(temp_charge_fn)){
@@ -19,9 +19,9 @@ for ( i in 1:length(cases)){
       colnames(temp_charge) <- temp_charge[1,] # make the row one as column name
       temp_charge <- as_tibble(temp_charge[-c(1, dim(temp_charge)[1]),]) 
       # Remove the first row (as it as been set as column names)
-      temp_generator <- read_csv(temp_generator_fn, col_types = cols());
-      temp_charge <- cbind(temp_charge,temp_generator$Fuel);
-      colnames(temp_charge)[dim(temp_charge)[2]] <- "Fuel";
+      # temp_generator <- read_csv(temp_generator_fn, col_types = cols());
+      # temp_charge <- cbind(temp_charge,temp_generator$Fuel);
+      # colnames(temp_charge)[dim(temp_charge)[2]] <- "Fuel";
       # temp_charge <- cbind(temp_charge,temp_generator$cluster);
       # colnames(temp_charge)[dim(temp_charge)[2]] <- "Cluster";
       temp_charge$case = cases[i];
@@ -39,7 +39,8 @@ if(exists('combined_charge')){
   combined_charge <- left_join(combined_charge, zone_mapping, 
                                by = c('Zone' = 'zone')) %>%
     rename(Region = region) %>%
-    select(case, year, Region, Resource, Zone, Fuel, AnnualSum);
+    select(case, year, Region, Resource, Zone, # Fuel, 
+           AnnualSum);
   charge_for_settlement <- combined_charge;
   write_csv(charge_for_settlement, 
             paste0(RunFdr,"/CompiledResults/charge_for_settlement.csv"));
@@ -50,10 +51,10 @@ if(exists('combined_charge')){
   #                            subset(combined_charge, Fuel != "ZCF"));
   #   rm(combined_charge_temp1)
   # }
-  combined_charge <- subset(combined_charge,select = -c(Fuel));
+  # combined_charge <- subset(combined_charge,select = -c(Fuel));
   write_csv(combined_charge, paste0(RunFdr,"/CompiledResults/charge.csv"));
-  rm(temp_generator_fn, temp_charge_fn, temp_charge,
-     combined_charge,charge_for_settlement)
+  rm(temp_charge_fn, temp_charge, combined_charge, charge_for_settlement)
+  # rm(temp_generator_fn, temp_generator)
   print('finished compiling energy charge')
   print(Sys.time())
 } else {

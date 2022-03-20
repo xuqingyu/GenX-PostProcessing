@@ -19,8 +19,6 @@ for ( i in 1:length(cases)){
                                                  c(2:(end-1)), # column 2 is the sum
                                                 names_to = "item") %>%
         mutate(case = cases[i], year = years[j] )
-      # temp_LSECO2Revenue_loadrate$case = cases[i]
-      # temp_LSECO2Revenue_loadrate$year = years[j] 
       if(!exists('LSECO2Revenue_loadrate')) {
         LSECO2Revenue_loadrate <- temp_LSECO2Revenue_loadrate;
       } else {

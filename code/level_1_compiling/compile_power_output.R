@@ -6,9 +6,9 @@ print('begin compiling energy generation')
 print(Sys.time())
 for ( i in 1:length(cases)){
   for (j in 1:length(years)){
-    temp_generator_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",
-                                years[j],"_",cases[i],
-                                "/Inputs/Generators_data.csv");
+    # temp_generator_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",
+    #                             years[j],"_",cases[i],
+    #                             "/Inputs/Generators_data.csv");
     temp_power_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",years[j],
                             "_",cases[i],"/Results/power.csv");
     if (file.exists(temp_power_fn)){
@@ -22,9 +22,9 @@ for ( i in 1:length(cases)){
       temp_power <- as_tibble(temp_power[-c(1, dim(temp_power)[1]),]) 
       # Remove the first row (as it as been set as column names)
       
-      temp_generator <- read_csv(temp_generator_fn, col_types = cols());
-      temp_power <- cbind(temp_power, temp_generator$Fuel);
-      colnames(temp_power)[dim(temp_power)[2]] <- "Fuel";
+      # temp_generator <- read_csv(temp_generator_fn, col_types = cols());
+      # temp_power <- cbind(temp_power, temp_generator$Fuel);
+      # colnames(temp_power)[dim(temp_power)[2]] <- "Fuel";
       # temp_power <- cbind(temp_power,temp_generator$cluster);
       # colnames(temp_power)[dim(temp_power)[2]] <- "Cluster";
       temp_power$case = cases[i];
@@ -42,7 +42,8 @@ if (exists('combined_power')){
   combined_power <- left_join(combined_power, zone_mapping, 
                               by = c('Zone' = 'zone')) %>%
     rename(Region = region) %>%
-    select(case, year, Resource, Region, Zone, Fuel, AnnualSum);
+    select(case, year, Resource, Region, Zone, #Fuel, 
+           AnnualSum);
   power_for_settlement <- combined_power;
   write_csv(power_for_settlement, 
             paste0(RunFdr,"/CompiledResults/power_for_settlement.csv"));
@@ -53,10 +54,10 @@ if (exists('combined_power')){
   #                           subset(combined_power, Fuel != "ZCF"));
   #   rm(combined_power_temp1)
   # }
-  combined_power <- subset(combined_power,select = -c(Fuel));
+  #combined_power <- subset(combined_power,select = -c(Fuel));
   write_csv(combined_power, paste0(RunFdr,"/CompiledResults/power.csv"));
-  rm(temp_generator_fn, temp_power_fn, temp_power, temp_generator,
-     combined_power,power_for_settlement)
+  rm(temp_power_fn, temp_power, combined_power, power_for_settlement)
+  # rm(temp_generator_fn, temp_generator)
   print('finished compiling energy generation')
   print(Sys.time())
 } else {

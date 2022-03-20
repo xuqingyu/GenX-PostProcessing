@@ -39,7 +39,11 @@ y_list = c(
   '10% CI Part., Adv. Tech. no Comb., 80% CES',
   '10% CI Part., Adv. Tech. Full, 80% CES',
   '10% CI Part., Adv. Tech. Full, no 45Q',
+  "10% CI Part., Curt. Tech., no Ex. Limit",
   '10% CI Part., Adv. Tech. no Comb., no Ex. Limit',
+  "10% CI Part., Adv. Tech. Full, no Ex. Limit",
+  "10% CI Part., Curt. Tech., Hi. Nat. Gas P.",
+  "10% CI Part., Adv. Tech. no Comb., Hi. Nat. Gas P.",
   '10% CI Part., Adv. Tech. Full, Hi. Nat. Gas P.'
   )
 

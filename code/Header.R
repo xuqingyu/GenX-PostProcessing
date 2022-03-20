@@ -1,15 +1,14 @@
 
 # Setting Up Packages -------------------------------------------------
 library(tidyverse)
-library(ggpubr)
-library(cowplot)
+# library(ggpubr)
+# library(cowplot)
 # Actively Scanning Result Folders ---------------------------------------
 
 dir.create(paste0(RunFdr,"/CompiledResults/"), showWarnings = FALSE)
-settings <- read_csv(paste0(RunFdr,"/",settingfile));
+settings <- read_csv(paste0(RunFdr,"/",settingfile), col_types = cols());
 resource_mapping <- select(settings, Resource, Fuel);
 resource_list <- unique(settings$Fuel);
-flexiload_list <- na.omit(unique(settings$FlexibleLoad))
 zone_mapping <- na.omit(select(settings, zone, region)) 
 zone_mapping$zone = as.factor(zone_mapping$zone)
 zone_count <- na.omit(settings$zone_count)
@@ -26,10 +25,6 @@ rto_mapping <- na.omit(select(settings, zone, region,System_membership)) %>%
 rto_mapping$zone <- factor(rto_mapping$zone, levels = zone_mapping$zone)
 Interested_Regions <- as.character(na.omit(settings$Interested_Regions))
 Deep_Dive <- as.character(na.omit(settings$Deep_Dive))
-# Total_1 <- as.character(na.omit(settings$Total_1))
-# Total_title_1 <- as.character(na.omit(settings$Total_1_title))
-# Total_2 <- as.character(na.omit(settings$Total_2))
-# Total_title_2 <- as.character(na.omit(settings$Total_2_title))
 Subregions <- na.omit(unique(settings$Subregions))
 n_subregions <- length(Subregions);
 Subregion_zones <- na.omit(unique(select(settings, Subregions, Subregion_zones)))
@@ -53,7 +48,9 @@ capacity_resource_colors <- as.character(colors$Color) %>% na.omit()
 capacity_resource_levels <- as.character(colors$Fuel) %>% na.omit()
 fuel_list <- as.character(na.omit(settings$Power_Fuel));
 storage_fuel <- as.character(na.omit(settings$Storage_Fuel));
+flexiload_list <- na.omit(unique(settings$FlexibleLoad))
 power_colors <- filter(colors, Fuel %in% fuel_list);
+
 color_list <- as.character(power_colors$Color);
 dir.create(paste0(RunFdr,"/Graphics"), showWarnings = FALSE)
 dir.create(paste0(RunFdr,"/Graphics/EnergyPrice"), showWarnings = FALSE)
@@ -83,7 +80,6 @@ sensitivity_comparison_target <- select(settings,TechSensitivity_Comparison, Tec
 sensitivity_comparison_sensitivity <- select(settings,TechSensitivity_Comparison, TechSensitivity_Comparison_Sensitivity) %>% na.omit() %>% unique()
 interested_scenario <- c(na.omit(unique(settings$Focused_Scenario)))
 
-resource_mapping_includingflexibleload <- select(settings, All_Resource, All_Fuel) %>% na.omit() %>% distinct()
 TS_cases<- settings$TS_cases %>% na.omit()
 TS_cases_id <- settings$TS_cases_id %>% na.omit()
 renewable_fuel <- settings$Renewable_Fuel %>% na.omit()
@@ -91,8 +87,8 @@ clean_fuel <- settings$Clean_Fuel %>% na.omit()
 
 interface <- unique(na.omit(settings$Interface))
 n_interface <- length(interface)
-interface_line_mapping <- select(settings, Interface, Interface_Line, 
-                                 Interface_Line_Direction) %>% na.omit() %>%
+interface_line_mapping <- select(settings, Interface, Interface_Line, Interface_Line_Direction) %>% 
+  na.omit() %>%
   mutate(Interface_Line = as.character(Interface_Line))
 
 

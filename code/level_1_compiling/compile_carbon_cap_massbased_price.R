@@ -12,9 +12,9 @@ for ( i in 1:length(cases)){
                                      years[j],"_",cases[i],"/Results/CO2Price_mass.csv");
     if (file.exists(temp_co2_mass_price_fn)){
       temp_carbon_mass_price = read_csv(paste0(temp_co2_mass_price_fn), 
-                                        col_types = cols(),col_names = F);
-      n_constraint <- dim(temp_carbon_mass_price)[2]-1
-      colnames(temp_carbon_mass_price) <- c('Zone',paste('CO2_Price_',c(1:n_constraint),sep=''))
+                                        col_types = cols(),col_names = T);
+      # n_constraint <- dim(temp_carbon_mass_price)[2]-1
+      # colnames(temp_carbon_mass_price) <- c('Zone',paste('CO2_Price_',c(1:n_constraint),sep=''))
       temp_carbon_mass_price <- temp_carbon_mass_price %>%
         pivot_longer(cols=!c(Zone),
                      names_to = 'Constraint',

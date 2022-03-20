@@ -17,10 +17,10 @@ for ( i in 1:length(cases)) {
       NoZone <- dim(temp_cost)[2]-1;
       colnames(temp_cost) <- c("item",c(1:NoZone));
       temp_cost <- temp_cost %>%
-        pivot_longer(c(2:(NoZone+1)),names_to = 'zone',values_to = 'value') %>%
+        pivot_longer(c(2:(NoZone+1)),names_to = 'Zone',values_to = 'value') %>%
         mutate(case = cases[i],year = years[j]) %>%
-        select(zone,case,year,item,value) %>%
-        mutate(zone = as.numeric(zone), 
+        select(Zone,case,year,item,value) %>%
+        mutate(Zone = as.numeric(Zone), 
                value = as.numeric(value));
       if (!exists('ZonalNSECost')) {
         ZonalNSECost <- temp_cost

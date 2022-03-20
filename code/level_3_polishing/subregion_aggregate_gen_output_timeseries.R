@@ -22,7 +22,7 @@ for ( k in 1:n_subregions){
         temp_power_ts <- temp_power_ts[-c(1,length(temp_power_ts[,1])),];
         colnames(temp_power_ts) <- powercolnames;
         temp_power_ts <- as_tibble(temp_power_ts);
-        temp_power_ts <- cbind(temp_power_ts,select(temp_generator,region, cluster,Fuel)) %>%
+        temp_power_ts <- cbind(temp_power_ts,select(temp_generator,region, cluster, Fuel)) %>%
           rename(Region = region,  Cluster = cluster) %>%
           filter(Region %in% temp_total);
         if ((temp_total_title == 'New Jersey')|(temp_total_title == 'PJM')) {
@@ -32,8 +32,7 @@ for ( k in 1:n_subregions){
 
         temp_power_ts <- temp_power_ts %>% 
           select(-Fuel) %>% 
-          left_join(resource_mapping_includingflexibleload,by=c('Resource' = 'All_Resource')) %>%
-          rename(Fuel = `All_Fuel`) %>%
+          left_join(resource_mapping) %>%
           pivot_longer(cols = !c(Region, Zone, Cluster, Resource, Fuel),names_to = 'Time_index') %>%
           mutate(`Time_index` = as.numeric(str_remove(`Time_index`, 't')), value = as.numeric(value)) %>%
           group_by(Fuel,`Time_index`) %>%
@@ -55,8 +54,7 @@ for ( k in 1:n_subregions){
         }
         temp_charge_ts <- temp_charge_ts %>% 
           select(-Fuel) %>% 
-          left_join(resource_mapping_includingflexibleload,by=c('Resource' = 'All_Resource')) %>%
-          rename(Fuel = `All_Fuel`) %>%
+          left_join(resource_mapping) %>%
           pivot_longer(cols = !c(Region, Zone, Cluster, Resource, Fuel),names_to = 'Time_index') %>%
           mutate(`Time_index` = as.numeric(str_remove(`Time_index`, 't')), value = as.numeric(value)) %>%
           group_by(Fuel,`Time_index`) %>%
@@ -99,12 +97,3 @@ for ( k in 1:n_subregions){
   write_csv(injection_timeseries,paste0(RunFdr,'/CompiledResults/',Subregions[k],'/Generation/Gen_fullyear_timeseries_',temp_total_title,".csv"))
   rm(injection_timeseries)
 }
-
-
-# temp <- read_csv(paste0(RunFdr,'/CompiledResults/',Subregions[1],'/Generation/Gen_fullyear_timeseries_PJM_Google.csv')) %>%
-#   filter(case == 'currentpolicy_25ci_cipannual100', year == 2030,Fuel != 'Flexible Load') %>%
-#   mutate(Fuel = factor(Fuel,levels = capacity_resource_levels))
-# temp_plot <- temp %>% filter(HourID %in% c(1:672))
-# ggplot(data=temp_plot,aes(x=HourID, y=Injection, fill=Fuel)) +
-#   geom_area()+
-#   scale_fill_manual(name = "Resources", values = fuel_colors)

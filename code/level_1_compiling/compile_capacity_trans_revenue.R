@@ -10,15 +10,22 @@ for ( i in 1:length(cases)){
   for (j in 1:length(years)){
     temp_TransCapacityRevenue_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],
                                            "_",years[j],"_",cases[i],
-                                           "/Results/ReserveMarginTransRevenue.csv");
+                                           "/Results/ReserveMarginTransmissionRevenue.csv");
     if (file.exists(temp_TransCapacityRevenue_fn)){
       temp_TransCapacityRevenue = read_csv(temp_TransCapacityRevenue_fn, 
-                                           col_types = cols())
-      end = dim(temp_TransCapacityRevenue)[2]
-      temp_TransCapacityRevenue = pivot_longer(temp_TransCapacityRevenue[-end], 
-                                               c(2:(end-1)),
-                                               names_to = "item") %>%
-        mutate(case = cases[i], year = years[j])
+                                           col_types = cols()) %>%
+        select(-AnnualSum) %>%
+        pivot_longer(cols = -c(Line),
+                     names_to = 'Reserve') %>%
+        mutate(item = 'transrevenue',
+               case = cases[i], 
+               year = years[j])
+        
+      # end = dim(temp_TransCapacityRevenue)[2]
+      # temp_TransCapacityRevenue = pivot_longer(temp_TransCapacityRevenue[-end], 
+      #                                          c(2:(end-1)),
+      #                                          names_to = "item") %>%
+      #   mutate(case = cases[i], year = years[j])
       # temp_TransCapacityRevenue$case = cases[i]
       # temp_TransCapacityRevenue$year = years[j]
       if(!exists('TransCapacityRevenue')) {

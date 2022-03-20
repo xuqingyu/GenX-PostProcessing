@@ -10,7 +10,7 @@ print(Sys.time())
 for ( i in 1:length(cases)){
   for (j in 1:length(years)){
     temp_Res_Mar_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],
-                              "_",years[j],"_",cases[i],"/Results/ReserveMargin_w.csv");
+                              "_",years[j],"_",cases[i],"/Results/ReserveMargin.csv");
     temp_timeweight_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],
                                  "_",years[j],"_",cases[i],"/Results/time_weights.csv");     
     if (file.exists(temp_Res_Mar_fn)){

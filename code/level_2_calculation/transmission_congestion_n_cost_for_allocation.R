@@ -6,18 +6,21 @@ year_levels <- c('start', as.character(years_pre$Model_years));
 years_pre$Model_years <- factor(years_pre$Model_years, levels = year_levels)
 years_pre$Pre_years <- factor(years_pre$Pre_years, levels = year_levels)
 if (zone_count>1){
-  trans_exp_cost <- read_csv(paste0(RunFdr,'/CompiledResults/trans.csv')) %>% select(Line,Cost_Trans_Capacity,case,year)
-  trans_exp_cost$Line <- as.factor(trans_exp_cost$Line)
-  trans_exp_cost$year <- factor(trans_exp_cost$year,levels = year_levels)
+  trans_exp_cost <- read_csv(paste0(RunFdr,'/CompiledResults/trans.csv'),
+                             col_types = cols()) %>% 
+    select(Line,Cost_Trans_Capacity,case,year) %>%
+    mutate(Line = as.factor(Line),
+           year = factor(year, levels = year_levels))
   case_year_list <- unique(select(trans_exp_cost, case, year))
   rto_list <- unique(trans_cost_mapping$SystemOperatorName)
   for (i in (1:dim(case_year_list)[1])){
-    temp_trans_exp_cost <- trans_exp_cost %>% filter(trans_exp_cost$case == case_year_list$case[i],
-                                                     trans_exp_cost$year == case_year_list$year[i])
+    temp_trans_exp_cost <- trans_exp_cost %>% 
+      filter(trans_exp_cost$case == case_year_list$case[i],
+             trans_exp_cost$year == case_year_list$year[i])
     if (length(rto_list>0)){
       temp_trans_exp_cost <- temp_trans_exp_cost %>% 
         left_join(trans_cost_mapping, by = c('Line' = 'Network_lines')) %>%
-        group_by(case,year,SystemOperatorName) %>%
+        group_by(case, year, SystemOperatorName) %>%
         summarize(`Incremental Transmission Cost` = sum(Cost_Trans_Capacity*SystemOperatorShare))
     }
     if (!exists('trans_exp_cost_allocated')){
@@ -59,19 +62,22 @@ if (zone_count>1){
     mutate(`Total Transmission Cost` = `Incremental Transmission Cost` + `Existing Transmission Cost`)
   
   # Congestion Revenue --- 
-  congestion_rev <- read_csv(paste0(RunFdr,'/CompiledResults/TransCongestionRevenue.csv')) %>% select(Line,Sum,case,year)
-  congestion_rev$Line <- as.factor(congestion_rev$Line)
-  congestion_rev$year <- factor(congestion_rev$year,levels = year_levels)
+  congestion_rev <- read_csv(paste0(RunFdr,'/CompiledResults/TransCongestionRevenue.csv'),
+                             col_types = cols()) %>% 
+    select(Line, AnnualSum, case, year) %>%
+    mutate(Line = as.factor(Line),
+           year = factor(year, levels = year_levels))
   case_year_list <- unique(select(congestion_rev, case, year))
   rto_list <- unique(trans_cost_mapping$SystemOperatorName)
   for (i in (1:dim(case_year_list)[1])){
-    temp_congestion_rev <- congestion_rev %>% filter(congestion_rev$case == case_year_list$case[i],
-                                                     congestion_rev$year == case_year_list$year[i])
+    temp_congestion_rev <- congestion_rev %>% 
+      filter(congestion_rev$case == case_year_list$case[i],
+             congestion_rev$year == case_year_list$year[i])
     if (length(rto_list>0)){
       temp_congestion_rev <- temp_congestion_rev %>% 
         left_join(trans_cost_mapping, by = c('Line' = 'Network_lines')) %>%
         group_by(case,year,SystemOperatorName) %>%
-        summarize(`Congestion Revenue` = (-1)*sum(Sum*SystemOperatorShare))
+        summarize(`Congestion Revenue` = (-1)*sum(AnnualSum*SystemOperatorShare))
     }
     if (!exists('congestion_rev_allocated')){
       congestion_rev_allocated <- temp_congestion_rev;
@@ -83,14 +89,16 @@ if (zone_count>1){
     rename(SystemOperator = SystemOperatorName)
   
   # Read in load ----
-  temp_load <- read_csv(paste0(RunFdr,'/CompiledResults/Total_load_summary.csv')) %>%
+  temp_load <- read_csv(paste0(RunFdr,'/CompiledResults/Total_load_summary.csv'),
+                        col_types = cols()) %>%
     rename(loadzone = Region) %>%
     left_join(rto_mapping) %>%
     na.omit()%>% 
-    group_by(case,year,System_membership) %>%
+    group_by(case, year, System_membership) %>%
     summarize(AnnualLoad = sum(AnnualLoad)) %>%
-    rename(SystemOperator = System_membership)
-  temp_load$year <- factor(temp_load$year, levels = year_levels)
+    rename(SystemOperator = System_membership) %>%
+    mutate(year = factor(year, levels = year_levels))
+  # temp_load$year <- factor(temp_load$year, levels = year_levels)
   # Merge load with Transmission Cost Table
   TransmissionCostTable_All <- TransmissionCostTable %>% 
     left_join(temp_load) %>%
