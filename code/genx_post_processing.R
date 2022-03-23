@@ -4,7 +4,8 @@ options(readr.show_progress = FALSE)
 # the naming convention of PG is
 # '[...]/[Running_folder]/[year]/[case_id]_[year]_[case_description]/Results/'
 # so it is in fact preferable to feed in the setup folder;
-RunFdr <- "/tigress/qingyux/GenX/PJM/2022_PJM_CE/pjm_ce_all/"
+RunFdr <- "/Users/qingyuxu/Documents/pjm_ce_all/"
+# RunFdr <- "/tigress/qingyux/GenX/PJM/2022_PJM_CE/pjm_ce_all/"
 settingfile <- 'postprocessing_inputs.csv';
 
 source('./code/Header.R')
@@ -65,6 +66,7 @@ source('./code/level_3_polishing/subregion_aggregate_gen_output.R') #Done
 # source('./code/level_3_polishing/subregion_aggregate_gen_output_timeseries.R') # time consuming
 source('./code/level_3_polishing/subregion_aggregate_gen_curtailment.R') #Done
 source('./code/level_3_polishing/subregion_aggregate_gen_clean_output.R') #Done
+source('./code/level_3_polishing/subregion_aggregate_storage_operation.R') #Done
 source('./code/level_3_polishing/subregion_aggregate_load_component.R') # This is currently tailored for PJM.
 # source('./code/level_3_polishing/subregion_aggregate_load_timeseries.R') # This will use gen_output time-series because flexible load is used.
 source('./code/level_3_polishing/subregion_aggregate_lse_payment.R') # Currently not supported, missing file

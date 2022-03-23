@@ -1,0 +1,4230 @@
+── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
+✔ ggplot2 3.3.5     ✔ purrr   0.3.4
+✔ tibble  3.1.6     ✔ dplyr   1.0.8
+✔ tidyr   1.2.0     ✔ stringr 1.4.0
+✔ readr   2.1.2     ✔ forcats 0.5.1
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+`summarise()` has grouped output by 'case'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+New names:
+* `` -> ...1
+Note: Using an external vector in selections is ambiguous.
+ℹ Use `all_of(temp_budgetcolumn)` instead of `temp_budgetcolumn` to silence this message.
+ℹ See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
+This message is displayed once per session.
+Note: Using an external vector in selections is ambiguous.
+ℹ Use `all_of(temp_membershipcolumn)` instead of `temp_membershipcolumn` to silence this message.
+ℹ See <https://tidyselect.r-lib.org/reference/faq-external-vector.html>.
+This message is displayed once per session.
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+New names:
+* `` -> ...1
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+Joining, by = c("case", "year", "Zone")
+Joining, by = c("case", "year", "Zone")
+Joining, by = c("case", "year", "Zone")
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+Joining, by = c("case", "year", "Zone")
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+Joining, by = c("case", "year", "Zone")
+Joining, by = c("case", "year", "Zone")
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+Joining, by = c("case", "year", "Zone")
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+Joining, by = c("case", "year", "Zone")
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+Joining, by = c("case", "year", "Zone")
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+Joining, by = c("case", "year", "Zone")
+Joining, by = c("case", "year", "Zone")
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = "SystemOperator"
+Joining, by = c("SystemOperator", "case", "year")
+Joining, by = c("case", "year", "SystemOperator")
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+Joining, by = "loadzone"
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+Joining, by = c("case", "year", "SystemOperator")
+Joining, by = c("case", "year", "SystemOperator")
+Joining, by = c("case", "year", "SystemOperator", "AnnualLoad")
+Joining, by = c("case", "year", "SystemOperator")
+`summarise()` has grouped output by 'Zone', 'Region', 'case'. You can override
+using the `.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'Constraint', 'case'. You can override
+using the `.groups` argument.
+There were 30 warnings (use warnings() to see them)
+Joining, by = "Resource"
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+Joining, by = "Resource"
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+Error: '/tigress/qingyux/GenX/PJM/2022_PJM_CE/pjm_ce_allCompiledResults/power.csv' does not exist.
+Execution halted

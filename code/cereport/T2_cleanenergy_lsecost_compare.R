@@ -1,11 +1,12 @@
 # CE Report theme plot 2 Clean energy share comparison
 # Created by Qingyu Xu
 # Created on Oct 6, 2021
-settingfile <- 'sample_inputs_pjm_additional.csv';
-RunFdr <- '/Users/qingyuxu/Documents/PJM_QX_2022_PH1_newwacc'
+settingfile <- 'postprocessing_inputs.csv';
+RunFdr <-"/Users/qingyuxu/Documents/pjm_ce_all/"
 source('./code/Header.R')
 ScenarioFilter = c('Cap-and-Trade (40% Reduction Compare to 2005 Level)',
                    'Cap-and-Trade (45% Reduction Compare to 2005 Level)',
+                   'Cap-and-Trade (85% Reduction Compare to 2005 Level)',
                    'Cap-and-Trade (100% Reduction Compare to 2005 Level)',
                    'Clean Energy Standard (40%)',
                    'Clean Energy Standard (45%)',
@@ -46,14 +47,21 @@ for (i in 1:n_subregions){
   
   cleanenergy <- read_csv(paste0(RunFdr,'/CompiledResults/',
                                           Subregions[i],'/Generation/Gen_Output_',
-                                          temp_total_title,"_withDG.csv")) %>%
+                                          temp_total_title,".csv")) %>%
     filter(Fuel %in% na.omit(clean_fuel)) %>%
     group_by(year, Scenario, TechSensitivity) %>%
     summarize(TotalCEOutput = sum(AnnualOutput)/1e6) %>%
     mutate(Scenario = factor(Scenario, levels = scenario),
            TechSensitivity = factor(TechSensitivity, levels = tech_sensitivity))
+  storage_loss <- read_csv(paste0(RunFdr,'/CompiledResults/',
+                                       Subregions[i],'/Generation/Stor_Operation_',
+                                       temp_total_title,".csv")) %>%
+    group_by(year, Scenario, TechSensitivity) %>%
+    summarize(AnnualLoss = sum(AnnualLoss)) %>%
+    select(year, Scenario, TechSensitivity, AnnualLoss)
   lse_clean_energy_share = left_join(lse_cost_vs_emission, cleanenergy) %>%
-    mutate(CEshare = round(TotalCEOutput*1e6/`Gross Total`,2)) %>%
+    left_join(storage_loss) %>%
+    mutate(CEshare = round(TotalCEOutput*1e6/(`Gross Total` + AnnualLoss),2)) %>%
     filter(!(Scenario %in% ScenarioFilter))
   lse_clean_energy_share$TechSensitivity[which(lse_clean_energy_share$TechSensitivity == "New Gas Capacity Caped at 20% of Existing")] <- 'New Gas Capacity Capped at 20% of Existing Gas'
   cost_max <- max(lse_clean_energy_share$`LSE Net Payment ($/MWh)`)
