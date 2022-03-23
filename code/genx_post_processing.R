@@ -5,6 +5,7 @@ options(readr.show_progress = FALSE)
 # '[...]/[Running_folder]/[year]/[case_id]_[year]_[case_description]/Results/'
 # so it is in fact preferable to feed in the setup folder;
 RunFdr <- "/Users/qingyuxu/Documents/pjm_ce_all/"
+# RunFdr <- "/tigress/qingyux/GenX/PJM/2022_PJM_CE/pjm_ce_all/"
 settingfile <- 'postprocessing_inputs.csv';
 
 source('./code/Header.R')
