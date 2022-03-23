@@ -1,8 +1,8 @@
 # CE Report theme plot 1 Emission comparison
 # Created by Qingyu Xu
 # Created on Oct 6, 2021
-settingfile <- 'sample_inputs_pjm_additional.csv';
-RunFdr <- '/Users/qingyuxu/Documents/PJM_QX_2022_PH1_newwacc'
+settingfile <- 'postprocessing_inputs.csv';
+RunFdr <-"/Users/qingyuxu/Documents/pjm_ce_all/"
 source('./code/Header.R')
 # Reference_Emission <- as_tibble(cbind(`Load Emissions Rate (Ton/MWh)` = c(0.466, 0.304, 0.243, 0.182, 0.152, 0.122, 0.061),
 #                                 Reference = c('2019 Level (simulated)','50% Emission Reduction of 2005 level',
@@ -14,6 +14,7 @@ Reference_Emission <- as_tibble(cbind(`Load Emissions Rate (Ton/MWh)` = c(0.466,
 Reference_Emission$`Load Emissions Rate (Ton/MWh)` = as.numeric(Reference_Emission$`Load Emissions Rate (Ton/MWh)`)
 ScenarioFilter = c('Cap-and-Trade (40% Reduction Compare to 2005 Level)',
                    'Cap-and-Trade (45% Reduction Compare to 2005 Level)',
+                   'Cap-and-Trade (85% Reduction Compare to 2005 Level)',
                    'Cap-and-Trade (100% Reduction Compare to 2005 Level)',
                    'Clean Energy Standard (40%)',
                    'Clean Energy Standard (45%)',
@@ -47,9 +48,17 @@ tech_sensitivity <- c(tech_sensitivity,'New Gas Capacity Capped at 20% of Existi
 for (i in 1:n_subregions){
   temp_total_title <- Subregions[i]
   temp_total <- Subregion_zones$Subregion_zones[Subregion_zones$Subregions == Subregions[i]]
+  storage_loss <- read_csv(paste0(RunFdr,'/CompiledResults/',
+                                  Subregions[i],'/Generation/Stor_Operation_',
+                                  temp_total_title,".csv")) %>%
+    group_by(year, Scenario, TechSensitivity) %>%
+    summarize(AnnualLoss = sum(AnnualLoss)) %>%
+    select(year, Scenario, TechSensitivity, AnnualLoss)
   lse_cost_vs_emission <- read_csv(paste0(RunFdr,'/CompiledResults/',
                                           Subregions[i],'/LSE_Cost_Emission_Tradeoff',
                                           temp_total_title,".csv")) %>%
+    left_join(storage_loss) %>%
+    mutate(`Load Emissions Rate (Ton/MWh)` = `Emissions (Mtons)`*1e6/(`Gross Total` + AnnualLoss)) %>%
     mutate(Scenario = factor(Scenario, levels = scenario),
            TechSensitivity = factor(TechSensitivity, levels = tech_sensitivity)) %>%
     filter(!(Scenario %in% ScenarioFilter))

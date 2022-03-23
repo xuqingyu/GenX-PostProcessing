@@ -65,6 +65,7 @@ source('./code/level_3_polishing/subregion_aggregate_gen_output.R') #Done
 # source('./code/level_3_polishing/subregion_aggregate_gen_output_timeseries.R') # time consuming
 source('./code/level_3_polishing/subregion_aggregate_gen_curtailment.R') #Done
 source('./code/level_3_polishing/subregion_aggregate_gen_clean_output.R') #Done
+source('./code/level_3_polishing/subregion_aggregate_storage_operation.R') #Done
 source('./code/level_3_polishing/subregion_aggregate_load_component.R') # This is currently tailored for PJM.
 # source('./code/level_3_polishing/subregion_aggregate_load_timeseries.R') # This will use gen_output time-series because flexible load is used.
 source('./code/level_3_polishing/subregion_aggregate_lse_payment.R') # Currently not supported, missing file
