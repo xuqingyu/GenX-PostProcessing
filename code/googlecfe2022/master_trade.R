@@ -1,11 +1,11 @@
 library(tidyverse)
 
 Studyregion = 'WECC' #WECC
-negtozero <- function(x) {x[x<=0] <-0; return(x)}
 natozero <- function(x) {x[which(is.na(x))] <-0; return(x)}
+negtozero <- function(x) {x[x<=0] <-0; return(x)}
 countercapres <- function(x) {x[x==0] <- (-1); return(x)}
-n_tfs = 1
-cistudy = 1
+n_tfs = 5
+cistudy = 0
 
 settingfile <- 'postprocessing_inputs.csv';
 
@@ -18,7 +18,7 @@ if(Studyregion == 'PJM'){
   }
 } else {
   subreg = 'California'
-  RunFdr <- "/Users/qingyuxu/Documents/WECC_247_upload/";
+  RunFdr <- "/Users/qingyuxu/Documents/WECC_247_trade/";
   if (n_tfs == 1 & cistudy == 1) {
     cfe_load_ori <- read_csv(paste0(RunFdr,'WECC_RPSH_Load_data_1.csv'), col_types = cols())
   }
@@ -27,32 +27,32 @@ if(Studyregion == 'PJM'){
 source('./code/Header.R')
 p_width = 12
 p_height = 7
-Scenario_filter = '10%'
-x_list = c("No 24x7 Purchase", "Hourly 80%",
-           "Hourly 82%","Hourly 84%","Hourly 86%","Hourly 88%","Hourly 90%",
-           "Hourly 92%","Hourly 94%","Hourly 96%","Hourly 98%","Hourly 100%","Annual 100%")
-
-y_list = c(
-  '5% CI Part., Curt. Tech.',
-  '10% CI Part., Curt. Tech.',
-  '25% CI Part., Curt. Tech.',
-  '5% CI Part., Adv. Tech. no Comb.',
-  '10% CI Part., Adv. Tech. no Comb.',
-  '25% CI Part., Adv. Tech. no Comb.',
-  '5% CI Part., Adv. Tech. Full',
-  '10% CI Part., Adv. Tech. Full',
-  '25% CI Part., Adv. Tech. Full',
-  '10% CI Part., Curt. Tech., 80% CES',
-  '10% CI Part., Adv. Tech. no Comb., 80% CES',
-  '10% CI Part., Adv. Tech. Full, 80% CES',
-  '10% CI Part., Adv. Tech. Full, no 45Q',
-  "10% CI Part., Curt. Tech., no Ex. Limit",
-  '10% CI Part., Adv. Tech. no Comb., no Ex. Limit',
-  "10% CI Part., Adv. Tech. Full, no Ex. Limit",
-  "10% CI Part., Curt. Tech., Hi. Nat. Gas P.",
-  "10% CI Part., Adv. Tech. no Comb., Hi. Nat. Gas P.",
-  '10% CI Part., Adv. Tech. Full, Hi. Nat. Gas P.'
-)
+# Scenario_filter = '10%'
+# x_list = c("No 24x7 Purchase", "Hourly 80%",
+#            "Hourly 82%","Hourly 84%","Hourly 86%","Hourly 88%","Hourly 90%",
+#            "Hourly 92%","Hourly 94%","Hourly 96%","Hourly 98%","Hourly 100%","Annual 100%")
+# 
+# y_list = c(
+#   '5% CI Part., Curt. Tech.',
+#   '10% CI Part., Curt. Tech.',
+#   '25% CI Part., Curt. Tech.',
+#   '5% CI Part., Adv. Tech. no Comb.',
+#   '10% CI Part., Adv. Tech. no Comb.',
+#   '25% CI Part., Adv. Tech. no Comb.',
+#   '5% CI Part., Adv. Tech. Full',
+#   '10% CI Part., Adv. Tech. Full',
+#   '25% CI Part., Adv. Tech. Full',
+#   '10% CI Part., Curt. Tech., 80% CES',
+#   '10% CI Part., Adv. Tech. no Comb., 80% CES',
+#   '10% CI Part., Adv. Tech. Full, 80% CES',
+#   '10% CI Part., Adv. Tech. Full, no 45Q',
+#   "10% CI Part., Curt. Tech., no Ex. Limit",
+#   '10% CI Part., Adv. Tech. no Comb., no Ex. Limit',
+#   "10% CI Part., Adv. Tech. Full, no Ex. Limit",
+#   "10% CI Part., Curt. Tech., Hi. Nat. Gas P.",
+#   "10% CI Part., Adv. Tech. no Comb., Hi. Nat. Gas P.",
+#   '10% CI Part., Adv. Tech. Full, Hi. Nat. Gas P.'
+# )
 
 source('./code/googlecfe2022/cfe_table_compile.R')
 source('./code/googlecfe2022/cfe_emission_table_compile.R')

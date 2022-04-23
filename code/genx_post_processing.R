@@ -4,7 +4,7 @@ options(readr.show_progress = FALSE)
 # the naming convention of PG is
 # '[...]/[Running_folder]/[year]/[case_id]_[year]_[case_description]/Results/'
 # so it is in fact preferable to feed in the setup folder;
-RunFdr <- "/Users/qingyuxu/Documents/pjm_ce_all/"
+RunFdr <- "/Users/qingyuxu/Documents/WECC_247_upload/"
 # RunFdr <- "/tigress/qingyux/GenX/PJM/2022_PJM_CE/pjm_ce_all/"
 settingfile <- 'postprocessing_inputs.csv';
 
@@ -15,12 +15,14 @@ source('./code/level_1_compiling/compile_model_cost.R') #Done
 source('./code/level_1_compiling/compile_model_zonal_cost.R') #Done
 source('./code/level_1_compiling/compile_lse_nse_cost.R') #Done
 source('./code/level_1_compiling/compile_energy_demand.R') # Done
+source('./code/level_1_compiling/compile_nonserved_energy.R')
 source('./code/level_1_compiling/compile_capacity.R') #Done
 source('./code/level_1_compiling/compile_power_output.R') #Done
 source('./code/level_1_compiling/compile_power_charge.R') #Done
 source('./code/level_1_compiling/compile_power_curtailment.R') #Done
 # source('./code/level_1_compiling/compile_capacity_value.R') #Done, but very time consuming, probably because the table is too wide
 source('./code/level_1_compiling/compile_transmission.R') #Done
+source('./code/level_1_compiling/compile_zonal_transmission_loss.R')
 source('./code/level_1_compiling/compile_transmission_congestion_revenue.R') # Done
 source('./code/level_1_compiling/compile_lse_transmission_loss_payment.R') # Done
 source('./code/level_1_compiling/compile_generation_settlement.R') #Done
@@ -74,7 +76,7 @@ source('./code/level_3_polishing/subregion_aggregate_system_cost.R') # Currently
 source('./code/level_3_polishing/subregion_aggregate_emissions.R') # Not fully supported
 source('./code/level_3_polishing/subregion_aggregate_emission_v_systemcost.R')
 # source('./code/level_3_polishing/subregion_aggregate_renewable_market.R') # Currently not supported, missing file
-
+source('./code/level_3_polishing/subregion_aggregate_netimport.R')
 
 # PJM study special 
 # source('./code/misc/Trans_Expansion.R')

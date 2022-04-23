@@ -14,7 +14,6 @@ Reference_Emission <- as_tibble(cbind(`Load Emissions Rate (Ton/MWh)` = c(0.466,
 Reference_Emission$`Load Emissions Rate (Ton/MWh)` = as.numeric(Reference_Emission$`Load Emissions Rate (Ton/MWh)`)
 ScenarioFilter = c('Cap-and-Trade (40% Reduction Compare to 2005 Level)',
                    'Cap-and-Trade (45% Reduction Compare to 2005 Level)',
-                   'Cap-and-Trade (85% Reduction Compare to 2005 Level)',
                    'Cap-and-Trade (100% Reduction Compare to 2005 Level)',
                    'Clean Energy Standard (40%)',
                    'Clean Energy Standard (45%)',
@@ -27,10 +26,11 @@ TechSensitivityColorCode = c(
   "High NatGas Price" = '#33a02c',
   "No Interregional Transmission Upgrade" = '#fdbf6f',
   "Half Interregional Transmission Upgrade" = '#ff7f00',
-  "New Gas Capacity Caped at 20% of Existing" = '#cab2d6',
+  "New Gas Capacity Capped at 20% of Existing" = '#cab2d6',
   "No New Gas Installation" = '#6a3d9a',
   "No Nuclear Retirement" = '#b15928',
-  "New Gas Capacity Capped at 20% of Existing Gas" = '#cab2d6')
+  "New Gas Capacity Capped at 20% of Existing Gas" = '#cab2d6',
+  "Allow CCS Expansion" = '#cab2d6')
 TechSensitivityLineType = c(
   "Mid" = 1,
   "Low RE/BESS Cost" = 2,
@@ -39,11 +39,12 @@ TechSensitivityLineType = c(
   "High NatGas Price" = 2,
   "No Interregional Transmission Upgrade" = 2,
   "Half Interregional Transmission Upgrade" = 2,
-  "New Gas Capacity Caped at 20% of Existing" = 2,
+  "New Gas Capacity Capped at 20% of Existing" = 2,
   "No New Gas Installation" = 2,
   "No Nuclear Retirement" = 2,
-  "New Gas Capacity Capped at 20% of Existing Gas" = 2)
-tech_sensitivity <- c(tech_sensitivity,'New Gas Capacity Capped at 20% of Existing Gas')
+  "New Gas Capacity Capped at 20% of Existing Gas" = 2,
+  "Allow CCS Expansion" = 2)
+#tech_sensitivity <- c(tech_sensitivity,'New Gas Capacity Capped at 20% of Existing Gas')
 
 for (i in 1:n_subregions){
   temp_total_title <- Subregions[i]
@@ -62,7 +63,7 @@ for (i in 1:n_subregions){
     mutate(Scenario = factor(Scenario, levels = scenario),
            TechSensitivity = factor(TechSensitivity, levels = tech_sensitivity)) %>%
     filter(!(Scenario %in% ScenarioFilter))
-  lse_cost_vs_emission$TechSensitivity[which(lse_cost_vs_emission$TechSensitivity == "New Gas Capacity Caped at 20% of Existing")] <- 'New Gas Capacity Capped at 20% of Existing Gas'
+  # lse_cost_vs_emission$TechSensitivity[which(lse_cost_vs_emission$TechSensitivity == "New Gas Capacity Caped at 20% of Existing")] <- 'New Gas Capacity Capped at 20% of Existing Gas'
   cost_max <- max(lse_cost_vs_emission$`LSE Net Payment ($/MWh)`)
   cost_min <- min(lse_cost_vs_emission$`LSE Net Payment ($/MWh)`)
   # ler_max <- max(lse_cost_vs_emission$`Load Emissions Rate (Ton/MWh)`[lse_cost_vs_emission$year == '2030'])
@@ -223,6 +224,7 @@ for (i in 1:n_subregions){
     summarise(lsemax = max(`LSE Net Payment ($/MWh)`),
               lsemin = min(`LSE Net Payment ($/MWh)`),
               xler = max(`Load Emissions Rate (Ton/MWh)`))
+  
   ggplot() +
     annotate("rect", xmin = 0, ymin = 0, xmax = ler2019, ymax = cost2019, fill = 'green',alpha = 0.02)+
     annotate("text", x = ler2019/2, y = cost_min-0.5, label = "Emissions & LSE cost lower than 2019") +
@@ -280,6 +282,7 @@ for (i in 1:n_subregions){
            width = 7,
            height= 6)
   
+  
   MajorTechSensitivity <- c('Mid','No Nuclear Retirement')    
   lse_cost_vs_emission_w_policy = cbind(lse_cost_vs_emission, Policy) %>%
     filter(year == '2030',
@@ -336,7 +339,7 @@ for (i in 1:n_subregions){
            width = 7,
            height= 6)
   
-  MajorTechSensitivity <- c('Mid','New Gas Capacity Capped at 20% of Existing Gas','No New Gas Installation')    
+  MajorTechSensitivity <- c('Mid','No New Gas Installation')    
   lse_cost_vs_emission_w_policy = cbind(lse_cost_vs_emission, Policy) %>%
     filter(year == '2030',
            TechSensitivity %in% MajorTechSensitivity,
@@ -445,6 +448,63 @@ for (i in 1:n_subregions){
     guides(color = guide_legend(ncol = 1, title.position = "top"))+
     ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],
                   '/Graphics/lsecost_emission_tradeoff_reverse_cat_transmissionimpact.png'),
+           width = 7,
+           height= 6)
+  
+  
+  MajorTechSensitivity <- c('Mid','Allow CCS Expansion')    
+  lse_cost_vs_emission_w_policy = cbind(lse_cost_vs_emission, Policy) %>%
+    filter(year == '2030',
+           TechSensitivity %in% MajorTechSensitivity,
+           Policy != 'No Federal Policy') %>%
+    arrange(`Load Emissions Rate (Ton/MWh)`)
+  ggplot() +
+    annotate("rect", xmin = 0, ymin = 0, xmax = ler2019, ymax = cost2019, fill = 'green',alpha = 0.05)+
+    annotate("text", x = ler2019/2, y = cost_min-0.5, label = "Emissions & LSE cost lower than 2019") +
+    geom_path(data = filter(lse_cost_vs_emission_w_policy,
+                            Policy == 'Carbon Cap-and-Trade'),
+              aes(y = `LSE Net Payment ($/MWh)`,
+                  x = `Load Emissions Rate (Ton/MWh)`,
+                  color = TechSensitivity),
+              alpha = 0.3) +
+    geom_point(data = filter(lse_cost_vs_emission_w_policy,
+                             Policy == 'Carbon Cap-and-Trade',
+                             TechSensitivity == 'Mid'),
+               aes(y = `LSE Net Payment ($/MWh)`,
+                   x = `Load Emissions Rate (Ton/MWh)`,
+                   color = TechSensitivity),
+               size = 3) +
+    geom_point(data = filter(lse_cost_vs_emission_w_policy,
+                             Policy == 'Carbon Cap-and-Trade',
+                             TechSensitivity != 'Mid'), 
+               aes(y = `LSE Net Payment ($/MWh)`, 
+                   x = `Load Emissions Rate (Ton/MWh)`,
+                   color = TechSensitivity)) +
+    # facet_wrap(.~Policy, strip.position = 'right')+
+    scale_color_manual(values = TechSensitivityColorCode) +
+    geom_vline(xintercept = 0, color = 'red') +
+    geom_vline(xintercept = ler2019, color = 'black') +
+    geom_hline(yintercept = cost2019) +
+    annotate("point", x = ler2019, y = cost2019) +
+    annotate("text", x = ler2019 - 0.05, y = cost2019+1, label = "2019 level") +
+    coord_cartesian(ylim = c(cost_min, cost_max))+
+    scale_x_reverse(limits = c(ler_max,0),
+                    sec.axis = sec_axis(~ (1-./0.607), labels = scales::percent,
+                                        name = '% reduction from 2005 emissions level = 0.607 ton/MWh',
+                                        breaks = seq(from = 0, to = 1, by = 0.1)))+
+    theme_classic2() +
+    ylab("LSE Cost ($/MWh)") +
+    xlab("Load Emission Rate (ton/MWh)")+
+    theme(legend.position = c(0.5,0.8),
+          legend.key = element_rect(fill = "white", colour = "black"),
+          legend.title = element_blank(),
+          axis.line = element_line(colour = "black",size=0),
+          panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(),
+          panel.background = element_rect(colour = "black", size=1.5))+
+    guides(color = guide_legend(ncol = 1, title.position = "top"))+
+    ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],
+                  '/Graphics/lsecost_emission_tradeoff_reverse_cat_ccsimpact.png'),
            width = 7,
            height= 6)
 }

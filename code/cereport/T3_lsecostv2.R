@@ -1,7 +1,7 @@
 p_width = 12
 p_height = 7
-settingfile <- 'sample_inputs_pjm_additional.csv';
-RunFdr <- '/Users/qingyuxu/Documents/PJM_QX_2022_PH1_newwacc'
+settingfile <- 'postprocessing_inputs.csv';
+RunFdr <-"/Users/qingyuxu/Documents/pjm_ce_all/"
 source('./code/Header.R')
 ScenarioFilter = c('Cap-and-Trade (40% Reduction Compare to 2005 Level)',
                    'Cap-and-Trade (45% Reduction Compare to 2005 Level)',
@@ -9,8 +9,8 @@ ScenarioFilter = c('Cap-and-Trade (40% Reduction Compare to 2005 Level)',
                    'Clean Energy Standard (40%)',
                    'Clean Energy Standard (45%)',
                    'Clean Energy Standard (100%)')
-ylims = c(-40,110)
-ybreaks = seq(-40,110,10)
+ylims = c(-90,170)
+ybreaks = seq(-200,200,20)
 for (i in 1:n_subregions) {
   temp_total_title <- Subregions[i]
   temp_total <- Subregion_zones$Subregion_zones[Subregion_zones$Subregions == Subregions[i]]
@@ -42,7 +42,7 @@ for (i in 1:n_subregions) {
                               'Allow CCS Expansion',
                               'Half Interregional Transmission Upgrade',
                               'No Interregional Transmission Upgrade',
-                              'New Gas Capacity Caped at 20% of Existing',
+                              'New Gas Capacity Capped at 20% of Existing',
                               'No New Gas Installation',
                               'No Nuclear Retirement')    
     for (k in 1:length(MajorTechSensitivity)) {
@@ -108,12 +108,12 @@ for (i in 1:n_subregions) {
                                                  Policy == w)
         if (w == 'Clean Energy Standard') {
           xlabel = '% of Total Load Supported by Clean Energy '
-          temp_load_cost_color = select(load_cost_color,-c(`NJ DG Cost`, `RPS Total Payment`))
+          temp_load_cost_color = select(load_cost_color,-c(`RPS Total Payment`))
           temp_lse_payment_plot_w_policy$`Cost Type`[which(temp_lse_payment_plot_w_policy$`Cost Type` == 'RPS Total Payment')] <- 'RPS/CES Total Payment'
         }
         if (w == 'Carbon Cap-and-Trade') {
           xlabel = '% Emission Reduction Compared to the 2005 Level'
-          temp_load_cost_color = select(load_cost_color,-c(`NJ DG Cost`, `RPS/CES Total Payment`))
+          temp_load_cost_color = select(load_cost_color,-c(`RPS/CES Total Payment`))
         }
         ggplot()+
           geom_col(data = temp_lse_payment_plot_w_policy,
@@ -146,7 +146,7 @@ for (i in 1:n_subregions) {
           theme(legend.position = c(0.45,0.9))+
           labs(caption = MajorTechSensitivity[k])+
           guides(fill = guide_legend(nrow = 3))+
-          ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/LSECostBreakDown_capvsces_',w,'_',k,'.png'),
+          ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/LSECost/LSECostBreakDown_capvsces_',w,'_',k,'.png'),
                  width = 7,
                  height = p_height)
       }
@@ -195,7 +195,7 @@ for (i in 1:n_subregions) {
                     y = pos, 
                     label = cost_label), 
                 size = 3)+
-      scale_fill_manual(values = select(load_cost_color,-`NJ DG Cost`)) +
+      scale_fill_manual(values = load_cost_color) +
       geom_text(data=lse_payment_plot_w_policy_2019_total, 
                 aes(x= Scenario,
                     y = pos,
@@ -215,7 +215,7 @@ for (i in 1:n_subregions) {
       theme(legend.position = "none")+
       labs(caption = 'Mid')+
       guides(fill = guide_legend(nrow = 3, title.position = "left"))+
-      ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/LSECostBreakDown_capvsces_2019.png'),
+      ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/LSECost/LSECostBreakDown_capvsces_2019.png'),
              width = 2,
              height = p_height)
     
@@ -266,7 +266,7 @@ for (i in 1:n_subregions) {
                     y = pos, 
                     label = cost_label), 
                 size = 3)+
-      scale_fill_manual(values = select(load_cost_color,-`NJ DG Cost`)) +
+      scale_fill_manual(values = load_cost_color) +
       geom_text(data=lse_payment_plot_w_policy_ref_total, 
                 aes(x= Scenario,
                     y = pos,
@@ -284,7 +284,7 @@ for (i in 1:n_subregions) {
       theme(legend.position = "none")+
       labs(caption = MajorTechSensitivity[k])+
       guides(fill = guide_legend(nrow = 3, title.position = "left"))+
-      ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/LSECostBreakDown_2030_',k,'.png'),
+      ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/LSECost/LSECostBreakDown_2030_',k,'.png'),
              width = 2,
              height = p_height)
   }

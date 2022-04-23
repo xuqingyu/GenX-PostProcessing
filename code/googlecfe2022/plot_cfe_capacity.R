@@ -95,9 +95,35 @@ ggplot(data = filter(cfe_capacity_allcase,
         legend.box.background = element_rect(colour = "black"),
         legend.title = element_blank()) + 
   guides(fill = guide_legend(nrow = 3)) +
-  ggsave(paste0(RunFdr,'/CompiledResults/',subreg,'/Graphics/CFE_Capacity_Expansion_10p_new.png'),
+  ggsave(paste0(RunFdr,'/CompiledResults/',subreg,'/Graphics/',subreg,'_CFE_Capacity_Expansion_10p_new.png'),
          width = 6,
          height = 10)
+
+ggplot(data = filter(cfe_capacity_allcase,
+                     grepl('^25%',Scenario),
+                     !grepl('CES|Hi.|Ex.|45Q',Scenario),
+                     (abs(`Shortfall price`) > 0.1| TechSensitivity == 'Annual 100%')))+
+  geom_col(aes(x = as.character(formatC(round(Target,2),format = 'f',digit = 2)), 
+               y = Capacity/1000, 
+               fill = Fuel),
+           colour="black", size= 0.1) +
+  facet_wrap(Scenario~.,ncol = 1) +
+  scale_fill_manual(name = "Resources", values = fuel_colors) +
+  labs(x = 'CFE Score', y = 'Capacityu (GW)')+
+  geom_hline(yintercept = 0, color = 'grey30')+
+  geom_vline(xintercept = 1.5, linetype = 'dashed', size = 0.3)+
+  coord_cartesian(ylim = cap_limit_25p)+
+  scale_y_continuous(breaks = cap_break_25p)+
+  theme_bw() +
+  theme(legend.position = "bottom",
+        legend.background = element_blank(),
+        legend.box.background = element_rect(colour = "black"),
+        legend.title = element_blank()) + 
+  guides(fill = guide_legend(nrow = 3)) +
+  ggsave(paste0(RunFdr,'/CompiledResults/',subreg,'/Graphics/',subreg,'_CFE_Capacity_Expansion_25p_new.png'),
+         width = 6,
+         height = 10)
+
 # 
 # ggplot(data = filter(cfe_capacity_allcase,
 #                      grepl('^10%',Scenario),

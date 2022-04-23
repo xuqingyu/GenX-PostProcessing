@@ -81,7 +81,7 @@ ggplot() +
   geom_vline(xintercept = 1.5, linetype = 'dashed', size = 0.3)+
   annotate("label", x = 5, y = ref_y,label = 'Reference Case', fill = 'gray',label.size = NA, alpha = 0.5)+
   annotate("text", x = 1, y = 55, label = "100% \nAnnual \nMatching",size = 3) +
-  theme(legend.position = c(0.6,0.7),
+  theme(legend.position = c(0.77,0.90),
         legend.background = element_blank(),
         legend.box.background = element_rect(colour = "black"),
         legend.title = element_blank()) + 
@@ -90,9 +90,10 @@ ggplot() +
   coord_cartesian(ylim = c(0,110)) +
   scale_y_continuous(breaks = seq(from = 0, to = 110, by = 10)) +
   guides(color=guide_legend(ncol=1), fill=guide_legend(ncol=1)) +
-  ggsave(paste0(RunFdr,'/CompiledResults/',subreg,'/Graphics/',Studyregion,'_CILSECost_10p_new.png'),
+  ggsave(paste0(RunFdr,'/CompiledResults/',subreg,'/Graphics/',subreg,'_CILSECost_10p_new.png'),
          width = 6,
          height = 6)
+
 
 ggplot() +
   geom_col(data = filter(ci_lsecost_total, 
@@ -122,7 +123,7 @@ ggplot() +
   geom_vline(xintercept = 1.5, linetype = 'dashed', size = 0.3)+
   annotate("text", x = 1, y = 55, label = "100% \nAnnual \nMatching",size = 3) +
   annotate("label", x = 5, y = ref_y,label = 'Reference Case', fill = 'gray',label.size = NA, alpha = 0.5)+
-  theme(legend.position = c(0.6,0.7),
+  theme(legend.position = c(0.77,0.90),
         legend.background = element_blank(),
         legend.box.background = element_rect(colour = "black"),
         legend.title = element_blank()) + 
@@ -131,7 +132,7 @@ ggplot() +
   coord_cartesian(ylim = c(0,110)) +
   scale_y_continuous(breaks = seq(from = 0, to = 110, by = 10)) +
   guides(color=guide_legend(ncol=1), fill=guide_legend(ncol=1)) +
-  ggsave(paste0(RunFdr,'/CompiledResults/',subreg,'/Graphics/',Studyregion,'_CILSECost_5p_new.png'),
+  ggsave(paste0(RunFdr,'/CompiledResults/',subreg,'/Graphics/',subreg,'_CILSECost_5p_new.png'),
          width = 6,
          height = 6)
 
@@ -163,7 +164,7 @@ ggplot() +
   annotate("text", x = 1, y = 55, label = "100% \nAnnual \nMatching",size = 3) +
   geom_hline(yintercept = 0, color = 'black')+
   geom_vline(xintercept = 1.5, linetype = 'dashed', size = 0.3)+
-  theme(legend.position = c(0.6,0.7),
+  theme(legend.position = c(0.77,0.90),
         legend.background = element_blank(),
         legend.box.background = element_rect(colour = "black"),
         legend.title = element_blank()) + 
@@ -172,7 +173,7 @@ ggplot() +
   coord_cartesian(ylim = c(0,110)) +
   scale_y_continuous(breaks = seq(from = 0, to = 110, by = 10)) +
   guides(color=guide_legend(ncol=1), fill=guide_legend(ncol=1)) +
-  ggsave(paste0(RunFdr,'/CompiledResults/',subreg,'/Graphics/',Studyregion,'_CILSECost_25p_new.png'),
+  ggsave(paste0(RunFdr,'/CompiledResults/',subreg,'/Graphics/',subreg,'_CILSECost_25p_new.png'),
          width = 6,
          height = 6)
 

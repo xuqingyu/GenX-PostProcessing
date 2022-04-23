@@ -1,6 +1,6 @@
 
-settingfile <- 'sample_inputs_pjm_additional.csv';
-RunFdr <- '/Users/qingyuxu/Documents/PJM_QX_2022_PH1_newwacc'
+settingfile <- 'postprocessing_inputs.csv';
+RunFdr <-"/Users/qingyuxu/Documents/pjm_ce_all/"
 source('./code/Header.R')
 energyprice_ts <- read_csv(paste0(RunFdr,'/CompiledResults/EnergyPrice_timeseries.csv')) %>%
   left_join(cases_newnames,by=c('case' = 'case_description')) %>%
@@ -19,7 +19,7 @@ MajorTechSensitivity <- c('Mid',
                           "No Interregional Transmission Upgrade",
                           "No New Gas Installation", 
                           "Allow CCS Expansion", 
-                          "New Gas Capacity Caped at 20% of Existing", 
+                          "New Gas Capacity Capped at 20% of Existing", 
                           "Half Interregional Transmission Upgrade", 
                           "No Nuclear Retirement")
 ScenarioFilter = c('Cap-and-Trade (40% Reduction Compare to 2005 Level)',

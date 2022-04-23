@@ -1,5 +1,5 @@
-RunFdr <- "/Users/qingyuxu/Documents/PJM_QX_2022_PH1_newwacc/";
-settingfile <- 'sample_inputs_pjm_additional.csv';
+settingfile <- 'postprocessing_inputs.csv';
+RunFdr <-"/Users/qingyuxu/Documents/pjm_ce_all/"
 source('./code/Header.R')
 p_width = 12
 p_height = 7
@@ -16,7 +16,7 @@ for (i in 1:n_subregions) {
   temp_total <- Subregion_zones$Subregion_zones[Subregion_zones$Subregions == Subregions[i]]
   if ((temp_total_title == 'New Jersey')|(temp_total_title == 'PJM')) {
     gen_capacity_subregion_fn <- paste0(RunFdr,'/CompiledResults/',
-                                        Subregions[i],'/Generation/Gen_Capacity_w_2019',
+                                        Subregions[i],'/Generation/Gen_Capacity_',
                                         temp_total_title,".csv")
     gen_output_subregion_fn <- paste0(RunFdr,'/CompiledResults/',Subregions[i],
                                       '/Generation/Gen_Output_',temp_total_title,".csv")
@@ -37,13 +37,14 @@ for (i in 1:n_subregions) {
                               "No Interregional Transmission Upgrade",
                               "No New Gas Installation", 
                               "Allow CCS Expansion", 
-                              "New Gas Capacity Caped at 20% of Existing", 
+                              "New Gas Capacity Capped at 20% of Existing", 
                               "Half Interregional Transmission Upgrade", 
                               "No Nuclear Retirement")
     
     gen_capacity_subregion_plot_all <- read_csv(gen_capacity_subregion_fn, col_types = cols()) %>%
       pivot_longer(!c(case,year,Fuel,Scenario, TechSensitivity),names_to = 'Capacity Type') %>%
       filter(`Capacity Type` == 'Capacity') %>%
+      filter(Fuel != 'Adv. Nuclear') %>%
       mutate(TechSensitivity = factor(TechSensitivity, levels = tech_sensitivity),
              Fuel = factor(Fuel, levels = capacity_resource_levels),
              `Capacity (GW)` = value/1000,
@@ -124,7 +125,7 @@ for (i in 1:n_subregions) {
           xlab(xlabel)+
           # coord_cartesian(ylim=c(0,limits))+
           # ggtitle(label = paste0('Generation Capacity of ', temp_total_title, ' under \nSensitivity ',interested_sensitivity[k]))+
-          ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/GenCapacity_2030_',w,'_',k,'.png'),
+          ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/GenCapacity/GenCapacity_2030_',w,'_',k,'.png'),
                  width = 7,
                  height = p_height)
       }
@@ -140,11 +141,11 @@ for (i in 1:n_subregions) {
              Fuel = factor(Fuel, levels = capacity_resource_levels),
              `Capacity (GW)` = value/1000) %>%
       select(-c(value,`Capacity Type`)) %>%
-      filter(year == '2019',
+      filter(year == '2021',
              TechSensitivity == 'Mid',
              Scenario %in% c('Cap-and-Trade (80% Reduction Compare to 2005 Level)')) %>%
       mutate(TechSensitivity = factor(TechSensitivity, levels = MajorTechSensitivity),
-             Scenario = '2019 Reference') %>%
+             Scenario = '2021 Reference') %>%
       arrange(Fuel)%>%
       group_by(case,year,Scenario,TechSensitivity)%>%
       mutate(capacitylabel = round(`Capacity (GW)`,1))%>%
@@ -177,7 +178,7 @@ for (i in 1:n_subregions) {
       xlab("")+
       # coord_cartesian(ylim=c(0,limits))+
       # ggtitle(label = paste0('Generation Capacity of ', temp_total_title, ' under \nSensitivity ',interested_sensitivity[k]))+
-      ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/GenCapacity_2019_capvsces.png'),
+      ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/GenCapacity/GenCapacity_2019_capvsces.png'),
              width = 2,
              height = p_height)
     
@@ -225,7 +226,7 @@ for (i in 1:n_subregions) {
         labs(caption = MajorTechSensitivity[k])+
         # coord_cartesian(ylim=c(0,limits))+
         # ggtitle(label = paste0('Generation Capacity of ', temp_total_title, ' under \nSensitivity ',interested_sensitivity[k]))+
-        ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/GenCapacity_2030_Reference_',k,'.png'),
+        ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],'/Graphics/GenCapacity/GenCapacity_2030_Reference_',k,'.png'),
                width = 2,
                height = p_height)
       

@@ -28,7 +28,7 @@ for ( i in 1:length(cases)){
                             each = n_hour_per_period) - 1) * n_hour_per_period + 
                          rep(c(1:n_hour_per_period), times = n_period))
     for (k in 1:n_tfs) {
-      cfe_load_ori <- read_csv(paste0(RunFdr,Studyregion,"_RPSH_Load_data_", n_tfs,".csv"), col_types = cols())[,-1]
+      cfe_load_ori <- read_csv(paste0(RunFdr,Studyregion,"_RPSH_Load_data_", k,".csv"), col_types = cols())[,-1]
       temp_cfeload_all = cfe_load_ori[original_hourid, ]
       if (cistudy == 1) {
         if (grepl('_5ci', cases[i])) {
@@ -134,13 +134,18 @@ for ( i in 1:length(cases)) {
           mutate(`PPA Cost` = (Fixed_OM_cost_MW + Fixed_OM_cost_MWh + Var_OM_cost_out +
                                  Var_OM_cost_in + Fuel_cost + Charge_cost + EmissionsCost +
                                  StartCost + Inv_cost_MW + Inv_cost_MWh), # + EmissionsCapture
-                 `Gen Benefit` = (-1)*(EnergyRevenue + SubsidyRevenue + 
-                                         ReserveMarginRevenue + ESRRevenue + RegSubsidyRevenue)) %>%
-          select(case, year, Policy, `PPA Cost`, `Gen Benefit`, ESRRevenue) %>%
+                 # `Gen Benefit` = (-1)*(EnergyRevenue + SubsidyRevenue + 
+                 #                         ReserveMarginRevenue + ESRRevenue + RegSubsidyRevenue)) %>%
+                 `Gen Benefit` = (-1)*(EnergyRevenue + SubsidyRevenue +
+                                         ReserveMarginRevenue + RegSubsidyRevenue)) %>%
+          # select(case, year, Policy, `PPA Cost`, `Gen Benefit`, ESRRevenue) %>%
+          select(case, year, Policy, `PPA Cost`, `Gen Benefit`) %>%
           group_by(case, year, Policy) %>%
+          # summarise(`PPA Cost` = sum(`PPA Cost`),
+          #           `Gen Benefit` = sum(`Gen Benefit`),
+          #           ESRRevenue = sum(ESRRevenue)) %>%
           summarise(`PPA Cost` = sum(`PPA Cost`),
-                    `Gen Benefit` = sum(`Gen Benefit`),
-                    ESRRevenue = sum(ESRRevenue)) %>%
+                    `Gen Benefit` = sum(`Gen Benefit`)) %>%
           mutate(Policy = as.character(Policy))
         temp_drsaving <- temp_genprofit_all[intersect(cfe_rows, dr_rows), ] %>%
           mutate(Policy = k, case = cases[i], year = years[j]) %>%
@@ -152,11 +157,15 @@ for ( i in 1:length(cases)) {
                     `Capacity Savings` = sum(`Capacity Savings`)) %>%
           mutate(Policy = as.character(Policy))
       } else {
+        # temp_genprofit <- as_tibble(cbind(case = cases[i], year = years[j],Policy = k,
+        #                                       `PPA Cost`= 0,`Gen Benefit` = 0, ESRRevenue = 0)) %>%
+        #   mutate(`PPA Cost` = as.numeric(`PPA Cost`),
+        #          `Gen Benefit` = as.numeric(`Gen Benefit`),
+        #          ESRRevenue = as.numeric(ESRRevenue))
         temp_genprofit <- as_tibble(cbind(case = cases[i], year = years[j],Policy = k,
-                                              `PPA Cost`= 0,`Gen Benefit` = 0, ESRRevenue = 0)) %>%
+                                          `PPA Cost`= 0,`Gen Benefit` = 0)) %>%
           mutate(`PPA Cost` = as.numeric(`PPA Cost`),
-                 `Gen Benefit` = as.numeric(`Gen Benefit`),
-                 ESRRevenue = as.numeric(ESRRevenue))
+                 `Gen Benefit` = as.numeric(`Gen Benefit`))
         temp_drsaving <- as_tibble(cbind(Policy = k, case = cases[i], year = years[j],
                                              `Energy Savings`= 0,`Capacity Savings` = 0)) %>%
           mutate(`Energy Savings` = as.numeric(`Energy Savings`),
@@ -180,18 +189,49 @@ for ( i in 1:length(cases)) {
   }
 }
 rm(temp_generator_fn, temp_genprofit_fn,temp_genprofit_all, temp_generator )
+
+if (exists('tfsloadcost')) {rm(tfsloadcost)}
+for ( i in 1:length(cases)) {
+  for (j in 1:length(years)) {
+    temp_tfsloadcost_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",
+                                years[j],"_",cases[i],"/Results/tfs_loadcost.csv");
+    if (file.exists(temp_tfsloadcost_fn)) {
+      temp_tfsloadcost <- read_csv(temp_tfsloadcost_fn, col_types = cols()) %>%
+        mutate(case = cases[i], year = years[j]) %>%
+        rename(TEACCost = AnnualSum, Policy = Policy_ID)
+      if(!exists('tfsloadcost')) {
+        tfsloadcost <- temp_tfsloadcost;
+        rm(temp_tfsloadcost)
+      } else {
+        tfsloadcost <- rbind(tfsloadcost, temp_tfsloadcost)
+        rm(temp_tfsloadcost)
+      }
+    }
+  }
+}
+tfsloadcost <- tfsloadcost %>%
+  mutate(Policy = as.character(Policy))
+rm(temp_tfsloadcost_fn)
+
 load_payment_withname_combined <- left_join(load_payment_withname, drsavings) %>%
   mutate(`Energy Payment` = as.numeric(`Energy Payment`),
          `Capacity Payment` = as.numeric(`Capacity Payment`)) %>%
-  mutate(`Energy Payment` = `Energy Payment` + `Energy Savings`,
-         `Capacity Payment` = `Capacity Payment` + `Capacity Savings`) %>%
+  mutate(`Energy Payment` = `Energy Payment` + natozero(`Energy Savings`),
+         `Capacity Payment` = `Capacity Payment` + natozero(`Capacity Savings`)) %>%
   mutate(`Participated Load` = as.numeric(`Participated Load`)) %>%
   select(-c(`Energy Savings`, `Capacity Savings`)) %>%
   left_join(load_allocatedcost) %>%
   left_join(ppanet);
-nontfsrows = which(!grepl('nocip',load_payment_withname_combined$case))
-load_payment_withname_combined$`RPS Total Payment`[nontfsrows] <- load_payment_withname_combined$ESRRevenue[nontfsrows]
-load_payment_withname_combined <- select(load_payment_withname_combined, -c(ESRRevenue))
+
+if (exists('tfsloadcost')) {
+  load_payment_withname_combined <- left_join(load_payment_withname_combined,
+                                              tfsloadcost) %>%
+  mutate(TEACCost = natozero(TEACCost))
+  }
+
+# nontfsrows = which(!grepl('nocip',load_payment_withname_combined$case))
+# load_payment_withname_combined$`RPS Total Payment`[nontfsrows] <- load_payment_withname_combined$ESRRevenue[nontfsrows]
+# load_payment_withname_combined <- select(load_payment_withname_combined, -c(ESRRevenue))
 
 load_payment_withname_combined_long <- load_payment_withname_combined %>%
   pivot_longer(cols = -c(case,year, Scenario, TechSensitivity, Policy, `Participated Load`)) %>%
