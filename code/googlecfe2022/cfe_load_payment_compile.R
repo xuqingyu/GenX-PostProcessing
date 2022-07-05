@@ -115,7 +115,9 @@ load_allocatedcost$`RPS Total Payment`[which(!grepl('nocip',load_allocatedcost$c
 
 # for all other cases which separate RPS constraints
 if (exists('ppanet')) {rm(ppanet)}
+if (exists('tfsprofit')) {rm(tfsprofit)}
 if (exists('drsavings')) {rm(drsavings)}
+# THis set up assumes the buyers first pay for whatever 
 for ( i in 1:length(cases)) {
   for (j in 1:length(years)) {
     temp_generator_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",
@@ -124,29 +126,40 @@ for ( i in 1:length(cases)) {
                                 years[j],"_",cases[i],"/Results/NetRevenue.csv");
     temp_genprofit_all <- read_csv(temp_genprofit_fn, col_types = cols())
     temp_generator <- read_csv(temp_generator_fn, col_types = cols())
+    temp_tfsprofit_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",
+                                years[j],"_",cases[i],"/Results/tfs_genrevenue.csv");
     for (k in 1:n_tfs) {
       if (!grepl('nocip', cases[i])) {
         policy_column = which(colnames(temp_generator) ==paste0('RPSH_',k))
         cfe_rows = which(temp_generator[,policy_column] == 1)
         dr_rows = which(temp_generator$FLEX == 1)
-        temp_genprofit <- temp_genprofit_all[setdiff(cfe_rows, dr_rows), ] %>%
+        stor_rows = which(temp_generator$STOR >= 1)
+        
+        temp_tfsprofit <- read_csv(temp_tfsprofit_fn, col_types = cols())[setdiff(cfe_rows, union(dr_rows,stor_rows)),] %>%
+          mutate(Policy = k, case = cases[i], year = years[j]) %>%
+          select(case, year, Policy, Resource, Zone, AnnualSum) %>%
+          group_by(case, year, Policy) %>%
+          summarize(`TEAC Payment (Gen)` = sum(AnnualSum)) %>%
+          mutate(Policy= as.character(Policy))
+        
+        temp_genprofit <- temp_genprofit_all[intersect(cfe_rows, stor_rows), ] %>%
           mutate(Policy = k, case = cases[i], year = years[j]) %>%
           mutate(`PPA Cost` = (Fixed_OM_cost_MW + Fixed_OM_cost_MWh + Var_OM_cost_out +
                                  Var_OM_cost_in + Fuel_cost + Charge_cost + EmissionsCost +
-                                 StartCost + Inv_cost_MW + Inv_cost_MWh), # + EmissionsCapture
+                                 StartCost + Inv_cost_MW + Inv_cost_MWh + SequestrationCost), 
                  # `Gen Benefit` = (-1)*(EnergyRevenue + SubsidyRevenue + 
                  #                         ReserveMarginRevenue + ESRRevenue + RegSubsidyRevenue)) %>%
-                 `Gen Benefit` = (-1)*(EnergyRevenue + SubsidyRevenue +
-                                         ReserveMarginRevenue + RegSubsidyRevenue)) %>%
+                 `Gen Benefit` = (-1)*(EnergyRevenue + SubsidyRevenue + 
+                                         ReserveMarginRevenue + RegSubsidyRevenue + CO2Credit)) %>%
           # select(case, year, Policy, `PPA Cost`, `Gen Benefit`, ESRRevenue) %>%
           select(case, year, Policy, `PPA Cost`, `Gen Benefit`) %>%
           group_by(case, year, Policy) %>%
-          # summarise(`PPA Cost` = sum(`PPA Cost`),
-          #           `Gen Benefit` = sum(`Gen Benefit`),
-          #           ESRRevenue = sum(ESRRevenue)) %>%
           summarise(`PPA Cost` = sum(`PPA Cost`),
                     `Gen Benefit` = sum(`Gen Benefit`)) %>%
-          mutate(Policy = as.character(Policy))
+          mutate(Policy = as.character(Policy),
+                 `Storage Net Support` = (natozero(`PPA Cost`) + 
+                                        natozero(`Gen Benefit`)))
+        
         temp_drsaving <- temp_genprofit_all[intersect(cfe_rows, dr_rows), ] %>%
           mutate(Policy = k, case = cases[i], year = years[j]) %>%
           mutate(`Energy Savings` = (Charge_cost - EnergyRevenue),
@@ -157,19 +170,27 @@ for ( i in 1:length(cases)) {
                     `Capacity Savings` = sum(`Capacity Savings`)) %>%
           mutate(Policy = as.character(Policy))
       } else {
-        # temp_genprofit <- as_tibble(cbind(case = cases[i], year = years[j],Policy = k,
-        #                                       `PPA Cost`= 0,`Gen Benefit` = 0, ESRRevenue = 0)) %>%
-        #   mutate(`PPA Cost` = as.numeric(`PPA Cost`),
-        #          `Gen Benefit` = as.numeric(`Gen Benefit`),
-        #          ESRRevenue = as.numeric(ESRRevenue))
         temp_genprofit <- as_tibble(cbind(case = cases[i], year = years[j],Policy = k,
-                                          `PPA Cost`= 0,`Gen Benefit` = 0)) %>%
+                                          `PPA Cost`= 0, 
+                                          `Gen Benefit` = 0,
+                                          `Storage Net Support` = 0)) %>%
           mutate(`PPA Cost` = as.numeric(`PPA Cost`),
-                 `Gen Benefit` = as.numeric(`Gen Benefit`))
+                 `Gen Benefit` = as.numeric(`Gen Benefit`),
+                 `Storage Net Support`= as.numeric(`Storage Net Support`))
+        temp_tfsprofit <- as_tibble(cbind(case = cases[i], year = years[j],Policy = k,
+                                          `TEAC Payment (Gen)`= 0)) %>%
+          mutate(`TEAC Payment (Gen)` = as.numeric(`TEAC Payment (Gen)`))
         temp_drsaving <- as_tibble(cbind(Policy = k, case = cases[i], year = years[j],
                                              `Energy Savings`= 0,`Capacity Savings` = 0)) %>%
           mutate(`Energy Savings` = as.numeric(`Energy Savings`),
                  `Capacity Savings` = as.numeric(`Capacity Savings`))
+      }
+      if (!exists('tfsprofit')){
+        tfsprofit <- temp_tfsprofit
+        rm(temp_tfsprofit)
+      } else {
+        tfsprofit <- rbind(tfsprofit, temp_tfsprofit)
+        rm(temp_tfsprofit)
       }
       if(!exists('ppanet')) {
         ppanet <- temp_genprofit;
@@ -213,6 +234,29 @@ tfsloadcost <- tfsloadcost %>%
   mutate(Policy = as.character(Policy))
 rm(temp_tfsloadcost_fn)
 
+if (exists('tfsexportrevenue')) {rm(tfsexportrevenue)}
+for ( i in 1:length(cases)) {
+  for (j in 1:length(years)) {
+    temp_tfsexport_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",
+                                  years[j],"_",cases[i],"/Results/tfs_exportrevenue.csv");
+    if (file.exists(temp_tfsexport_fn)) {
+      temp_tfsexport <- read_csv(temp_tfsexport_fn, col_types = cols()) %>%
+        mutate(case = cases[i], year = years[j]) %>%
+        rename(TEACExchange = AnnualSum, Policy = Policy_ID)
+      if(!exists('tfsexportrevenue')) {
+        tfsexportrevenue <- temp_tfsexport;
+        rm(temp_tfsexport)
+      } else {
+        tfsexportrevenue <- rbind(tfsexportrevenue, temp_tfsexport)
+        rm(temp_tfsexport)
+      }
+    }
+  }
+}
+tfsexportrevenue <- tfsexportrevenue %>%
+  mutate(Policy = as.character(Policy))
+rm(temp_tfsexport_fn)
+
 load_payment_withname_combined <- left_join(load_payment_withname, drsavings) %>%
   mutate(`Energy Payment` = as.numeric(`Energy Payment`),
          `Capacity Payment` = as.numeric(`Capacity Payment`)) %>%
@@ -221,14 +265,24 @@ load_payment_withname_combined <- left_join(load_payment_withname, drsavings) %>
   mutate(`Participated Load` = as.numeric(`Participated Load`)) %>%
   select(-c(`Energy Savings`, `Capacity Savings`)) %>%
   left_join(load_allocatedcost) %>%
-  left_join(ppanet);
+  left_join(ppanet) %>%
+  select(-c(`PPA Cost`, `Gen Benefit`));
 
 if (exists('tfsloadcost')) {
   load_payment_withname_combined <- left_join(load_payment_withname_combined,
                                               tfsloadcost) %>%
   mutate(TEACCost = natozero(TEACCost))
   }
-
+if (exists('tfsexportrevenue')) {
+  load_payment_withname_combined <- left_join(load_payment_withname_combined,
+                                              tfsexportrevenue) %>%
+    mutate(`TEAC Exchange` = -1* natozero(TEACExchange)) %>%
+    select(-`TEACExchange`)
+}
+if (exists('tfsprofit')) {
+  load_payment_withname_combined <- left_join(load_payment_withname_combined,
+                                              tfsprofit)
+}
 # nontfsrows = which(!grepl('nocip',load_payment_withname_combined$case))
 # load_payment_withname_combined$`RPS Total Payment`[nontfsrows] <- load_payment_withname_combined$ESRRevenue[nontfsrows]
 # load_payment_withname_combined <- select(load_payment_withname_combined, -c(ESRRevenue))

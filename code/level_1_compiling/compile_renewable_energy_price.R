@@ -9,7 +9,7 @@ print(Sys.time())
 for ( i in 1:length(cases)){
   for (j in 1:length(years)){
     temp_RPS_CES_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_", 
-                              years[j],"_",cases[i],"/Results/ESR_prices.csv");
+                              years[j],"_",cases[i],"/Results/ESR_prices_penalty.csv");
     if (file.exists(temp_RPS_CES_fn)){
       temp_RPS_CES = read_csv(temp_RPS_CES_fn, col_types = cols()) %>%
         mutate(case = cases[i], year = years[j]) 

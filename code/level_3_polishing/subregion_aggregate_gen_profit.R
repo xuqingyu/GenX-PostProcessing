@@ -16,7 +16,8 @@ gen_profit <- read_csv(paste0(RunFdr,'/CompiledResults/Settlement_short.csv'),
          `CAPEX` = `Inv_cost`,
          `Energy Charge Payment` = `Charge_cost`,
          `Emission Cost` = EmissionsCost,
-         `Emission Capture Cost` = EmissionsCapture,
+         `Emission Capture Cost` = SequestrationCost,
+         `CO2 Credit` = CO2Credit,
          `Sunk Cost` = SunkCost) %>%
   select(-c(SubsidyRevenue,RegSubsidyRevenue))
   

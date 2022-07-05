@@ -14,13 +14,15 @@ if(Studyregion == 'PJM'){
   subreg = 'PJM_Google'
   RunFdr <- "/Users/qingyuxu/Documents/PJM_247/";
   if (n_tfs == 1 & cistudy == 1) {
-    cfe_load_ori <- read_csv(paste0(RunFdr,'PJM_RPSH_Load_data_1.csv'), col_types = cols())
+    cfe_load_ori <- read_csv(paste0(RunFdr,'PJM_RPSH_Load_data_1.csv'), 
+                             col_types = cols())
   }
 } else {
   subreg = 'California'
-  RunFdr <- "/Users/qingyuxu/Documents/WECC_247_trade/";
+  RunFdr <- "/Users/qingyuxu/Documents/WECC_247_trade_ccs100_p500_new//";
   if (n_tfs == 1 & cistudy == 1) {
-    cfe_load_ori <- read_csv(paste0(RunFdr,'WECC_RPSH_Load_data_1.csv'), col_types = cols())
+    cfe_load_ori <- read_csv(paste0(RunFdr,'WECC_RPSH_Load_data_1.csv'), 
+                             col_types = cols())
   }
 }
 
@@ -63,7 +65,8 @@ source('./code/googlecfe2022/cfe_curtailment_compile.R')
 source('./code/googlecfe2022/cfe_gen_ts.R')
 source('./code/googlecfe2022/cfe_modifiedload_compile.R')
 source('./code/googlecfe2022/cfe_load_payment_compile.R')
-
+source('./code/googlecfe2022/cfe_netexport_compile.R')
+source('./code/googlecfe2022/cfe_importexport_compile.R')
 if(Studyregion == 'PJM'){
   subreg = 'PJM_Google'
   if (n_tfs == 1) {

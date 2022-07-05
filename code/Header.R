@@ -78,7 +78,7 @@ sensitivity_comparison <- unique(na.omit(settings$TechSensitivity_Comparison))
 n_sensitivity_comparison <- length(sensitivity_comparison)
 sensitivity_comparison_target <- select(settings,TechSensitivity_Comparison, TechSensitivity_Comparison_Target) %>% na.omit() %>% unique()
 sensitivity_comparison_sensitivity <- select(settings,TechSensitivity_Comparison, TechSensitivity_Comparison_Sensitivity) %>% na.omit() %>% unique()
-interested_scenario <- c(na.omit(unique(settings$Focused_Scenario)))
+# interested_scenario <- c(na.omit(unique(settings$Focused_Scenario)))
 
 TS_cases<- settings$TS_cases %>% na.omit()
 TS_cases_id <- settings$TS_cases_id %>% na.omit()

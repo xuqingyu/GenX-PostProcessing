@@ -4,7 +4,7 @@ options(readr.show_progress = FALSE)
 # the naming convention of PG is
 # '[...]/[Running_folder]/[year]/[case_id]_[year]_[case_description]/Results/'
 # so it is in fact preferable to feed in the setup folder;
-RunFdr <- "/Users/qingyuxu/Documents/WECC_247_upload/"
+RunFdr <- "/Users/qingyuxu/Documents/WECC_247_trade_ccs100_p500_new//"
 # RunFdr <- "/tigress/qingyux/GenX/PJM/2022_PJM_CE/pjm_ce_all/"
 settingfile <- 'postprocessing_inputs.csv';
 
