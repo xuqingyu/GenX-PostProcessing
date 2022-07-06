@@ -179,25 +179,21 @@ if (file.exists(lse_co2_tax_fn)){
 
 # RPS ----
 lse_rps_all_fn <- paste0(RunFdr,'/CompiledResults/LSERPSPayment.csv')
+lse_rps_trans_fn <- paste0(RunFdr,'/CompiledResults/ESRpaymentTransmissionloss.csv')
 if (file.exists(lse_rps_all_fn)) {
   lse_rps_all <- read_csv(lse_rps_all_fn, col_types = cols()) %>%
     mutate(Zone = factor(Zone, levels = zone_mapping$zone))
+  if (file.exists(lse_rps_trans_fn)) {
+    lse_rps_trans <- read_csv(lse_rps_trans_fn, col_types = cols()) %>%
+      mutate(Zone = factor(Zone, levels = zone_mapping$zone))
+    lse_rps_all = rbind(lse_rps_all, lse_rps_trans)
+  }
   lse_rps_load <- lse_rps_all %>%
-    filter(grepl('esrpayment', item)) %>%
+    filter(grepl('esrpayment|esrpaymenttransloss', item)) %>%
     group_by(case, year, Zone) %>%
     summarize(`RPS Payment` = sum(value))
-  # lse_rps_load <- lse_rps_all %>%
-  #   filter(grepl('RPS_LoadPayment_', item) | grepl('RPS_LoadPayment_StorageLoss_', item)) %>%
-  #   group_by(case, year, zone) %>%
-  #   summarize(`RPS Payment` = sum(value))
-  # lse_rps_dg <- lse_rps_all %>%
-  #   filter(grepl('RPS_DG_RevenueOffset_', item)) %>%
-  #   group_by(case, year, zone) %>%
-  #   summarize(`RPS DG Revenue` = sum(value))
   lse_rps <- lse_rps_load %>%
     mutate(`RPS Total Payment` = `RPS Payment`)
-  # lse_rps <- left_join(lse_rps_load, lse_rps_dg) %>%
-  #   mutate(`RPS Total Payment` = `RPS Payment` + `RPS DG Revenue`)
   if (exists('lse_rps')) {
     lse_payment_notrans <- left_join(lse_payment_notrans, lse_rps)
   } else {
