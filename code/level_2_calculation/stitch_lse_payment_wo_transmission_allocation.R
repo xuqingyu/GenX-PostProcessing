@@ -144,6 +144,7 @@ lse_co2_loadrate_fn <- paste0(RunFdr,'/CompiledResults/LSECO2Revenue_loadrate.cs
 if (file.exists(lse_co2_loadrate_fn)){
   lse_co2_loadrate <- read_csv(lse_co2_loadrate_fn, col_types = cols()) %>%
     mutate(Zone = factor(Zone, levels = zone_mapping$zone)) %>%
+    filter(!grepl('StorageLoss',item)) %>%
     group_by(case, year, Zone) %>%
     summarize(`CO2 Revenue Load Rate Cap` = (-1) * sum(value))
   if (exists('lse_co2_loadrate')) {
