@@ -19,7 +19,7 @@ for ( i in 1:length(cases)){
         mutate(item = 'esrpaymenttransloss',
                case = cases[i], 
                year = years[j])
-      if(!exists('LSERPSPayment')) {
+      if(!exists('ESRpaymentTransmissionloss')) {
         ESRpaymentTransmissionloss <- temp_LSERPSPayment;
       } else {
         ESRpaymentTransmissionloss <- rbind(ESRpaymentTransmissionloss, temp_LSERPSPayment);
@@ -29,7 +29,7 @@ for ( i in 1:length(cases)){
 }
 if(exists('ESRpaymentTransmissionloss')){
   write_csv(ESRpaymentTransmissionloss, 
-            paste0(RunFdr,"/CompiledResults/ESRpaymentTransmissionloss.csv"));
+            paste0(RunFdr,"/CompiledResults/ESR_PaymentTransmissionloss.csv"));
   print('finished compiling LSE RPS transmission loss payment')
   print(Sys.time())
 } else {

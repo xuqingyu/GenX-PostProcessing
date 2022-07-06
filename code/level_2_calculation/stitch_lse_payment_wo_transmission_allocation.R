@@ -180,7 +180,7 @@ if (file.exists(lse_co2_tax_fn)){
 
 # RPS ----
 lse_rps_all_fn <- paste0(RunFdr,'/CompiledResults/LSERPSPayment.csv')
-lse_rps_trans_fn <- paste0(RunFdr,'/CompiledResults/ESRpaymentTransmissionloss.csv')
+lse_rps_trans_fn <- paste0(RunFdr,'/CompiledResults/ESR_PaymentTransmissionloss.csv')
 if (file.exists(lse_rps_all_fn)) {
   lse_rps_all <- read_csv(lse_rps_all_fn, col_types = cols()) %>%
     mutate(Zone = factor(Zone, levels = zone_mapping$zone))
