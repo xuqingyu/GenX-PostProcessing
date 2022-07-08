@@ -4,7 +4,7 @@ options(readr.show_progress = FALSE)
 # the naming convention of PG is
 # '[...]/[Running_folder]/[year]/[case_id]_[year]_[case_description]/Results/'
 # so it is in fact preferable to feed in the setup folder;
-RunFdr <- "/Users/qingyuxu/Documents/WECC_247_trade_ccs100_p500_new//"
+RunFdr <- "/Users/qingyuxu/Documents/pjm_ce_0627//"
 # RunFdr <- "/tigress/qingyux/GenX/PJM/2022_PJM_CE/pjm_ce_all/"
 settingfile <- 'postprocessing_inputs.csv';
 
@@ -45,6 +45,8 @@ source('./code/level_1_compiling/compile_energy_lse_payment.R') # Done
 source('./code/level_1_compiling/compile_capacity_lse_payment.R') # Done
 source('./code/level_1_compiling/compile_capacity_trans_revenue.R') # Done
 source('./code/level_1_compiling/compile_renewable_energy_lse_payment.R')
+source('./code/level_1_compiling/compile_renewable_energy_transmissionloss_payment.R')
+source('./code/level_1_compiling/compile_renewable_energy_storageloss_payment.R')
 
 # Level 2: Result Calculation ----
 source('./code/level_2_calculation/stitch_lse_payment_wo_transmission_allocation.R') # Done

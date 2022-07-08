@@ -46,6 +46,7 @@ source('./code/level_1_compiling/compile_capacity_lse_payment.R') # Done
 source('./code/level_1_compiling/compile_capacity_trans_revenue.R') # Done
 source('./code/level_1_compiling/compile_renewable_energy_lse_payment.R')
 source('./code/level_1_compiling/compile_renewable_energy_transmissionloss_payment.R')
+source('./code/level_1_compiling/compile_renewable_energy_storageloss_payment.R')
 # Level 2: Result Calculation ----
 source('./code/level_2_calculation/stitch_lse_payment_wo_transmission_allocation.R') # Done
 source('./code/level_2_calculation/transmission_congestion_n_cost_for_allocation.R') # Done

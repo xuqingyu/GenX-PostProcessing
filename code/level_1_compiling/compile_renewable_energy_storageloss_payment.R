@@ -30,7 +30,7 @@ for ( i in 1:length(cases)){
 if(exists('ESRpaymentStorageloss')){
   write_csv(ESRpaymentStorageloss, 
             paste0(RunFdr,"/CompiledResults/ESR_PaymentStorageloss.csv"));
-  print('finished compiling LSE RPS transmission loss payment')
+  print('finished compiling LSE RPS storage loss payment')
   print(Sys.time())
 } else {
   print('there is no ESR_StoragelossPayment.csv')

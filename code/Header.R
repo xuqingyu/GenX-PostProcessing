@@ -3,6 +3,12 @@
 library(tidyverse)
 library(ggpubr)
 # library(cowplot)
+
+# Setup functions
+natozero <- function(x) {x[which(is.na(x))] <-0; return(x)}
+negtozero <- function(x) {x[x<=0] <-0; return(x)}
+countercapres <- function(x) {x[x==0] <- (-1); return(x)}
+
 # Actively Scanning Result Folders ---------------------------------------
 
 dir.create(paste0(RunFdr,"/CompiledResults/"), showWarnings = FALSE)

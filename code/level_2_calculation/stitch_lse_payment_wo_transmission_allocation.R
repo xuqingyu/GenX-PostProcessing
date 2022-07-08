@@ -16,9 +16,10 @@ if (file.exists(lse_energy_base_fn)) {
 gen_settlement_fn <- paste0(RunFdr,'/CompiledResults/Settlement_short.csv');
 if (file.exists(gen_settlement_fn)) {
   lse_energy_flexible_load <- read_csv(gen_settlement_fn, col_types = cols()) %>%
-    filter(Resource %in% flexiload_list) %>%
+    left_join(resource_mapping) %>%
+    filter(Fuel %in% flexiload_list) %>%
     group_by(case, year, Region) %>%
-    summarize(`Energy Payment Flexible Load` = sum(EnergyRevenue + Charge_cost)) %>% #for now, Energy Revenue for flexible load is in reverse.
+    summarize(`Energy Payment Flexible Load` = (-1)*sum(EnergyRevenue + Charge_cost)) %>% 
     left_join(zone_mapping,by = c("Region" = "region")) %>%
     rename(Zone = zone) %>%
     select(case, year, Zone, `Energy Payment Flexible Load`);
@@ -28,10 +29,9 @@ if (file.exists(gen_settlement_fn)) {
 
 if (exists('lse_energy_base')) {
   if (exists('lse_energy_flexible_load')) {
-    lse_energy <- left_join(lse_energy_base,lse_energy_flexible_load, col_types = cols());
-    lse_energy[is.na(lse_energy)] <- 0 # it is possible that there is no flexible load resource, to enable that the summation will work, we need to change NA to zero
-    lse_energy <- lse_energy %>%
-      mutate(`Energy Payment` = `Energy Payment Base` + `Energy Payment Flexible Load`)
+    lse_energy <- left_join(lse_energy_base,lse_energy_flexible_load) %>%
+      mutate(`Energy Payment` = (natozero(`Energy Payment Base`) + 
+                                   natozero(`Energy Payment Flexible Load`)))
   } else {
     print('ERROR: there is no lse_energy_flexible_load')
   }
@@ -98,7 +98,8 @@ if (file.exists(lse_capacity_all_fn)) {
     lse_capacity_flexible_load <- read_csv(paste0(RunFdr,'/CompiledResults/Settlement_short.csv'), 
                                            col_types = cols()) %>%
       mutate(Zone = factor(Zone, levels = zone_mapping$zone)) %>%
-      filter(Resource %in% flexiload_list) %>%
+      left_join(resource_mapping) %>%
+      filter(Fuel %in% flexiload_list) %>%
       group_by(case,year, Zone) %>%
       summarize(`Capacity Revenue Flexible Load` = (-1)*sum(ReserveMarginRevenue)) %>%
       select(case, year, Zone, `Capacity Revenue Flexible Load`)

@@ -67,6 +67,8 @@ temp_compared_scenario = c('Clean Energy Standard (70%)',
                            'Clean Energy Standard (75%)',
                            'Clean Energy Standard (80%)',
                            'Clean Energy Standard (85%)',
+                           # 'Clean Energy Standard (90%)',
+                           # 'Clean Energy Standard (95%)',
                            'DD (No Policy Reference)')
 for (k in 1:length(interested_sensitivity)){
   temp_plot <- energyprice_ts  %>%
