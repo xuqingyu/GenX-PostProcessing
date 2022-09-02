@@ -16,9 +16,10 @@ if (file.exists(lse_energy_base_fn)) {
 gen_settlement_fn <- paste0(RunFdr,'/CompiledResults/Settlement_short.csv');
 if (file.exists(gen_settlement_fn)) {
   lse_energy_flexible_load <- read_csv(gen_settlement_fn, col_types = cols()) %>%
-    filter(Resource %in% flexiload_list) %>%
+    left_join(resource_mapping) %>%
+    filter(Fuel %in% flexiload_list) %>%
     group_by(case, year, Region) %>%
-    summarize(`Energy Payment Flexible Load` = sum(EnergyRevenue + Charge_cost)) %>% #for now, Energy Revenue for flexible load is in reverse.
+    summarize(`Energy Payment Flexible Load` = (-1)*sum(EnergyRevenue + Charge_cost)) %>% 
     left_join(zone_mapping,by = c("Region" = "region")) %>%
     rename(Zone = zone) %>%
     select(case, year, Zone, `Energy Payment Flexible Load`);
@@ -28,10 +29,9 @@ if (file.exists(gen_settlement_fn)) {
 
 if (exists('lse_energy_base')) {
   if (exists('lse_energy_flexible_load')) {
-    lse_energy <- left_join(lse_energy_base,lse_energy_flexible_load, col_types = cols());
-    lse_energy[is.na(lse_energy)] <- 0 # it is possible that there is no flexible load resource, to enable that the summation will work, we need to change NA to zero
-    lse_energy <- lse_energy %>%
-      mutate(`Energy Payment` = `Energy Payment Base` + `Energy Payment Flexible Load`)
+    lse_energy <- left_join(lse_energy_base,lse_energy_flexible_load) %>%
+      mutate(`Energy Payment` = (natozero(`Energy Payment Base`) + 
+                                   natozero(`Energy Payment Flexible Load`)))
   } else {
     print('ERROR: there is no lse_energy_flexible_load')
   }
@@ -98,7 +98,8 @@ if (file.exists(lse_capacity_all_fn)) {
     lse_capacity_flexible_load <- read_csv(paste0(RunFdr,'/CompiledResults/Settlement_short.csv'), 
                                            col_types = cols()) %>%
       mutate(Zone = factor(Zone, levels = zone_mapping$zone)) %>%
-      filter(Resource %in% flexiload_list) %>%
+      left_join(resource_mapping) %>%
+      filter(Fuel %in% flexiload_list) %>%
       group_by(case,year, Zone) %>%
       summarize(`Capacity Revenue Flexible Load` = (-1)*sum(ReserveMarginRevenue)) %>%
       select(case, year, Zone, `Capacity Revenue Flexible Load`)
@@ -144,6 +145,7 @@ lse_co2_loadrate_fn <- paste0(RunFdr,'/CompiledResults/LSECO2Revenue_loadrate.cs
 if (file.exists(lse_co2_loadrate_fn)){
   lse_co2_loadrate <- read_csv(lse_co2_loadrate_fn, col_types = cols()) %>%
     mutate(Zone = factor(Zone, levels = zone_mapping$zone)) %>%
+    filter(!grepl('StorageLoss',item)) %>%
     group_by(case, year, Zone) %>%
     summarize(`CO2 Revenue Load Rate Cap` = (-1) * sum(value))
   if (exists('lse_co2_loadrate')) {
@@ -179,25 +181,21 @@ if (file.exists(lse_co2_tax_fn)){
 
 # RPS ----
 lse_rps_all_fn <- paste0(RunFdr,'/CompiledResults/LSERPSPayment.csv')
+lse_rps_trans_fn <- paste0(RunFdr,'/CompiledResults/ESR_PaymentTransmissionloss.csv')
 if (file.exists(lse_rps_all_fn)) {
   lse_rps_all <- read_csv(lse_rps_all_fn, col_types = cols()) %>%
     mutate(Zone = factor(Zone, levels = zone_mapping$zone))
+  if (file.exists(lse_rps_trans_fn)) {
+    lse_rps_trans <- read_csv(lse_rps_trans_fn, col_types = cols()) %>%
+      mutate(Zone = factor(Zone, levels = zone_mapping$zone))
+    lse_rps_all = rbind(lse_rps_all, lse_rps_trans)
+  }
   lse_rps_load <- lse_rps_all %>%
-    filter(grepl('esrpayment', item)) %>%
+    filter(grepl('esrpayment|esrpaymenttransloss', item)) %>%
     group_by(case, year, Zone) %>%
     summarize(`RPS Payment` = sum(value))
-  # lse_rps_load <- lse_rps_all %>%
-  #   filter(grepl('RPS_LoadPayment_', item) | grepl('RPS_LoadPayment_StorageLoss_', item)) %>%
-  #   group_by(case, year, zone) %>%
-  #   summarize(`RPS Payment` = sum(value))
-  # lse_rps_dg <- lse_rps_all %>%
-  #   filter(grepl('RPS_DG_RevenueOffset_', item)) %>%
-  #   group_by(case, year, zone) %>%
-  #   summarize(`RPS DG Revenue` = sum(value))
   lse_rps <- lse_rps_load %>%
     mutate(`RPS Total Payment` = `RPS Payment`)
-  # lse_rps <- left_join(lse_rps_load, lse_rps_dg) %>%
-  #   mutate(`RPS Total Payment` = `RPS Payment` + `RPS DG Revenue`)
   if (exists('lse_rps')) {
     lse_payment_notrans <- left_join(lse_payment_notrans, lse_rps)
   } else {

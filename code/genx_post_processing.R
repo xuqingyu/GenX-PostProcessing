@@ -15,12 +15,14 @@ source('./code/level_1_compiling/compile_model_cost.R') #Done
 source('./code/level_1_compiling/compile_model_zonal_cost.R') #Done
 source('./code/level_1_compiling/compile_lse_nse_cost.R') #Done
 source('./code/level_1_compiling/compile_energy_demand.R') # Done
+source('./code/level_1_compiling/compile_nonserved_energy.R')
 source('./code/level_1_compiling/compile_capacity.R') #Done
 source('./code/level_1_compiling/compile_power_output.R') #Done
 source('./code/level_1_compiling/compile_power_charge.R') #Done
 source('./code/level_1_compiling/compile_power_curtailment.R') #Done
 # source('./code/level_1_compiling/compile_capacity_value.R') #Done, but very time consuming, probably because the table is too wide
 source('./code/level_1_compiling/compile_transmission.R') #Done
+source('./code/level_1_compiling/compile_zonal_transmission_loss.R')
 source('./code/level_1_compiling/compile_transmission_congestion_revenue.R') # Done
 source('./code/level_1_compiling/compile_lse_transmission_loss_payment.R') # Done
 source('./code/level_1_compiling/compile_generation_settlement.R') #Done
@@ -43,7 +45,8 @@ source('./code/level_1_compiling/compile_energy_lse_payment.R') # Done
 source('./code/level_1_compiling/compile_capacity_lse_payment.R') # Done
 source('./code/level_1_compiling/compile_capacity_trans_revenue.R') # Done
 source('./code/level_1_compiling/compile_renewable_energy_lse_payment.R')
-
+source('./code/level_1_compiling/compile_renewable_energy_transmissionloss_payment.R')
+source('./code/level_1_compiling/compile_renewable_energy_storageloss_payment.R')
 # Level 2: Result Calculation ----
 source('./code/level_2_calculation/stitch_lse_payment_wo_transmission_allocation.R') # Done
 source('./code/level_2_calculation/transmission_congestion_n_cost_for_allocation.R') # Done
@@ -74,7 +77,7 @@ source('./code/level_3_polishing/subregion_aggregate_system_cost.R') # Currently
 source('./code/level_3_polishing/subregion_aggregate_emissions.R') # Not fully supported
 source('./code/level_3_polishing/subregion_aggregate_emission_v_systemcost.R')
 # source('./code/level_3_polishing/subregion_aggregate_renewable_market.R') # Currently not supported, missing file
-
+source('./code/level_3_polishing/subregion_aggregate_netimport.R')
 
 # PJM study special 
 # source('./code/misc/Trans_Expansion.R')

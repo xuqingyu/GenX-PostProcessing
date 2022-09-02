@@ -48,6 +48,7 @@ if (Studyregion == 'WECC') {
   output_limit_25p = c(0,70)
   output_break_25p = seq(from = 0, to = 70, by = 10)
   nudge_25p = 4.5
+  nudge_25p_am = 15
 } else {
   ci_load_before_time_reduction = 565.90
   output_limit_5p = c(0,40)
@@ -67,25 +68,25 @@ cfe_gen_allcase_total = cfe_gen_allcase %>%
   summarize(AnnualOutput = sum(AnnualOutput))
 
 # Procurement as Ratio of Annual Participating Demand
-ggplot(data = filter(cfe_gen_allcase_total, 
-                     grepl('^10%',Scenario),
-                     !grepl('CES|Hi.|Ex.|45Q',Scenario),
-                     TechSensitivity != 'No 24x7 Purchase'))+
-  geom_col(aes(x= as.character(formatC(round(Target,2),format = 'f',digit = 2)),
-               y = AnnualOutput/ci_load_before_time_reduction/1e6/0.1,
-               fill = Scenario),
-           colour="black", size= 0.1, position = 'dodge') +
-  scale_fill_brewer(palette = 'Set1')+
-  scale_y_continuous(limits = c(0,1.4),breaks = seq(0,1.4,0.1)) +
-  geom_vline(xintercept = 1.5, linetype = 'dashed', size = 0.3)+
-  xlab('CFE Score')+
-  ylab('Procurement as Ratio of Annual Participating Demand') +
-  geom_hline(yintercept = 0, color = 'grey30')+
-  theme_bw() +
-  theme(legend.position = 'none')+
-  ggsave(paste0(RunFdr,'/CompiledResults/',subreg,'/Graphics/CFE_Output_10p_new_norm.png'),
-         width = 6,
-         height = 6)
+# ggplot(data = filter(cfe_gen_allcase_total, 
+#                      grepl('^10%',Scenario),
+#                      !grepl('CES|Hi.|Ex.|45Q',Scenario),
+#                      TechSensitivity != 'No 24x7 Purchase'))+
+#   geom_col(aes(x= as.character(formatC(round(Target,2),format = 'f',digit = 2)),
+#                y = AnnualOutput/ci_load_before_time_reduction/1e6/0.1,
+#                fill = Scenario),
+#            colour="black", size= 0.1, position = 'dodge') +
+#   scale_fill_brewer(palette = 'Set1')+
+#   scale_y_continuous(limits = c(0,1.4),breaks = seq(0,1.4,0.1)) +
+#   geom_vline(xintercept = 1.5, linetype = 'dashed', size = 0.3)+
+#   xlab('CFE Score')+
+#   ylab('Procurement as Ratio of Annual Participating Demand') +
+#   geom_hline(yintercept = 0, color = 'grey30')+
+#   theme_bw() +
+#   theme(legend.position = 'none')+
+#   ggsave(paste0(RunFdr,'/CompiledResults/',subreg,'/Graphics/CFE_Output_10p_new_norm.png'),
+#          width = 6,
+#          height = 6)
 
 ggplot(data = filter(cfe_gen_allcase, 
                      grepl('^10%',Scenario),
@@ -112,7 +113,36 @@ ggplot(data = filter(cfe_gen_allcase,
         legend.background = element_blank(),
         legend.box.background = element_rect(colour = "black"),
         legend.title = element_blank()) + 
-  ggsave(paste0(RunFdr,'/CompiledResults/',subreg,'/Graphics/CFE_Output_10p_new.png'),
+  ggsave(paste0(RunFdr,'/CompiledResults/',subreg,'/Graphics/',subreg,'CFE_Output_10p_new.png'),
+         width = 6,
+         height = 10)
+
+ggplot(data = filter(cfe_gen_allcase, 
+                     grepl('^25%',Scenario),
+                     !grepl('CES|Hi.|Ex.|45Q',Scenario),
+                     TechSensitivity != 'No 24x7 Purchase',
+                     (abs(`Shortfall price`) > 0.1| TechSensitivity == 'Annual 100%')))+
+  geom_col(aes(x= as.character(formatC(round(Target,2),format = 'f',digit = 2)),
+               y = AnnualOutput/1e6, 
+               fill=Fuel),
+           colour="black", size= 0.1) +
+  geom_hline(aes(yintercept = ci_load_before_time_reduction*.25),
+             colour="black", size= .5) +
+  annotate("text", x = 7, y = ci_load_before_time_reduction*.25+nudge_25p,label = 'Annual Demand')+
+  annotate("text", x = 1, y = ci_load_before_time_reduction*.25+nudge_25p_am, label = "100% \nAnnual \nMatching",size = 3) +
+  facet_wrap(Scenario~.,ncol = 1) +
+  scale_fill_manual(name = "Resources", values = fuel_colors) + 
+  coord_cartesian(ylim = output_limit_25p)+
+  scale_y_continuous(breaks = output_break_25p) +
+  labs(x = 'CFE Score', y = 'Generation Output (TWh)')+
+  geom_hline(yintercept = 0, color = 'grey30')+
+  geom_vline(xintercept = 1.5, linetype = 'dashed', size = 0.3)+
+  theme_bw() +
+  theme(legend.position = "bottom",
+        legend.background = element_blank(),
+        legend.box.background = element_rect(colour = "black"),
+        legend.title = element_blank()) + 
+  ggsave(paste0(RunFdr,'/CompiledResults/',subreg,'/Graphics/',subreg,'CFE_Output_25p_new.png'),
          width = 6,
          height = 10)
 

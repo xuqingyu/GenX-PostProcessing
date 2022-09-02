@@ -1,5 +1,5 @@
-settingfile <- 'sample_inputs_pjm_additional.csv';
-RunFdr <- '/Users/qingyuxu/Documents/PJM_QX_2022_PH1_newwacc'
+settingfile <- 'postprocessing_inputs.csv';
+RunFdr <-"/Users/qingyuxu/Documents/pjm_ce_all/"
 source('./code/Header.R')
 cap_price <- read_csv(paste0(RunFdr,'/CompiledResults/Capacity_Price.csv')) %>%
   filter(year == 2030, name == 'CapRes_1')
@@ -9,14 +9,22 @@ lse_cost_vs_emission <- read_csv(paste0(RunFdr,'/CompiledResults/',
   mutate(TechSensitivity = factor(TechSensitivity, levels = tech_sensitivity))
 
 cleanenergy <- read_csv(paste0(RunFdr,'/CompiledResults/',
-                               Subregions[i],'/Generation/Gen_Output_PJM_withDG.csv')) %>%
+                               Subregions[i],'/Generation/Gen_Output_PJM.csv')) %>%
   filter(Fuel %in% na.omit(clean_fuel)) %>%
   group_by(year, Scenario, TechSensitivity) %>%
   summarize(TotalCEOutput = sum(AnnualOutput)/1e6) %>%
   mutate(TechSensitivity = factor(TechSensitivity, levels = tech_sensitivity))
 
+storage_loss <- read_csv(paste0(RunFdr,'/CompiledResults/',
+                                Subregions[i],'/Generation/Stor_Operation_',
+                                temp_total_title,".csv")) %>%
+  group_by(year, Scenario, TechSensitivity) %>%
+  summarize(AnnualLoss = sum(AnnualLoss)) %>%
+  select(year, Scenario, TechSensitivity, AnnualLoss)
+
 lse_clean_energy_share = left_join(lse_cost_vs_emission, cleanenergy) %>%
-  mutate(CEshare = round(TotalCEOutput*1e6/`Gross Total`,2))
+  left_join(storage_loss) %>%
+  mutate(CEshare = round(TotalCEOutput*1e6/(`Gross Total` + AnnualLoss),2))
 
 cap_price <- left_join(cap_price, lse_clean_energy_share)
 
@@ -34,7 +42,7 @@ TechSensitivityColorCode = c(
   "High NatGas Price" = '#33a02c',
   "No Interregional Transmission Upgrade" = '#fdbf6f',
   "Half Interregional Transmission Upgrade" = '#ff7f00',
-  "New Gas Capacity Caped at 20% of Existing" = '#cab2d6',
+  "New Gas Capacity Capped at 20% of Existing" = '#cab2d6',
   "No New Gas Installation" = '#6a3d9a',
   "No Nuclear Retirement" = '#b15928')
 TechSensitivityLineType = c(
@@ -45,7 +53,7 @@ TechSensitivityLineType = c(
   "High NatGas Price" = 2,
   "No Interregional Transmission Upgrade" = 2,
   "Half Interregional Transmission Upgrade" = 2,
-  "New Gas Capacity Caped at 20% of Existing" = 2,
+  "New Gas Capacity Capped at 20% of Existing" = 2,
   "No New Gas Installation" = 2,
   "No Nuclear Retirement" = 2)
 
@@ -94,8 +102,8 @@ for (w in c(c('Clean Energy Standard','Carbon Cap-and-Trade'))){
             panel.grid.major = element_blank(), 
             panel.grid.minor = element_blank(),
             panel.background = element_rect(colour = "black", size=1.5))+
-      coord_cartesian(ylim = c(30,50))+
-      scale_y_continuous(breaks = seq(30,60,5))+
+      coord_cartesian(ylim = c(20,70))+
+      scale_y_continuous(breaks = seq(20,70,5))+
       ylab("Capacity Price ($/MW-day)") +
       guides(color = guide_legend(ncol = 1, title.position = "top"))+
       ggsave(paste0(RunFdr,'/Graphics/Capacity price_',w,'.png'),
@@ -123,8 +131,8 @@ for (w in c(c('Clean Energy Standard','Carbon Cap-and-Trade'))){
                      y = round(`Capacity Price`,2),
                      color = TechSensitivity))+
       scale_color_manual(values = TechSensitivityColorCode)+
-      coord_cartesian(ylim = c(30,50))+
-      scale_y_continuous(breaks = seq(30,60,5))+
+      coord_cartesian(ylim = c(20,70))+
+      scale_y_continuous(breaks = seq(20,70,5))+
       scale_x_reverse(limits = c(0.5,0),
                       sec.axis = sec_axis(~ (1-./0.607), labels = scales::percent,
                                           name = '% reduction from 2005 emissions level = 0.607 ton/MWh',

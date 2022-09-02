@@ -2,6 +2,7 @@ library(tidyverse)
 
 Studyregion = 'WECC' #WECC
 negtozero <- function(x) {x[x<=0] <-0; return(x)}
+natozero <- function(x) {x[which(is.na(x))] <-0; return(x)}
 countercapres <- function(x) {x[x==0] <- (-1); return(x)}
 n_tfs = 1
 cistudy = 1
@@ -17,7 +18,7 @@ if(Studyregion == 'PJM'){
   }
 } else {
   subreg = 'California'
-  RunFdr <- "/Users/qingyuxu/Documents/WECC_247/";
+  RunFdr <- "/Users/qingyuxu/Documents/WECC_247_upload/";
   if (n_tfs == 1 & cistudy == 1) {
     cfe_load_ori <- read_csv(paste0(RunFdr,'WECC_RPSH_Load_data_1.csv'), col_types = cols())
   }
@@ -53,15 +54,15 @@ y_list = c(
   '10% CI Part., Adv. Tech. Full, Hi. Nat. Gas P.'
 )
 
-# source('./code/googlecfe2022/cfe_table_compile.R')
-# source('./code/googlecfe2022/cfe_emission_table_compile.R')
-# source('./code/googlecfe2022/cfe_system_emission_table_compile.R')
-# source('./code/googlecfe2022/cfe_capacity_compile.R')
-# source('./code/googlecfe2022/cfe_output_compile.R')
-# source('./code/googlecfe2022/cfe_curtailment_compile.R')
-# source('./code/googlecfe2022/cfe_gen_ts.R')
-# source('./code/googlecfe2022/cfe_modifiedload_compile.R')
-# source('./code/googlecfe2022/cfe_load_payment_compile.R')
+source('./code/googlecfe2022/cfe_table_compile.R')
+source('./code/googlecfe2022/cfe_emission_table_compile.R')
+source('./code/googlecfe2022/cfe_system_emission_table_compile.R')
+source('./code/googlecfe2022/cfe_capacity_compile.R')
+source('./code/googlecfe2022/cfe_output_compile.R')
+source('./code/googlecfe2022/cfe_curtailment_compile.R')
+source('./code/googlecfe2022/cfe_gen_ts.R')
+source('./code/googlecfe2022/cfe_modifiedload_compile.R')
+source('./code/googlecfe2022/cfe_load_payment_compile.R')
 
 if(Studyregion == 'PJM'){
   subreg = 'PJM_Google'

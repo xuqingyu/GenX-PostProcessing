@@ -1,11 +1,11 @@
 # RPS price
-settingfile <- 'sample_inputs_pjm_additional.csv';
-RunFdr <- '/Users/qingyuxu/Documents/PJM_QX_2022_PH1_newwacc'
+settingfile <- 'postprocessing_inputs.csv';
+RunFdr <-"/Users/qingyuxu/Documents/pjm_ce_all/"
 source('./code/Header.R')
 
-rps_price <- read_csv(paste0(RunFdr,'/CompiledResults/RPS_prices.csv')) %>%
+rps_price <- read_csv(paste0(RunFdr,'/CompiledResults/ESR_Prices.csv')) %>%
   filter(year == 2030, 
-         RPS_Constraint_Name == 'RPS_2')
+         ID == 2)
 carbon_price <- read_csv(paste0(RunFdr,'/CompiledResults/CO2_LoadRate_Price.csv')) %>%
   filter(year == 2030, 
          Zone == 7, 
@@ -16,14 +16,21 @@ lse_cost_vs_emission <- read_csv(paste0(RunFdr,'/CompiledResults/',
   mutate(TechSensitivity = factor(TechSensitivity, levels = tech_sensitivity))
 
 cleanenergy <- read_csv(paste0(RunFdr,'/CompiledResults/',
-                               Subregions[i],'/Generation/Gen_Output_PJM_withDG.csv')) %>%
+                               Subregions[i],'/Generation/Gen_Output_PJM.csv')) %>%
   filter(Fuel %in% na.omit(clean_fuel)) %>%
   group_by(year, Scenario, TechSensitivity) %>%
   summarize(TotalCEOutput = sum(AnnualOutput)/1e6) %>%
   mutate(TechSensitivity = factor(TechSensitivity, levels = tech_sensitivity))
+storage_loss <- read_csv(paste0(RunFdr,'/CompiledResults/',
+                                Subregions[i],'/Generation/Stor_Operation_',
+                                temp_total_title,".csv")) %>%
+  group_by(year, Scenario, TechSensitivity) %>%
+  summarize(AnnualLoss = sum(AnnualLoss)) %>%
+  select(year, Scenario, TechSensitivity, AnnualLoss)
 
 lse_clean_energy_share = left_join(lse_cost_vs_emission, cleanenergy) %>%
-  mutate(CEshare = round(TotalCEOutput*1e6/`Gross Total`,2))
+  left_join(storage_loss) %>%
+  mutate(CEshare = round(TotalCEOutput*1e6/(`Gross Total` + AnnualLoss),2))
 
 rps_price <- left_join(rps_price, lse_clean_energy_share)
 carbon_price <- left_join(carbon_price, lse_clean_energy_share)
@@ -42,7 +49,7 @@ TechSensitivityColorCode = c(
   "High NatGas Price" = '#33a02c',
   "No Interregional Transmission Upgrade" = '#fdbf6f',
   "Half Interregional Transmission Upgrade" = '#ff7f00',
-  "New Gas Capacity Caped at 20% of Existing" = '#cab2d6',
+  "New Gas Capacity Capped at 20% of Existing" = '#cab2d6',
   "No New Gas Installation" = '#6a3d9a',
   "No Nuclear Retirement" = '#b15928')
 TechSensitivityLineType = c(
@@ -53,7 +60,7 @@ TechSensitivityLineType = c(
   "High NatGas Price" = 2,
   "No Interregional Transmission Upgrade" = 2,
   "Half Interregional Transmission Upgrade" = 2,
-  "New Gas Capacity Caped at 20% of Existing" = 2,
+  "New Gas Capacity Capped at 20% of Existing" = 2,
   "No New Gas Installation" = 2,
   "No Nuclear Retirement" = 2)
 
@@ -69,8 +76,8 @@ rps_price_w_policy <- cbind(rps_price, Policy) %>%
          TechSensitivity %in% MajorTechSensitivity) %>%
   mutate(TechSensitivity = factor(TechSensitivity, levels = MajorTechSensitivity)) %>%
   filter(Policy %in%  c('Clean Energy Standard', 'Carbon Cap-and-Trade')) %>%
-  filter(!(Scenario %in% ScenarioFilter))
-
+  filter(!(Scenario %in% ScenarioFilter)) %>%
+  write_csv(paste0(RunFdr,'/Graphics/rps_prices.csv'))
 Policy = rep('No Federal Policy',nrow(carbon_price))
 Policy[grep('Clean Energy Standard',carbon_price$Scenario)] = 'Clean Energy Standard';
 Policy[grep('Cap-and-Trade',carbon_price$Scenario)] = 'Carbon Cap-and-Trade';
@@ -79,7 +86,8 @@ carbon_price_w_policy <- cbind(carbon_price, Policy) %>%
          TechSensitivity %in% MajorTechSensitivity) %>%
   mutate(TechSensitivity = factor(TechSensitivity, levels = MajorTechSensitivity)) %>%
   filter(Policy %in%  c('Clean Energy Standard', 'Carbon Cap-and-Trade'))%>%
-  filter(!(Scenario %in% ScenarioFilter))
+  filter(!(Scenario %in% ScenarioFilter)) %>%
+  write_csv(paste0(RunFdr,'/Graphics/carbon_prices.csv')) 
 
 
 for (w in c(c('Clean Energy Standard','Carbon Cap-and-Trade'))){
@@ -90,19 +98,19 @@ for (w in c(c('Clean Energy Standard','Carbon Cap-and-Trade'))){
                                Policy == w,
                                TechSensitivity == 'Mid'),
                  aes(x = CEshare,
-                     y = round(RPS_Price,2),
+                     y = round(ESR_Price,2),
                      color = TechSensitivity),
                  size = 3)+
       geom_point(data = filter(rps_price_w_policy,
                                Policy == w,
                                TechSensitivity != 'Mid'),
                  aes(x = CEshare,
-                     y = round(RPS_Price,2),
+                     y = round(ESR_Price,2),
                      color = TechSensitivity))+
       geom_line(data = filter(rps_price_w_policy,
                               Policy == w),
                 aes(x = CEshare,
-                    y = round(RPS_Price,2),
+                    y = round(ESR_Price,2),
                     color = TechSensitivity))+
       scale_color_manual(values = TechSensitivityColorCode)+
       scale_x_continuous(limits = c(0.2,1), labels =scales::percent, breaks = seq(0.2,1,0.1))+
@@ -115,8 +123,8 @@ for (w in c(c('Clean Energy Standard','Carbon Cap-and-Trade'))){
             panel.grid.major = element_blank(), 
             panel.grid.minor = element_blank(),
             panel.background = element_rect(colour = "black", size=1.5))+
-      coord_cartesian(ylim = c(0,110))+
-      scale_y_continuous(breaks = seq(0,110,10))+
+      coord_cartesian(ylim = c(0,200))+
+      scale_y_continuous(breaks = seq(0,200,10))+
       ylab("Clean Energy Credit Price ($/MWh Gen.)") +
       guides(color = guide_legend(ncol = 1, title.position = "top"))+
       ggsave(paste0(RunFdr,'/Graphics/CECPrice_',w,'.png'),
@@ -130,23 +138,23 @@ for (w in c(c('Clean Energy Standard','Carbon Cap-and-Trade'))){
                                Policy == w,
                                TechSensitivity == 'Mid'),
                  aes(x = `Load Emissions Rate (Ton/MWh)`,
-                     y = round(-Price,2),
+                     y = round(Price,2),
                      color = TechSensitivity),
                  size = 3)+
       geom_point(data = filter(carbon_price_w_policy,
                                Policy == w,
                                TechSensitivity != 'Mid'),
                  aes(x = `Load Emissions Rate (Ton/MWh)`,
-                     y = round(-Price,2),
+                     y = round(Price,2),
                      color = TechSensitivity))+
       geom_line(data = filter(carbon_price_w_policy,
                               Policy == w),
                 aes(x = `Load Emissions Rate (Ton/MWh)`,
-                    y = round(-Price,2),
+                    y = round(Price,2),
                     color = TechSensitivity))+
       scale_color_manual(values = TechSensitivityColorCode)+
-      coord_cartesian(ylim = c(0,500))+
-      scale_y_continuous(breaks = seq(0,500,50))+
+      coord_cartesian(ylim = c(0,400))+
+      scale_y_continuous(breaks = seq(0,400,20))+
       scale_x_reverse(limits = c(0.5,0),
                       sec.axis = sec_axis(~ (1-./0.607), labels = scales::percent,
                                           name = '% reduction from 2005 emissions level = 0.607 ton/MWh',

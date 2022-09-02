@@ -22,7 +22,7 @@ for (k in 1:length(interested_sensitivity)){
   
   ggplot(data=temp_plot,aes(x=rank, y=Price, color = Scenario)) +
     scale_color_brewer(palette = 'Set1') +
-    scale_y_continuous(limits = c(-100,250),breaks = seq(-100,400,50))+
+    scale_y_continuous(limits = c(-100,300),breaks = seq(-100,400,50))+
     geom_line()+
     theme_classic2()+
     geom_hline(yintercept = 0, color = 'grey30')+
@@ -33,16 +33,17 @@ for (k in 1:length(interested_sensitivity)){
           panel.grid.major = element_blank(), 
           panel.grid.minor = element_blank(),
           panel.background = element_rect(colour = "black", size=1.5))+
+    labs(x = 'Hour Rank', y = "Energy Price ($/MWh)")+
     guides(color = guide_legend(ncol = 1))+
     # ggtitle(paste0('Energy Price Duration curves Under \nSensitivity ',interested_sensitivity[k]))+
-    ylab("Energy Price ($/MWh)") + 
+    # ylab("Energy Price ($/MWh)") + 
     ggsave(paste0(RunFdr,'/Graphics/EnergyPrice/Cat_Duration Curve Energy Price of Region_',k,'.png'),
            width = 7,
            height= 7)
   ggplot(data=temp_plot,aes(x=Price,after_stat(density), color = Scenario)) +
     scale_color_brewer(palette = 'Set1') +
-    scale_x_continuous(limits = c(-100,250),breaks = seq(-100,400,50))+
-    scale_y_continuous(limits = c(0,.3),breaks = seq(0,.3,0.05))+
+    scale_x_continuous(limits = c(-100,300),breaks = seq(-100,400,50))+
+    scale_y_continuous(limits = c(0,.5),breaks = seq(0,.5,0.05))+
     geom_freqpoly(binwidth = 1)+
     theme_classic2()+
     geom_hline(yintercept = 0, color = 'grey30')+
@@ -66,6 +67,8 @@ temp_compared_scenario = c('Clean Energy Standard (70%)',
                            'Clean Energy Standard (75%)',
                            'Clean Energy Standard (80%)',
                            'Clean Energy Standard (85%)',
+                           # 'Clean Energy Standard (90%)',
+                           # 'Clean Energy Standard (95%)',
                            'DD (No Policy Reference)')
 for (k in 1:length(interested_sensitivity)){
   temp_plot <- energyprice_ts  %>%
@@ -80,7 +83,7 @@ for (k in 1:length(interested_sensitivity)){
   
   ggplot(data=temp_plot,aes(x=rank, y=Price, color = Scenario)) +
     scale_color_brewer(palette = 'Set1') +
-    scale_y_continuous(limits = c(-100,250),breaks = seq(-100,400,50))+
+    scale_y_continuous(limits = c(-100,300),breaks = seq(-100,400,50))+
     geom_line()+
     theme_classic2()+
     geom_hline(yintercept = 0, color = 'grey30')+
@@ -92,15 +95,16 @@ for (k in 1:length(interested_sensitivity)){
           panel.grid.minor = element_blank(),
           panel.background = element_rect(colour = "black", size=1.5))+
     guides(color = guide_legend(ncol = 1))+
+    labs(x = 'Hour Rank', y = "Energy Price ($/MWh)")+
     # ggtitle(paste0('Energy Price Duration curves Under \nSensitivity ',interested_sensitivity[k]))+
-    ylab("Energy Price ($/MWh)") + 
+    # ylab("Energy Price ($/MWh)") + 
     ggsave(paste0(RunFdr,'/Graphics/EnergyPrice/Ces_Duration Curve Energy Price of Region_',k,'.png'),
            width = 7,
            height= 7)
   ggplot(data=temp_plot,aes(x=Price,after_stat(density), color = Scenario)) +
     scale_color_brewer(palette = 'Set1') +
-    scale_x_continuous(limits = c(-100,250),breaks = seq(-100,400,50))+
-    scale_y_continuous(limits = c(0,.3),breaks = seq(0,.3,0.05))+
+    scale_x_continuous(limits = c(-100,300),breaks = seq(-100,400,50))+
+    scale_y_continuous(limits = c(0,.5),breaks = seq(0,.5,0.05))+
     geom_freqpoly(binwidth = 1)+
     theme_classic2()+
     geom_hline(yintercept = 0, color = 'grey30')+

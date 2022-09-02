@@ -6,7 +6,6 @@ RunFdr <-"/Users/qingyuxu/Documents/pjm_ce_all/"
 source('./code/Header.R')
 ScenarioFilter = c('Cap-and-Trade (40% Reduction Compare to 2005 Level)',
                    'Cap-and-Trade (45% Reduction Compare to 2005 Level)',
-                   'Cap-and-Trade (85% Reduction Compare to 2005 Level)',
                    'Cap-and-Trade (100% Reduction Compare to 2005 Level)',
                    'Clean Energy Standard (40%)',
                    'Clean Energy Standard (45%)',
@@ -22,7 +21,8 @@ TechSensitivityColorCode = c(
   "New Gas Capacity Caped at 20% of Existing" = '#cab2d6',
   "No New Gas Installation" = '#6a3d9a',
   "No Nuclear Retirement" = '#b15928',
-  "New Gas Capacity Capped at 20% of Existing Gas" = '#cab2d6')
+  "New Gas Capacity Capped at 20% of Existing Gas" = '#cab2d6',
+  "Allow CCS Expansion" = '#cab2d6')
 TechSensitivityLineType = c(
   "Mid" = 1,
   "Low RE/BESS Cost" = 2,
@@ -34,8 +34,9 @@ TechSensitivityLineType = c(
   "New Gas Capacity Caped at 20% of Existing" = 2,
   "No New Gas Installation" = 2,
   "No Nuclear Retirement" = 2,
-  "New Gas Capacity Capped at 20% of Existing Gas" = 2)
-tech_sensitivity <- c(tech_sensitivity,'New Gas Capacity Capped at 20% of Existing Gas')
+  "New Gas Capacity Capped at 20% of Existing Gas" = 2,
+  "Allow CCS Expansion" = 2)
+# tech_sensitivity <- c(tech_sensitivity,'New Gas Capacity Capped at 20% of Existing Gas')
 for (i in 1:n_subregions){
   temp_total_title <- Subregions[i]
   temp_total <- Subregion_zones$Subregion_zones[Subregion_zones$Subregions == Subregions[i]]
@@ -63,7 +64,8 @@ for (i in 1:n_subregions){
     left_join(storage_loss) %>%
     mutate(CEshare = round(TotalCEOutput*1e6/(`Gross Total` + AnnualLoss),2)) %>%
     filter(!(Scenario %in% ScenarioFilter))
-  lse_clean_energy_share$TechSensitivity[which(lse_clean_energy_share$TechSensitivity == "New Gas Capacity Caped at 20% of Existing")] <- 'New Gas Capacity Capped at 20% of Existing Gas'
+  
+  # lse_clean_energy_share$TechSensitivity[which(lse_clean_energy_share$TechSensitivity == "New Gas Capacity Caped at 20% of Existing")] <- 'New Gas Capacity Capped at 20% of Existing Gas'
   cost_max <- max(lse_clean_energy_share$`LSE Net Payment ($/MWh)`)
   cost_min <- min(lse_clean_energy_share$`LSE Net Payment ($/MWh)`)
   ces_max <- max(lse_clean_energy_share$CEshare[lse_clean_energy_share$year == '2030'])
@@ -75,6 +77,11 @@ for (i in 1:n_subregions){
     'Clean Energy Standard';
   Policy[grep('Cap-and-Trade',lse_clean_energy_share$Scenario)] = 
     'Carbon Cap-and-Trade';
+  lse_clean_energy_share_w_policy_all = cbind(lse_clean_energy_share, Policy)
+  write_csv(lse_clean_energy_share_w_policy_all, paste0(RunFdr,'/CompiledResults/',
+                                                    Subregions[i],'/LSE_Cost_Emission_Tradeoff_withCEShare',
+                                                    temp_total_title,".csv"))
+  
   MajorTechSensitivity <- c('Mid','Low RE/BESS Cost', 'Low NatGas Price', 
                             'High RE/BESS Cost','High NatGas Price')      
   lse_clean_energy_share_w_policy = cbind(lse_clean_energy_share, Policy) %>%
@@ -82,6 +89,7 @@ for (i in 1:n_subregions){
            TechSensitivity %in% MajorTechSensitivity,
            Policy != 'No Federal Policy') %>%
     arrange(CEshare)
+
   # cost_max <- max(lse_clean_energy_share_w_policy$`LSE Net Payment ($/MWh)`)
   # cost_min <- min(lse_clean_energy_share_w_policy$`LSE Net Payment ($/MWh)`)
   ceshare_range <- lse_clean_energy_share_w_policy %>%
@@ -354,6 +362,61 @@ for (i in 1:n_subregions){
     guides(color = guide_legend(ncol = 1, title.position = "top"))+
     ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],
                   '/Graphics/lsecost_ces_tradeoff_reverse_v2_transmissionimpact.png'),
+           width = 7,
+           height= 6)
+  
+  MajorTechSensitivity <- c('Mid','Allow CCS Expansion')  
+  lse_clean_energy_share_w_policy = cbind(lse_clean_energy_share, Policy) %>%
+    filter(year == '2030',
+           TechSensitivity %in% MajorTechSensitivity,
+           Policy != 'No Federal Policy') %>%
+    arrange(CEshare)
+  ggplot() +
+    annotate("rect", xmin = ces2019, ymin = 0, xmax = 1, ymax = cost2019, fill = 'green',alpha = 0.05)+
+    annotate("text", x = (ces2019+1)/2, y = cost_min+1, label = "Lower LSE cost & \nmore clean power than 2019") +
+    # annotate("rect", xmin = 0.182, ymin = 0, xmax = 0.122, ymax = cost_max, fill = 'blue',alpha = 0.05)+
+    # annotate("text", x = 0.152, y = cost_max+0.5, label = "70%-80% reduction from 2005 level") +
+    geom_point(data = filter(lse_clean_energy_share_w_policy,
+                             Policy == 'Clean Energy Standard',
+                             TechSensitivity == 'Mid'), 
+               aes(y = `LSE Net Payment ($/MWh)`, 
+                   x = `CEshare`,
+                   color = TechSensitivity),
+               size = 3) + 
+    geom_point(data = filter(lse_clean_energy_share_w_policy,
+                             Policy == 'Clean Energy Standard',
+                             TechSensitivity != 'Mid'), 
+               aes(y = `LSE Net Payment ($/MWh)`, 
+                   x = `CEshare`,
+                   color = TechSensitivity)) + 
+    geom_path(data = filter(lse_clean_energy_share_w_policy,
+                            Policy == 'Clean Energy Standard'), 
+              aes(y = `LSE Net Payment ($/MWh)`, 
+                  x = `CEshare`,
+                  color = TechSensitivity),
+              alpha = 0.3) + 
+    geom_vline(xintercept = 1, color = 'red') +
+    geom_vline(xintercept = 0.4, color = 'black') +
+    geom_hline(yintercept = cost2019) +
+    annotate("point", x = 0.4, y = cost2019) +
+    annotate("text", x = 0.4+0.07, y = cost2019+1, label = "2019 level") +
+    scale_color_manual(values = TechSensitivityColorCode) +
+    scale_x_continuous(labels =scales::percent, breaks = seq(0.2,1,0.1))+
+    coord_cartesian(ylim = c(cost_min, cost_max),
+                    xlim = c(0.2,1))+
+    theme_classic2() +
+    ylab("LSE Cost ($/MWh)") +
+    xlab("% of total load supported by clean energy")+
+    theme(legend.position = c(0.5,0.8),
+          legend.key = element_rect(fill = "white", colour = "black"),
+          legend.title = element_blank(),
+          axis.line = element_line(colour = "black",size=0),
+          panel.grid.major = element_blank(), 
+          panel.grid.minor = element_blank(),
+          panel.background = element_rect(colour = "black", size=1.5))+
+    guides(color = guide_legend(ncol = 1, title.position = "top"))+
+    ggsave(paste0(RunFdr,'/CompiledResults/',Subregions[i],
+                  '/Graphics/lsecost_ces_tradeoff_reverse_v2_ccsimpact.png'),
            width = 7,
            height= 6)
 }

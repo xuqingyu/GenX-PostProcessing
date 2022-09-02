@@ -1,16 +1,4 @@
-# cfe_system_emission_table = tibble(
-#   case = character(),
-#   year = character(),
-#   emission_local = numeric(),
-#   # emission rate is using the PJM/CA emission rate
-#   emission_local_n_import = numeric(),
-#   emission_rest_of_local = numeric(),
-#   emission_rest_of_local_w_import = numeric(),
-#   participating_load_emission = numeric(),
-#   # emission rate is using the PJM or CA using 
-#   # [CA emission + hourly imported emission]/[CA Gen + hourly import]
-#   `Local Load` = numeric()
-# )
+
 
 if(exists('systemload_emission_table')) {rm(systemload_emission_table,systemload_emission_table_withname)}
 for ( i in 1:length(cases)){

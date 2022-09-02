@@ -6,9 +6,6 @@ print('begin compiling energy charge')
 print(Sys.time())
 for ( i in 1:length(cases)){
   for (j in 1:length(years)){
-    # temp_generator_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",
-    #                             years[j],"_",cases[i],
-    #                             "/Inputs/Generators_data.csv");
     temp_charge_fn <- paste0(RunFdr,"/",years[j],"/",case_ids[i],"_",
                              years[j],"_",cases[i],"/Results/charge.csv");
     if (file.exists(temp_charge_fn)){
@@ -19,11 +16,6 @@ for ( i in 1:length(cases)){
       colnames(temp_charge) <- temp_charge[1,] # make the row one as column name
       temp_charge <- as_tibble(temp_charge[-c(1, dim(temp_charge)[1]),]) 
       # Remove the first row (as it as been set as column names)
-      # temp_generator <- read_csv(temp_generator_fn, col_types = cols());
-      # temp_charge <- cbind(temp_charge,temp_generator$Fuel);
-      # colnames(temp_charge)[dim(temp_charge)[2]] <- "Fuel";
-      # temp_charge <- cbind(temp_charge,temp_generator$cluster);
-      # colnames(temp_charge)[dim(temp_charge)[2]] <- "Cluster";
       temp_charge$case = cases[i];
       temp_charge$year = years[j]
     }

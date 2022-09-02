@@ -43,9 +43,9 @@ for ( i in 1:length(cases)){
         select(AnnualSum) %>%
         rename(ChargeSum = AnnualSum)
       temp_settlement = cbind(temp_settlement,temp_charge)
-      if (!('EmissionsCapture' %in% colnames(temp_settlement))){
-        temp_settlement$EmissionsCapture = 0
-      }
+      # if (!('EmissionsCapture' %in% colnames(temp_settlement))){
+      #   temp_settlement$EmissionsCapture = 0
+      # }
       temp_settlement$case = cases[i]
       temp_settlement$year = years[j]
     }
@@ -64,6 +64,7 @@ for ( i in 1:length(cases)){
 if (exists('Settlement')){
   
   Settlement <- Settlement %>%
+    rename(Region = region, Zone = zone) %>%
     mutate(Region = as.factor(Region),
            year = as.factor(year),
            case = as.factor(case),
@@ -80,10 +81,9 @@ if (exists('Settlement')){
            Fuel_cost = -1*Fuel_cost,
            Charge_cost = -1*Charge_cost,
            EmissionsCost = -1*EmissionsCost,
-           EmissionsCapture = -1*EmissionsCapture,
+           SequestrationCost = -1*SequestrationCost,
            StartCost = -1*StartCost) %>%
-    mutate(VOM_n_Fuel = Var_OM_cost_out + Var_OM_cost_in + 
-             Fuel_cost + StartCost,
+    mutate(VOM_n_Fuel = Var_OM_cost_out + Var_OM_cost_in + Fuel_cost + StartCost,
            FOM = Fixed_OM_cost_MWh + Fixed_OM_cost_MW,
            Inv_cost = Inv_cost_MW + Inv_cost_MWh)
   ###########################
@@ -98,7 +98,7 @@ if (exists('Settlement')){
           select(-SunkCost);
         settlement_previous_year <- Settlement %>% 
           filter(case == cases[i],year == years[j-1]) %>%
-          select(Region, Resource, Zone, Cluster,Inv_cost,SunkCost) %>%
+          select(Region, Resource, Zone, Cluster, Inv_cost, SunkCost) %>%
           mutate(SunkCost = Inv_cost + SunkCost) %>%
           select(-Inv_cost);
         settlement_rest <- Settlement %>% filter((case != cases[i])|(year != years[j]));
@@ -116,7 +116,7 @@ if (exists('Settlement')){
                                         "EnergyRevenue","SubsidyRevenue","RegSubsidyRevenue",
                                         "ReserveMarginRevenue", "ESRRevenue","VOM_n_Fuel",
                                         "FOM","Inv_cost", "SunkCost","Charge_cost",
-                                        "EmissionsCost","EmissionsCapture","EndCap",
+                                        "EmissionsCost","CO2Credit","SequestrationCost","EndCap",
                                         "EndEnergyCap","EndChargeCap","DischargeSum","ChargeSum"));
   write_csv(Settlement, paste0(RunFdr,"/CompiledResults/Settlement.csv"));
   write_csv(Settlement_Short, paste0(RunFdr,"/CompiledResults/Settlement_short.csv"));
