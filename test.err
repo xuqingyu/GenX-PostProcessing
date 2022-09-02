@@ -4226,5 +4226,38 @@ Joining, by = "Resource"
 Joining, by = "Resource"
 `summarise()` has grouped output by 'case', 'year'. You can override using the
 `.groups` argument.
-Error: '/tigress/qingyux/GenX/PJM/2022_PJM_CE/pjm_ce_allCompiledResults/power.csv' does not exist.
-Execution halted
+Joining, by = "Resource"
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+Joining, by = "Resource"
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year', 'Scenario'. You can
+override using the `.groups` argument.
+`summarise()` has grouped output by 'case', 'year', 'Scenario'. You can
+override using the `.groups` argument.
+Joining, by = c("case", "year", "Scenario", "TechSensitivity")
+Joining, by = "Resource"
+Joining, by = "Resource"
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+Joining, by = c("case", "year", "Fuel", "Scenario", "TechSensitivity")
+Joining, by = c("year", "Zone", "SCENARIO_Load")
+`summarise()` has grouped output by 'case', 'year'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case'. You can override using the
+`.groups` argument.
+Joining, by = c("case", "year", "Scenario", "TechSensitivity")
+`summarise()` has grouped output by 'case', 'year', 'Scenario'. You can
+override using the `.groups` argument.
+Joining, by = c("case", "year", "Scenario", "TechSensitivity", "Gross Total")
+`summarise()` has grouped output by 'case'. You can override using the
+`.groups` argument.
+`summarise()` has grouped output by 'case', 'year', 'Scenario'. You can
+override using the `.groups` argument.
+Joining, by = c("case", "year", "Scenario", "TechSensitivity")
+Joining, by = c("case", "year", "Scenario", "TechSensitivity")
+Joining, by = c("case", "year", "Scenario", "TechSensitivity")
+Joining, by = c("case", "year", "Scenario", "TechSensitivity")
